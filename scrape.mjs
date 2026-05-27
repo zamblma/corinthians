@@ -48,7 +48,7 @@ function parseStandings(html, compName, compKey) {
     const nameMatch = row.match(/<td class="main team-name[^"]*"[^>]*>[\s\S]*?<a[^>]*>([^<]+)/);
     const shieldMatch = row.match(/<img[^>]+class="sports-shield"[^>]+src="([^"]+)"/);
     const pointsMatch = row.match(/<td class="points[^"]*"[^>]*>(\d+)<\/td>/);
-    const tds = [...row.matchAll(/<td[^>]*>(\d+)<\/td>/g)];
+    const tds = [...row.matchAll(/<td[^>]*>(-?\d+)<\/td>/g)];
     const zoneMatch = row.match(/class="zone-(\d+)/);
     const moveMatch = row.match(/<td class="main movement (up|down)">(?:<span>[^<]*<\/span>\s*)?(\d+)?/);
 
@@ -66,15 +66,15 @@ function parseStandings(html, compName, compKey) {
       pos: parseInt(posMatch[1]),
       name: nameMatch[1].trim(),
       shield: shieldMatch ? shieldMatch[1] : '',
-      points: parseInt(tds[0]?.[1] || 0),
-      games: parseInt(tds[1]?.[1] || 0),
-      wins: parseInt(tds[2]?.[1] || 0),
-      draws: parseInt(tds[3]?.[1] || 0),
-      losses: parseInt(tds[4]?.[1] || 0),
-      goalsFor: parseInt(tds[5]?.[1] || 0),
-      goalsAgainst: parseInt(tds[6]?.[1] || 0),
-      goalDiff: parseInt(tds[7]?.[1] || 0),
-      pct: parseInt(tds[8]?.[1] || 0),
+      points: parseInt(tds[1]?.[1] || 0),
+      games: parseInt(tds[2]?.[1] || 0),
+      wins: parseInt(tds[3]?.[1] || 0),
+      draws: parseInt(tds[4]?.[1] || 0),
+      losses: parseInt(tds[5]?.[1] || 0),
+      goalsFor: parseInt(tds[6]?.[1] || 0),
+      goalsAgainst: parseInt(tds[7]?.[1] || 0),
+      goalDiff: parseInt(tds[8]?.[1] || 0),
+      pct: parseInt(tds[9]?.[1] || 0),
       zone,
       movement,
     });
