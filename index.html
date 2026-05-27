@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corinthians - Proximos Jogos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Corinthians <span>Tracker</span></h1>
+    <p>Proximos jogos do Timao</p>
+    <div class="sbar"><span class="sdot gray" id="sdot"></span><span class="stxt" id="stxt">Carregando...</span></div>
+  </header>
+
+  <section class="panel">
+    <h2>Sobre</h2>
+    <p>Dados atualizados automaticamente a cada 6 horas via <strong>site da Terra/UOL</strong>. Nenhuma chave necessaria.</p>
+    <p style="margin-top:8px;color:var(--gray-500);font-size:0.8rem">Ultima atualizacao: <span id="lastUpd">--</span></p>
+  </section>
+
+  <section class="panel">
+    <h2>Notificacoes</h2>
+    <div class="nrow"><label for="notifT">Notificacoes do navegador</label><label class="switch"><input type="checkbox" id="notifT"><span class="sl"></span></label></div>
+    <div class="nrow"><label for="remindT">Lembrar 1 hora antes</label><label class="switch"><input type="checkbox" id="remindT" checked><span class="sl"></span></label></div>
+  </section>
+
+  <div class="mtop"><h2>Proximos Jogos</h2><button class="btn" id="refreshBtn">Atualizar</button></div>
+  <div id="matches"><div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><p>Carregando jogos...</p></div></div>
+  <footer>Corinthians Tracker &mdash; Dados via Terra/UOL (Brasileir&atilde;o S&eacute;rie A)</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
