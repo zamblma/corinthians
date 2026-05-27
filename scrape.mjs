@@ -5,9 +5,11 @@ const COMPETITIONS = [
   { id: 1457, name: 'Copa Libertadores', key: 'libertadores' },
   { id: 1459, name: 'Copa do Brasil', key: 'copabrasil' },
   { id: 1460, name: 'Copa Sudamericana', key: 'sudamericana' },
+  { id: 1455, name: 'Campeonato Paulista', key: 'paulista' },
 ];
 
 const BASE_URL = 'https://p1.trrsf.com/api/musa-soccer/ms-standings-games-light?idChampionship=ID&idPhase=&language=pt-BR&country=BR&nav=N&timezone=BR';
+const STANDINGS_URL = 'https://p1.trrsf.com/api/musa-soccer/ms-standings-light?idChampionship=ID&language=pt-BR&country=BR&nav=N&timezone=BR';
 
 function parseTime(timeStr) {
   const m = timeStr.match(/(\d{1,2})h(\d{2})/);
@@ -33,6 +35,106 @@ async function fetchCompetition(comp) {
   return await resp.text();
 }
 
+function parseStandings(html, compName, compKey) {
+  if (compKey === 'copabrasil' || compKey === 'paulista') return null; // knockout/state format, no league table
+
+  const rows = html.match(/<tr[^>]*data-idteam="[^"]*"[^>]*>[\s\S]*?<\/tr>/g);
+  if (!rows) return null;
+
+  const teams = [];
+
+  for (const row of rows) {
+    const posMatch = row.match(/<td class="main position[^"]*"[^>]*>(\d+)<\/td>/);
+    const nameMatch = row.match(/<td class="main team-name[^"]*"[^>]*>[\s\S]*?<a[^>]*>([^<]+)/);
+    const shieldMatch = row.match(/<img[^>]+class="sports-shield"[^>]+src="([^"]+)"/);
+    const pointsMatch = row.match(/<td class="points[^"]*"[^>]*>(\d+)<\/td>/);
+    const tds = [...row.matchAll(/<td[^>]*>(\d+)<\/td>/g)];
+    const zoneMatch = row.match(/class="zone-(\d+)/);
+    const moveMatch = row.match(/<td class="main movement (up|down)">(?:<span>[^<]*<\/span>\s*)?(\d+)?/);
+
+    if (!posMatch || !nameMatch) continue;
+
+    const zone = zoneMatch ? parseInt(zoneMatch[1]) : 0;
+    let movement = '';
+    if (moveMatch) {
+      const dir = moveMatch[1] === 'up' ? 'S' : 'D';
+      const ct = moveMatch[2] || '';
+      movement = dir + ct;
+    }
+
+    teams.push({
+      pos: parseInt(posMatch[1]),
+      name: nameMatch[1].trim(),
+      shield: shieldMatch ? shieldMatch[1] : '',
+      points: parseInt(tds[0]?.[1] || 0),
+      games: parseInt(tds[1]?.[1] || 0),
+      wins: parseInt(tds[2]?.[1] || 0),
+      draws: parseInt(tds[3]?.[1] || 0),
+      losses: parseInt(tds[4]?.[1] || 0),
+      goalsFor: parseInt(tds[5]?.[1] || 0),
+      goalsAgainst: parseInt(tds[6]?.[1] || 0),
+      goalDiff: parseInt(tds[7]?.[1] || 0),
+      pct: parseInt(tds[8]?.[1] || 0),
+      zone,
+      movement,
+    });
+  }
+
+  return { championship: compName, championshipKey: compKey, teams };
+}
+
+async function fetchStandings(comp) {
+  const url = STANDINGS_URL.replace('ID', comp.id);
+  const resp = await fetch(url, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    }
+  });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${comp.name}`);
+  return await resp.text();
+}
+
+async function fetchLineupPage(matchUrl) {
+  if (!matchUrl) return null;
+  const resp = await fetch(matchUrl, {
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    }
+  });
+  if (!resp.ok) return null;
+  return await resp.text();
+}
+
+function parseLineupPlayers(html) {
+  if (!html) return null;
+  const lineups = [];
+
+  // Find each team's lineup section
+  const sections = html.match(/live__content__lineup__col[\s\S]*?<\/ul>/g);
+  if (!sections || sections.length < 2) return null;
+
+  for (const section of sections) {
+    const teamMatch = section.match(/title="([^"]+)"(?:[\s\S]*?<h5>([^<]+)<)/);
+    const teamName = teamMatch ? teamMatch[1] : '';
+    const acronym = teamMatch ? teamMatch[2] : '';
+
+    const players = [];
+    const playerMatches = [...section.matchAll(/team-player__number">(\d+)<\/span>\s*<span[^>]+team-player__name[^>]+title="([^"]+)"\s*>([^<]+)/g)];
+    for (const pm of playerMatches) {
+      players.push({ num: pm[1], pos: pm[2], name: pm[3] });
+    }
+
+    if (players.length > 0) {
+      lineups.push({ team: teamName, acronym, players });
+    }
+  }
+
+  return lineups.length > 0 ? lineups : null;
+}
 function parseHtml(html, compName, compKey) {
   const matches = [];
 
@@ -84,6 +186,11 @@ function parseHtml(html, compName, compKey) {
       const started = homeGoals !== null;
       const status = started ? (homeGoals !== awayGoals ? 'finished' : 'draw') : 'scheduled';
 
+      const linkMatch = mh.match(/<a[^>]+href="([^"]*\/ao-vivo\/[^"]+)"/);
+      const matchUrl = linkMatch ? linkMatch[1] : '';
+      const idMatch = matchUrl.match(/\/(\d+)$/);
+      const matchId = idMatch ? idMatch[1] : '';
+
       const matchData = {
         round: roundNum,
         date: rawDate,
@@ -101,6 +208,8 @@ function parseHtml(html, compName, compKey) {
         championshipKey: compKey,
         homeLogo,
         awayLogo,
+        matchUrl,
+        matchId,
       };
 
       if (homeTeam === 'Corinthians' || awayTeam === 'Corinthians') {
@@ -119,6 +228,7 @@ function parseHtml(html, compName, compKey) {
 
 async function scrape() {
   const allCorinthians = [];
+  const standingsList = [];
   const errors = [];
 
   for (const comp of COMPETITIONS) {
@@ -131,11 +241,54 @@ async function scrape() {
       errors.push(`${comp.name}: ${err.message}`);
       console.log(`  ${comp.name}: ERROR - ${err.message}`);
     }
+
+    try {
+      const html = await fetchStandings(comp);
+      const parsed = parseStandings(html, comp.name, comp.key);
+      if (parsed) {
+        standingsList.push(parsed);
+        console.log(`  ${comp.name}: ${parsed.teams.length} teams in standings`);
+      } else {
+        console.log(`  ${comp.name}: no standings (knockout format)`);
+      }
+    } catch (err) {
+      errors.push(`${comp.name} (standings): ${err.message}`);
+      console.log(`  ${comp.name} (standings): ERROR - ${err.message}`);
+    }
+  }
+
+  // Fetch lineups for finished OR upcoming matches (check if data is available)
+  const lineups = {};
+  const lineupTargets = allCorinthians.filter(m => {
+    if (m.status !== 'scheduled') return true;
+    // Also try matches happening today (within 3h of kickoff)
+    const matchTime = new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00'));
+    const now = new Date();
+    const diffH = (matchTime - now) / 3600000;
+    return diffH <= 3 && diffH >= -1;
+  });
+  for (const m of lineupTargets) {
+    try {
+      if (!m.matchId) continue;
+      console.log(`  Lineup: ${m.homeTeam} x ${m.awayTeam}...`);
+      const html = await fetchLineupPage(m.matchUrl);
+      const data = parseLineupPlayers(html);
+      if (data) {
+        lineups[m.matchId] = data;
+        console.log(`    -> ${data[0].players.length} + ${data[1]?.players.length || 0} players`);
+      } else {
+        console.log(`    -> no lineup data yet`);
+      }
+    } catch (err) {
+      console.log(`  Lineup ERROR: ${err.message}`);
+    }
   }
 
   const output = {
     lastUpdated: new Date().toISOString(),
     corinthiansMatches: allCorinthians,
+    standings: standingsList,
+    lineups,
   };
 
   writeFileSync('matches.json', JSON.stringify(output, null, 2));

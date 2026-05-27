@@ -1,0 +1,17 @@
+{
+  "name": "Corinthians Tracker",
+  "short_name": "Timão",
+  "description": "Acompanhe os próximos jogos do Corinthians",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "logocorinthians.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
