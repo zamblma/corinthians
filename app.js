@@ -98,7 +98,9 @@ async function buscarJogos() {
         id: `${m.championshipKey}-${m.round}-${m.homeTeam}-${m.awayTeam}`,
         date: new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00')),
         homeName: m.homeTeam,
+        homeLogo: m.homeLogo || '',
         awayName: m.awayTeam,
+        awayLogo: m.awayLogo || '',
         venue: m.stadium || 'Local a definir',
         league: m.championship,
         championshipKey: m.championshipKey,
@@ -130,9 +132,9 @@ function render() {
     <div class="cd">${fmtD(m.date)} &bull; ${fmtT(m.date)}</div>
     <div class="ccomp">${m.league}</div>
     <div class="ct">
-      <div class="tc"><span class="nm h">${m.homeName}</span></div>
+      <div class="tc">${m.homeLogo ? `<img class="bd" src="${m.homeLogo}" alt="" onerror="this.style.display='none'">` : ''}<span class="nm h">${m.homeName}</span></div>
       <div class="vs">VS</div>
-      <div class="tc"><span class="nm a">${m.awayName}</span></div>
+      <div class="tc">${m.awayLogo ? `<img class="bd" src="${m.awayLogo}" alt="" onerror="this.style.display='none'">` : ''}<span class="nm a">${m.awayName}</span></div>
     </div>
     <div class="dts">
       <div class="dt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${fmtD(m.date)} as ${fmtT(m.date)}</div>

@@ -72,6 +72,10 @@ function parseHtml(html, compName, compKey) {
       const homeAcronym = acronyms.length > 0 ? acronyms[0][1] : '';
       const awayAcronym = acronyms.length > 1 ? acronyms[1][1] : '';
 
+      const shields = [...mh.matchAll(/<img[^>]+class="sports-shield"[^>]+src="([^"]+)"/g)];
+      const homeLogo = shields.length > 0 ? shields[0][1] : '';
+      const awayLogo = shields.length > 1 ? shields[1][1] : '';
+
       const homeGoalsMatch = mh.match(/<strong class="goals home">(\d+)<\/strong>/);
       const awayGoalsMatch = mh.match(/<strong class="goals away">(\d+)<\/strong>/);
       const homeGoals = homeGoalsMatch ? parseInt(homeGoalsMatch[1]) : null;
@@ -95,6 +99,8 @@ function parseHtml(html, compName, compKey) {
         status,
         championship: compName,
         championshipKey: compKey,
+        homeLogo,
+        awayLogo,
       };
 
       if (homeTeam === 'Corinthians' || awayTeam === 'Corinthians') {
