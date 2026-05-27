@@ -10,8 +10,16 @@ const BRD = {
   'amistoso': ['YouTube'],
 };
 
+const COMP_KEYS = [
+  { key: 'todas', label: 'Todas' },
+  { key: 'brasileirao', label: 'Brasileirão' },
+  { key: 'libertadores', label: 'Libertadores' },
+  { key: 'copabrasil', label: 'Copa do Brasil' },
+  { key: 'sudamericana', label: 'Sul-Americana' },
+];
+
 const $ = s => document.querySelector(s);
-let st = { notif: false, remind: true, matches: [], notified: new Set() };
+let st = { notif: false, remind: true, matches: [], filtered: [], notified: new Set(), filter: 'todas' };
 
 function load() {
   try {
@@ -47,7 +55,26 @@ function cdwn(d) {
   return `Falta <strong>${m}min</strong>`;
 }
 
-const BRASILEIRAO = 'Brasileirão Série A';
+function renderFiltros() {
+  const c = $('#filtros');
+  c.innerHTML = COMP_KEYS.map(f =>
+    `<button class="fbtn${st.filter === f.key ? ' ativo' : ''}" data-key="${f.key}">${f.label}</button>`
+  ).join('');
+  c.querySelectorAll('.fbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      st.filter = btn.dataset.key;
+      renderFiltros();
+      aplicarFiltro();
+    });
+  });
+}
+
+function aplicarFiltro() {
+  st.filtered = st.filter === 'todas'
+    ? st.matches
+    : st.matches.filter(m => m.championshipKey === st.filter);
+  render();
+}
 
 async function buscarJogos() {
   sdot('yellow', 'Carregando...');
@@ -68,25 +95,25 @@ async function buscarJogos() {
 
     st.matches = data.corinthiansMatches
       .map(m => ({
-        id: `${m.round}-${m.homeTeam}-${m.awayTeam}`,
+        id: `${m.championshipKey}-${m.round}-${m.homeTeam}-${m.awayTeam}`,
         date: new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00')),
         homeName: m.homeTeam,
         awayName: m.awayTeam,
         venue: m.stadium || 'Local a definir',
-        league: m.championship || BRASILEIRAO,
-        ch: getBRD(m.championship || BRASILEIRAO),
+        league: m.championship,
+        championshipKey: m.championshipKey,
+        ch: getBRD(m.championship),
         isHome: m.isHome,
         opponent: m.opponent,
-        opponentAcronym: m.opponentAcronym,
         round: m.round,
         status: m.status,
       }))
       .filter(m => m.date >= new Date())
       .sort((a, b) => a.date - b.date);
 
-    render();
+    aplicarFiltro();
     sdot(st.matches.length > 0 ? 'green' : 'gray',
-      st.matches.length > 0 ? `${st.matches.length} ${st.matches.length === 1 ? 'jogo' : 'jogos'} encontrado${st.matches.length === 1 ? '' : 's'}` : 'Nenhum jogo agendado');
+      `${st.matches.length} ${st.matches.length === 1 ? 'jogo' : 'jogos'} encontrado${st.matches.length === 1 ? '' : 's'}`);
   } catch (err) {
     $('#matches').innerHTML = `<div class="empty"><p style="color:#ef5350">Erro ao carregar dados: ${err.message}</p><p style="margin-top:8px;font-size:0.85rem;color:var(--gray-500)">Verifique se o arquivo <strong>matches.json</strong> existe ou se o GitHub Action ja rodou.</p></div>`;
     sdot('red', 'Erro');
@@ -95,12 +122,13 @@ async function buscarJogos() {
 
 function render() {
   const c = $('#matches');
-  if (!st.matches.length) {
-    c.innerHTML = '<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><p>Nenhum jogo do Corinthians agendado.</p></div>';
+  if (!st.filtered.length) {
+    c.innerHTML = '<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><p>Nenhum jogo agendado para esta competicao.</p></div>';
     return;
   }
-  c.innerHTML = st.matches.map(m => `<div class="card">
-    <div class="cd">${fmtD(m.date)} &bull; ${fmtT(m.date)} &bull; Rodada ${m.round}</div>
+  c.innerHTML = st.filtered.map(m => `<div class="card">
+    <div class="cd">${fmtD(m.date)} &bull; ${fmtT(m.date)}</div>
+    <div class="ccomp">${m.league}</div>
     <div class="ct">
       <div class="tc"><span class="nm h">${m.homeName}</span></div>
       <div class="vs">VS</div>
@@ -126,13 +154,13 @@ function checkNotifs() {
     if (diff <= 0) { st.notified.add(m.id); save(); return; }
     if (st.remind && diff <= 3600000 && diff > 0) {
       new Notification('Corinthians - 1 hora!', {
-        body: `${m.isHome ? m.awayName : m.homeName} - ${m.venue} as ${fmtT(m.date)}`,
+        body: `${m.league}: ${m.isHome ? m.awayName : m.homeName} - ${m.venue} as ${fmtT(m.date)}`,
       });
       st.notified.add(m.id); save();
     }
     if (diff <= 86400000 && diff > 3600000) {
       new Notification('Corinthians - Jogo amanha!', {
-        body: `${m.isHome ? m.awayName : m.homeName} - ${fmtD(m.date)} as ${fmtT(m.date)}`,
+        body: `${m.league}: ${m.isHome ? m.awayName : m.homeName} - ${fmtD(m.date)} as ${fmtT(m.date)}`,
       });
       st.notified.add(m.id); save();
     }
@@ -141,6 +169,7 @@ function checkNotifs() {
 
 function init() {
   load();
+  renderFiltros();
   $('#notifT').checked = st.notif;
   $('#remindT').checked = st.remind;
 
@@ -157,7 +186,7 @@ function init() {
   if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission();
   buscarJogos();
   setInterval(buscarJogos, 1800000);
-  setInterval(() => { if (st.matches.length) render(); }, 60000);
+  setInterval(aplicarFiltro, 60000);
 }
 
 document.addEventListener('DOMContentLoaded', init);

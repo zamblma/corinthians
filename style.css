@@ -36,6 +36,12 @@ header p { color: var(--gray-300); margin-top: 4px; font-size: 0.9rem; }
 .mtop .btn { background: none; border: 1px solid var(--gray-500); color: var(--gray-300); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; }
 .mtop .btn:hover { border-color: var(--gold); color: var(--gold); }
 
+.filtros { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.fbtn { background: var(--gray-700); border: 1px solid var(--gray-500); color: var(--gray-300); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; transition: 0.2s; }
+.fbtn:hover { border-color: var(--gold); color: var(--gold); }
+.fbtn.ativo { background: var(--gold); color: var(--black); border-color: var(--gold); font-weight: 700; }
+.ccomp { color: var(--gold); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+
 .card { background: var(--gray-800); border-radius: 12px; padding: 20px; margin-bottom: 12px; border-left: 4px solid var(--gold); }
 .card .cd { color: var(--gold); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 .ct { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 14px; }

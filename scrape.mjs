@@ -1,6 +1,13 @@
 import { writeFileSync } from 'fs';
 
-const URL = 'https://p1.trrsf.com/api/musa-soccer/ms-standings-games-light?idChampionship=1456&idPhase=&language=pt-BR&country=BR&nav=N&timezone=BR';
+const COMPETITIONS = [
+  { id: 1456, name: 'Brasileirão Série A', key: 'brasileirao' },
+  { id: 1457, name: 'Copa Libertadores', key: 'libertadores' },
+  { id: 1459, name: 'Copa do Brasil', key: 'copabrasil' },
+  { id: 1460, name: 'Copa Sudamericana', key: 'sudamericana' },
+];
+
+const BASE_URL = 'https://p1.trrsf.com/api/musa-soccer/ms-standings-games-light?idChampionship=ID&idPhase=&language=pt-BR&country=BR&nav=N&timezone=BR';
 
 function parseTime(timeStr) {
   const m = timeStr.match(/(\d{1,2})h(\d{2})/);
@@ -13,23 +20,23 @@ function fmtDate(dateStr, timeStr) {
   return t ? `${dateStr}T${t}:00` : `${dateStr}T00:00:00`;
 }
 
-async function scrape() {
-  const resp = await fetch(URL, {
+async function fetchCompetition(comp) {
+  const url = BASE_URL.replace('ID', comp.id);
+  const resp = await fetch(url, {
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
       'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7'
     }
   });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status} for ${comp.name}`);
+  return await resp.text();
+}
 
-  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-  const html = await resp.text();
+function parseHtml(html, compName, compKey) {
+  const matches = [];
 
-  const rounds = [];
-  const corinthiansMatches = [];
-
-  const ROUND_START = '<li class="round';
-  const sections = html.split(ROUND_START);
+  const sections = html.split('<li class="round');
   for (let i = 1; i < sections.length; i++) {
     const s = sections[i];
     const idMatch = s.match(/^[^"]*" id="round-(\d+)">/);
@@ -37,7 +44,6 @@ async function scrape() {
 
     const roundNum = parseInt(idMatch[1]);
     const section = s.substring(idMatch[0].length);
-    const roundMatches = [];
 
     const matchRegex = /<li class="match "([\s\S]*?)<\/li>/g;
     let m;
@@ -74,8 +80,6 @@ async function scrape() {
       const started = homeGoals !== null;
       const status = started ? (homeGoals !== awayGoals ? 'finished' : 'draw') : 'scheduled';
 
-      let championship = 'Brasileirão Série A';
-
       const matchData = {
         round: roundNum,
         date: rawDate,
@@ -89,38 +93,52 @@ async function scrape() {
         homeGoals,
         awayGoals,
         status,
-        championship
+        championship: compName,
+        championshipKey: compKey,
       };
 
-      roundMatches.push(matchData);
-
       if (homeTeam === 'Corinthians' || awayTeam === 'Corinthians') {
-        corinthiansMatches.push({
+        matches.push({
           ...matchData,
           isHome: homeTeam === 'Corinthians',
           opponent: homeTeam === 'Corinthians' ? awayTeam : homeTeam,
-          opponentAcronym: homeTeam === 'Corinthians' ? awayAcronym : homeAcronym
+          opponentAcronym: homeTeam === 'Corinthians' ? awayAcronym : homeAcronym,
         });
       }
     }
+  }
 
-    if (roundMatches.length > 0) {
-      rounds.push({ round: roundNum, matches: roundMatches });
+  return matches;
+}
+
+async function scrape() {
+  const allCorinthians = [];
+  const errors = [];
+
+  for (const comp of COMPETITIONS) {
+    try {
+      const html = await fetchCompetition(comp);
+      const matches = parseHtml(html, comp.name, comp.key);
+      allCorinthians.push(...matches);
+      console.log(`  ${comp.name}: ${matches.length} Corinthians matches`);
+    } catch (err) {
+      errors.push(`${comp.name}: ${err.message}`);
+      console.log(`  ${comp.name}: ERROR - ${err.message}`);
     }
   }
 
   const output = {
     lastUpdated: new Date().toISOString(),
-    rounds,
-    corinthiansMatches
+    corinthiansMatches: allCorinthians,
   };
 
   writeFileSync('matches.json', JSON.stringify(output, null, 2));
-  const upcoming = corinthiansMatches.filter(m => m.status === 'scheduled').length;
-  console.log(`OK — ${rounds.length} rounds, ${corinthiansMatches.length} Corinthians matches (${upcoming} upcoming), saved to matches.json`);
+  const upcoming = allCorinthians.filter(m => m.status === 'scheduled').length;
+  console.log(`\nTotal: ${allCorinthians.length} Corinthians matches (${upcoming} upcoming)`);
+  if (errors.length) console.log(`Errors: ${errors.join(' | ')}`);
 }
 
 scrape().catch(err => {
-  console.error('FAIL:', err.message);
+  console.error('FATAL:', err.message);
   process.exit(1);
 });
