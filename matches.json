@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-28T01:43:21.384Z",
+  "lastUpdated": "2026-05-28T05:15:32.229Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -1001,14 +1001,14 @@
       "awayAcronym": "CAP",
       "stadium": "Neo Química Arena",
       "homeGoals": 0,
-      "awayGoals": 1,
-      "status": "live",
+      "awayGoals": 2,
+      "status": "finished",
       "championship": "Copa Libertadores",
       "championshipKey": "libertadores",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
       "awayLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/32603-65sdk4qogrkt9ecin2int28r39.png",
-      "matchUrl": "",
-      "matchId": "",
+      "matchUrl": "https://www.terra.com.br/esportes/futebol/libertadores/ao-vivo/corinthians-x-platense/95569",
+      "matchId": "95569",
       "isHome": true,
       "opponent": "Platense",
       "opponentAcronym": "CAP"
@@ -1370,9 +1370,9 @@
           "wins": 2,
           "draws": 2,
           "losses": 2,
-          "goalsFor": 6,
+          "goalsFor": 7,
           "goalsAgainst": 7,
-          "goalDiff": -1,
+          "goalDiff": 0,
           "pct": 44,
           "zone": 1,
           "movement": "S1"
@@ -1403,8 +1403,8 @@
           "draws": 2,
           "losses": 1,
           "goalsFor": 8,
-          "goalsAgainst": 3,
-          "goalDiff": 5,
+          "goalsAgainst": 4,
+          "goalDiff": 4,
           "pct": 61,
           "zone": 1,
           "movement": "S"
@@ -1544,20 +1544,20 @@
           "movement": "S"
         },
         {
-          "pos": 3,
+          "pos": 2,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
-          "points": 8,
+          "points": 10,
           "games": 6,
-          "wins": 2,
-          "draws": 2,
+          "wins": 3,
+          "draws": 1,
           "losses": 2,
-          "goalsFor": 10,
+          "goalsFor": 12,
           "goalsAgainst": 5,
-          "goalDiff": 5,
-          "pct": 44,
+          "goalDiff": 7,
+          "pct": 55,
           "zone": 0,
-          "movement": "S"
+          "movement": "S1"
         }
       ]
     }
@@ -4282,6 +4282,130 @@
             "num": "9",
             "pos": "Atacante",
             "name": "Mateo Cassierra"
+          }
+        ]
+      }
+    ],
+    "95569": [
+      {
+        "team": "Corinthians",
+        "acronym": "COR",
+        "players": [
+          {
+            "num": "1",
+            "pos": "Goleiro",
+            "name": "Hugo Souza"
+          },
+          {
+            "num": "2",
+            "pos": "Zagueiro",
+            "name": "Matheuzinho"
+          },
+          {
+            "num": "3",
+            "pos": "Zagueiro",
+            "name": "Gabriel Paulista"
+          },
+          {
+            "num": "13",
+            "pos": "Zagueiro",
+            "name": "Gustavo Henrique"
+          },
+          {
+            "num": "21",
+            "pos": "Zagueiro",
+            "name": "Matheus Bidu"
+          },
+          {
+            "num": "7",
+            "pos": "Meia",
+            "name": "Breno Bidon"
+          },
+          {
+            "num": "8",
+            "pos": "Meia",
+            "name": "Rodrigo Garro"
+          },
+          {
+            "num": "14",
+            "pos": "Meia",
+            "name": "Raniele"
+          },
+          {
+            "num": "29",
+            "pos": "Meia",
+            "name": "Allan"
+          },
+          {
+            "num": "9",
+            "pos": "Atacante",
+            "name": "Yuri Alberto"
+          },
+          {
+            "num": "10",
+            "pos": "Atacante",
+            "name": "Memphis Depay"
+          }
+        ]
+      },
+      {
+        "team": "Platense",
+        "acronym": "PLA",
+        "players": [
+          {
+            "num": "20",
+            "pos": "Goleiro",
+            "name": "Matias Borgogno"
+          },
+          {
+            "num": "3",
+            "pos": "Zagueiro",
+            "name": "Tomas Silva"
+          },
+          {
+            "num": "4",
+            "pos": "Zagueiro",
+            "name": "Agustin Lagos"
+          },
+          {
+            "num": "13",
+            "pos": "Zagueiro",
+            "name": "Ignacio Vazquez"
+          },
+          {
+            "num": "31",
+            "pos": "Zagueiro",
+            "name": "Victor Cuesta"
+          },
+          {
+            "num": "5",
+            "pos": "Meia",
+            "name": "Ivan Gomez"
+          },
+          {
+            "num": "10",
+            "pos": "Meia",
+            "name": "Franco Zapiola"
+          },
+          {
+            "num": "15",
+            "pos": "Meia",
+            "name": "Maximiliano Amarfil"
+          },
+          {
+            "num": "24",
+            "pos": "Meia",
+            "name": "Martin Barrios"
+          },
+          {
+            "num": "33",
+            "pos": "Meia",
+            "name": "Juan Gauto"
+          },
+          {
+            "num": "43",
+            "pos": "Atacante",
+            "name": "Nicolas Retamar"
           }
         ]
       }
