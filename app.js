@@ -166,7 +166,7 @@ async function buscarJogos() {
         venue: m.stadium || 'Local a definir',
         league: m.championship, championshipKey: m.championshipKey,
         ch: getBRD(m.championship), isHome: m.isHome,
-        opponent: m.opponent, round: m.round,
+        opponent: m.opponent, round: m.round, matchId: m.matchId,
         status: m.status, resultado, isLive,
         homeGoals: m.homeGoals, awayGoals: m.awayGoals,
       };
@@ -283,6 +283,17 @@ function render() {
   }
 
   c.innerHTML = html;
+
+  // Live match card click → detail modal
+  const liveCard = c.querySelector('.card-destaque.card-live');
+  if (liveCard) {
+    liveCard.style.cursor = 'pointer';
+    liveCard.addEventListener('click', () => {
+      const liveMatch = st.filtered.find(m => m.isLive);
+      if (liveMatch) renderMatchModal(liveMatch);
+    });
+  }
+
   checkNotifs();
   renderHamTab();
 }
@@ -674,6 +685,48 @@ async function registrarSW() {
 
 let swReg = null;
 registrarSW().then(r => swReg = r);
+
+function renderMatchModal(m) {
+  if (!m || !m.isLive) return;
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  const lineup = m.matchId && st.lineups[m.matchId];
+  const scoreDisplay = (m.homeGoals !== null ? m.homeGoals : '?') + ' x ' + (m.awayGoals !== null ? m.awayGoals : '?');
+  let html = `<div class="modal-box">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-title">${m.league} &bull; Rodada ${m.round}</div>
+    <div class="modal-teams">
+      <div class="modal-team">${m.homeLogo ? `<img src="${m.homeLogo}" alt="">` : ''}<span class="nm">${m.homeName}</span></div>
+      <div class="modal-score live">${scoreDisplay}</div>
+      <div class="modal-team">${m.awayLogo ? `<img src="${m.awayLogo}" alt="">` : ''}<span class="nm">${m.awayName}</span></div>
+    </div>
+    <div class="modal-info">
+      <div>${m.venue}</div>
+      <div>${m.ch.join(' / ')}</div>
+      <div class="live-dot" style="display:inline-block;vertical-align:middle;margin-top:6px"></div> AO VIVO
+    </div>`;
+
+  if (lineup) {
+    html += `<div class="modal-lineup-title">Escalacao</div>`;
+    lineup.forEach(team => {
+      html += `<div class="modal-lineup-team"><strong>${team.team} (${team.acronym})</strong><div class="modal-lineup-grid">`;
+      team.players.forEach(p => {
+        html += `<span class="ej-num">${p.num}</span><span class="ej-nome">${p.name}</span><span class="ej-pos">${p.pos}</span>`;
+      });
+      html += `</div></div>`;
+    });
+  }
+
+  html += `</div>`;
+  overlay.innerHTML = html;
+  document.body.appendChild(overlay);
+
+  requestAnimationFrame(() => overlay.classList.add('show'));
+
+  const close = () => { overlay.classList.remove('show'); setTimeout(() => overlay.remove(), 300); };
+  overlay.querySelector('#modalClose').addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+}
 
 function notificar(title, body, tag) {
   if (!st.notif || Notification.permission !== 'granted') return;

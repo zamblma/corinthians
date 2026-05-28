@@ -599,3 +599,51 @@ footer {
   .panel-standings { width: 100vw; max-width: 100vw; }
   .panel { padding: 16px 12px; }
 }
+
+/* Live match detail modal */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.85); display: flex;
+  align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+.modal-overlay.show { opacity: 1; pointer-events: auto; }
+.modal-box {
+  background: var(--gray-900); border: 1px solid var(--gray-700);
+  border-radius: 16px; max-width: 440px; width: 92%;
+  max-height: 85vh; overflow-y: auto; padding: 24px;
+  transform: scale(0.92); transition: transform 0.25s;
+}
+.modal-overlay.show .modal-box { transform: scale(1); }
+.modal-close {
+  float: right; background: none; border: none;
+  color: var(--gray-400); font-size: 1.4rem; cursor: pointer;
+  line-height: 1; padding: 0 4px;
+}
+.modal-close:hover { color: var(--white); }
+.modal-title { font-size: 0.75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.modal-teams {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  margin-bottom: 16px;
+}
+.modal-team { text-align: center; }
+.modal-team img { width: 56px; height: 56px; }
+.modal-team .nm { display: block; font-size: 0.85rem; font-weight: 600; margin-top: 4px; }
+.modal-score {
+  font-size: 2.2rem; font-weight: 800; letter-spacing: 2px;
+}
+.modal-score.live { color: var(--red); }
+.modal-info { text-align: center; font-size: 0.8rem; color: var(--gray-400); margin-bottom: 16px; }
+.modal-lineup-title {
+  font-size: 0.75rem; color: var(--gray-300); text-transform: uppercase;
+  letter-spacing: 1px; margin: 16px 0 8px; border-top: 1px solid var(--gray-700); padding-top: 12px;
+}
+.modal-lineup-team { margin-bottom: 8px; }
+.modal-lineup-team strong { font-size: 0.85rem; display: block; margin-bottom: 4px; }
+.modal-lineup-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px;
+  font-size: 0.75rem;
+}
+.modal-lineup-grid .ej-num { color: var(--gray-400); }
+.modal-lineup-grid .ej-nome { color: var(--white); }
+.modal-lineup-grid .ej-pos { color: var(--gray-500); text-align: right; }
