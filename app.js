@@ -50,7 +50,10 @@ function fmtT(d) { return d.toLocaleTimeString('pt-BR', { hour:'2-digit', minute
 function fmtData(d) { return `${d.getDate().toString().padStart(2,'0')}/${(d.getMonth()+1).toString().padStart(2,'0')}`; }
 function cdwn(d) {
   const diff = d - new Date();
-  if (diff <= 0) return 'Jogo ja comecou!';
+  if (diff <= 0) {
+    if (diff >= -7200000) return 'AO VIVO';
+    return 'Jogo encerrado';
+  }
   const days = Math.floor(diff/86400000), h = Math.floor((diff%86400000)/3600000), m = Math.floor((diff%3600000)/60000);
   if (days > 0) return `Faltam <strong>${days}d ${h}h ${m}min</strong>`;
   if (h > 0) return `Falta <strong>${h}h ${m}min</strong>`;
@@ -83,7 +86,7 @@ function aplicarFiltro() {
   let lista = st.filter === 'todas' ? st.all : st.all.filter(m => m.championshipKey === st.filter);
   if (st.local === 'casa') lista = lista.filter(m => m.isHome);
   else if (st.local === 'fora') lista = lista.filter(m => !m.isHome);
-  st.filtered = lista.filter(m => m.date >= agora).sort((a, b) => a.date - b.date);
+  st.filtered = lista.filter(m => m.date >= agora || m.isLive).sort((a, b) => a.date - b.date);
   render();
 }
 
@@ -145,6 +148,12 @@ async function buscarJogos() {
     st.all = data.corinthiansMatches.map(m => {
       const d = new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00'));
       let resultado = '';
+      let isLive = false;
+      if (m.status === 'scheduled') {
+        const agora = new Date();
+        const diff = d - agora;
+        isLive = diff <= 0 && diff >= -7200000;
+      }
       if (m.status !== 'scheduled' && m.homeGoals !== null && m.awayGoals !== null) {
         if (m.isHome) resultado = m.homeGoals > m.awayGoals ? 'V' : m.homeGoals < m.awayGoals ? 'D' : 'E';
         else resultado = m.awayGoals > m.homeGoals ? 'V' : m.awayGoals < m.homeGoals ? 'D' : 'E';
@@ -158,17 +167,22 @@ async function buscarJogos() {
         league: m.championship, championshipKey: m.championshipKey,
         ch: getBRD(m.championship), isHome: m.isHome,
         opponent: m.opponent, round: m.round,
-        status: m.status, resultado,
+        status: m.status, resultado, isLive,
         homeGoals: m.homeGoals, awayGoals: m.awayGoals,
       };
     }).sort((a, b) => a.date - b.date);
 
-    st.matches = st.all.filter(m => m.date >= agora).sort((a, b) => a.date - b.date);
+    st.matches = st.all.filter(m => m.date >= agora || m.isLive).sort((a, b) => a.date - b.date);
     st.standings = data.standings || [];
     st.lineups = data.lineups || {};
     aplicarFiltro();
-    sdot(st.matches.length > 0 ? 'green' : 'gray',
-      `${st.matches.length} ${st.matches.length === 1 ? 'jogo' : 'jogos'} restante${st.matches.length === 1 ? '' : 's'}`);
+    const liveCount = st.all.filter(m => m.isLive).length;
+    if (liveCount > 0) {
+      sdot('red', `${liveCount} ao vivo`);
+    } else {
+      sdot(st.matches.length > 0 ? 'green' : 'gray',
+        `${st.matches.length} ${st.matches.length === 1 ? 'jogo' : 'jogos'} restante${st.matches.length === 1 ? '' : 's'}`);
+    }
   } catch (err) {
     $('#matches').innerHTML = `<div class="empty"><p style="color:#ef4444">Erro: ${err.message}</p></div>`;
     sdot('red', 'Erro');
@@ -181,10 +195,25 @@ function render() {
 
   // Próximo jogo em destaque
   let html = '';
+
+  // AO VIVO banner
+  const liveMatch = filtrados.find(m => m.isLive);
+  if (liveMatch) {
+    html += `<div class="live-banner">
+      <div class="live-dot"></div>
+      <div class="live-info">
+        <strong>JOGO EM ANDAMENTO</strong>
+        <span>${liveMatch.league} &bull; ${liveMatch.isHome ? liveMatch.awayName : liveMatch.homeName}</span>
+        <span class="live-score">${liveMatch.homeGoals !== null ? liveMatch.homeGoals : '?'} x ${liveMatch.awayGoals !== null ? liveMatch.awayGoals : '?'}</span>
+      </div>
+    </div>`;
+  }
+
   if (filtrados.length > 0) {
     const p = filtrados[0];
-    html += `<div class="card card-destaque">
-      <div class="cd">PROXIMO JOGO &bull; ${fmtD(p.date)} &bull; ${fmtT(p.date)}</div>
+    const isLive = p.isLive;
+    html += `<div class="card card-destaque ${isLive ? 'card-live' : ''}">
+      <div class="cd">${isLive ? '<span class="live-dot"></span> AO VIVO' : `PROXIMO JOGO &bull; ${fmtD(p.date)} &bull; ${fmtT(p.date)}`}</div>
       <div class="ct">
         <div class="tc">${p.homeLogo ? `<img class="bd" src="${p.homeLogo}" alt="">` : ''}<span class="nm h">${p.homeName}</span></div>
         <div class="vs">VS</div>
@@ -230,9 +259,10 @@ function render() {
   }
 
   // Proximos jogos
-  if (filtrados.length > 0) {
-    html += `<div class="section-title">Proximos Jogos (${filtrados.length})</div>`;
-    html += filtrados.map(m => `<div class="card">
+  const futuros = filtrados.filter(m => !m.isLive);
+  if (futuros.length > 0) {
+    html += `<div class="section-title">Proximos Jogos (${futuros.length})</div>`;
+    html += futuros.map(m => `<div class="card">
       <div class="cd">${fmtD(m.date)} &bull; ${fmtT(m.date)}</div>
       <div class="ccomp">${m.league} &bull; Rodada ${m.round}</div>
       <div class="ct">
@@ -598,6 +628,37 @@ function init() {
   buscarJogos();
   setInterval(buscarJogos, 60000);
   setInterval(aplicarFiltro, 60000);
+
+  // Touch swipe gestures
+  let tx = 0, touchPanel = false;
+  document.addEventListener('touchstart', e => {
+    tx = e.changedTouches[0].clientX;
+    touchPanel = e.target.closest('.panel') !== null;
+  }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    const startX = tx;
+    if (dx > 80 && startX < 60) {
+      // Swipe right from left edge → open hamburger
+      if (!$('#hamPanel').classList.contains('show')) {
+        $('#hamBtn').click();
+      }
+    } else if (dx < -80) {
+      // Swipe left → close panels
+      if ($('#hamPanel').classList.contains('show')) {
+        $('#hamOverlay').click();
+      }
+      if ($('#notifPanel').classList.contains('show')) {
+        $('#notifOverlay').click();
+      }
+    } else if (Math.abs(dx) < 20 && !touchPanel) {
+      // Tap on right edge (panel peek area) → open hamburger
+      const screenW = window.innerWidth;
+      if (startX > screenW - 60 && !$('#hamPanel').classList.contains('show')) {
+        $('#hamBtn').click();
+      }
+    }
+  }, { passive: true });
 }
 
 async function registrarSW() {

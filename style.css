@@ -317,6 +317,7 @@ header p { color: var(--gray-400); margin-top: 6px; font-size: 0.85rem; letter-s
   transition: 0.25s; position: relative; overflow: hidden;
   animation: cardIn 0.35s ease-out;
 }
+.card.card-live { border-color: var(--red); box-shadow: 0 0 20px rgba(239,68,68,0.15); }
 @keyframes cardIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -529,6 +530,31 @@ footer {
   border-top: 1px solid var(--gray-800);
   margin-top: 20px; line-height: 1.8;
 }
+
+/* Live banner */
+.live-banner {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3);
+  border-radius: 12px; padding: 12px 16px; margin-bottom: 14px;
+  animation: livePulse 2s ease infinite;
+}
+@keyframes livePulse {
+  0%, 100% { border-color: rgba(239,68,68,0.3); }
+  50% { border-color: rgba(239,68,68,0.7); }
+}
+.live-dot {
+  width: 10px; height: 10px; border-radius: 50%; background: var(--red);
+  flex-shrink: 0; animation: liveBlink 1s ease infinite;
+  display: inline-block; vertical-align: middle;
+}
+@keyframes liveBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.live-info { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.live-info strong { font-size: 0.85rem; color: var(--red); letter-spacing: 1px; }
+.live-info span { font-size: 0.78rem; color: var(--gray-300); }
+.live-score { font-size: 1.2rem !important; font-weight: 800; color: var(--white) !important; }
 
 /* Responsive */
 @media (max-width: 500px) {
