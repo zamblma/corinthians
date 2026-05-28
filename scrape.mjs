@@ -147,7 +147,7 @@ function parseHtml(html, compName, compKey) {
     const roundNum = parseInt(idMatch[1]);
     const section = s.substring(idMatch[0].length);
 
-    const matchRegex = /<li class="match "([\s\S]*?)<\/li>/g;
+    const matchRegex = /<li class="match[^"]*"([\s\S]*?)<\/li>/g;
     let m;
 
     while ((m = matchRegex.exec(section)) !== null) {
@@ -184,7 +184,12 @@ function parseHtml(html, compName, compKey) {
       const awayGoals = awayGoalsMatch ? parseInt(awayGoalsMatch[1]) : null;
 
       const started = homeGoals !== null;
-      const status = started ? (homeGoals !== awayGoals ? 'finished' : 'draw') : 'scheduled';
+      const hasLiveText = /ao\s*vivo/i.test(mh);
+      let status = 'scheduled';
+      if (started) {
+        if (hasLiveText) status = 'live';
+        else status = (homeGoals !== awayGoals ? 'finished' : 'draw');
+      }
 
       const linkMatch = mh.match(/<a[^>]+href="([^"]*\/ao-vivo\/[^"]+)"/);
       const matchUrl = linkMatch ? linkMatch[1] : '';
@@ -260,6 +265,7 @@ async function scrape() {
   // Fetch lineups for finished OR upcoming matches (check if data is available)
   const lineups = {};
   const lineupTargets = allCorinthians.filter(m => {
+    if (m.status === 'live') return true;
     if (m.status !== 'scheduled') return true;
     // Also try matches happening today (within 3h of kickoff)
     const matchTime = new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00'));
@@ -293,7 +299,8 @@ async function scrape() {
 
   writeFileSync('matches.json', JSON.stringify(output, null, 2));
   const upcoming = allCorinthians.filter(m => m.status === 'scheduled').length;
-  console.log(`\nTotal: ${allCorinthians.length} Corinthians matches (${upcoming} upcoming)`);
+  const liveCount = allCorinthians.filter(m => m.status === 'live').length;
+  console.log(`\nTotal: ${allCorinthians.length} Corinthians matches (${upcoming} upcoming, ${liveCount} live)`);
   if (errors.length) console.log(`Errors: ${errors.join(' | ')}`);
 }
 

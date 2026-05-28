@@ -93,7 +93,7 @@ function aplicarFiltro() {
 function calcResumo(jogos) {
   const r = { vitorias: 0, empates: 0, derrotas: 0, golsPro: 0, golsContra: 0, jogos: 0 };
   jogos.forEach(m => {
-    if (m.status === 'scheduled') return;
+    if (m.status === 'scheduled' || m.status === 'live') return;
     r.jogos++;
     if (m.homeGoals !== null && m.awayGoals !== null) {
       if (m.isHome) { r.golsPro += m.homeGoals; r.golsContra += m.awayGoals; }
@@ -149,12 +149,14 @@ async function buscarJogos() {
       const d = new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00'));
       let resultado = '';
       let isLive = false;
-      if (m.status === 'scheduled') {
+      if (m.status === 'live') {
+        isLive = true;
+      } else if (m.status === 'scheduled') {
         const agora = new Date();
         const diff = d - agora;
         isLive = diff <= 0 && diff >= -7200000;
       }
-      if (m.status !== 'scheduled' && m.homeGoals !== null && m.awayGoals !== null) {
+      if ((m.status === 'finished' || m.status === 'draw') && m.homeGoals !== null && m.awayGoals !== null) {
         if (m.isHome) resultado = m.homeGoals > m.awayGoals ? 'V' : m.homeGoals < m.awayGoals ? 'D' : 'E';
         else resultado = m.awayGoals > m.homeGoals ? 'V' : m.awayGoals < m.homeGoals ? 'D' : 'E';
       }
@@ -229,7 +231,7 @@ function render() {
   }
 
   // Resumo
-  const finalizados = st.all.filter(m => m.status !== 'scheduled');
+  const finalizados = st.all.filter(m => m.status !== 'scheduled' && m.status !== 'live');
   if (finalizados.length > 0) {
     const resumo = calcResumo(finalizados.filter(m => st.filter === 'todas' || m.championshipKey === st.filter));
     html += `<div class="resumo">
@@ -363,8 +365,8 @@ function renderClassif() {
 
 function renderEscalacao() {
   const c = $('#hamContent');
-  const comEscalacao = st.all.filter(m => m.status !== 'scheduled' && m.matchId && st.lineups[m.matchId]).sort((a, b) => b.date - a.date);
-  const proximos = st.all.filter(m => m.status === 'scheduled' && m.matchId).sort((a, b) => a.date - b.date);
+  const comEscalacao = st.all.filter(m => m.status !== 'scheduled' && m.status !== 'live' && m.matchId && st.lineups[m.matchId]).sort((a, b) => b.date - a.date);
+  const proximos = st.all.filter(m => (m.status === 'scheduled' || m.status === 'live') && m.matchId).sort((a, b) => a.date - b.date);
   const total = comEscalacao.length + proximos.length;
 
   let html = '';
@@ -440,7 +442,7 @@ function renderEscalacao() {
 
 function renderHistorico() {
   const c = $('#hamContent');
-  const jogos = st.all.filter(m => m.status !== 'scheduled').sort((a, b) => b.date - a.date);
+  const jogos = st.all.filter(m => m.status !== 'scheduled' && m.status !== 'live').sort((a, b) => b.date - a.date);
   if (jogos.length === 0) { c.innerHTML = '<div class="empty"><p>Nenhum jogo realizado.</p></div>'; return; }
   let html = `<p class="st-legenda" style="font-size:0.85rem;color:var(--gray-400)">Todos os jogos do Corinthians na temporada:</p>`;
   jogos.forEach(m => {
@@ -458,7 +460,7 @@ function renderHistorico() {
 function renderAproveitamento() {
   const c = $('#hamContent');
   const comps = {};
-  st.all.filter(m => m.status !== 'scheduled').forEach(m => {
+  st.all.filter(m => m.status !== 'scheduled' && m.status !== 'live').forEach(m => {
     if (!comps[m.league]) comps[m.league] = { j: 0, v: 0, e: 0, d: 0, gp: 0, gc: 0 };
     const r = comps[m.league]; r.j++;
     if (m.isHome) { r.gp += m.homeGoals; r.gc += m.awayGoals; }
@@ -489,7 +491,7 @@ function renderAproveitamento() {
 
 function renderSequencia() {
   const c = $('#hamContent');
-  const ultimos = st.all.filter(m => m.status !== 'scheduled').sort((a, b) => b.date - a.date).slice(0, 15);
+  const ultimos = st.all.filter(m => m.status !== 'scheduled' && m.status !== 'live').sort((a, b) => b.date - a.date).slice(0, 15);
   if (ultimos.length === 0) { c.innerHTML = '<div class="empty"><p>Sem resultados.</p></div>'; return; }
 
   // Sparkline bars
@@ -533,8 +535,9 @@ function renderCalendario() {
     const [ano, mes] = k.split('-');
     html += `<div class="section-title" style="margin-top:12px">${meses[parseInt(mes)-1]} ${ano}</div>`;
     grupos[k].sort((a, b) => a.date - b.date).forEach(m => {
-      const status = m.status === 'scheduled' ? '' : (m.resultado === 'V' ? '🟢' : m.resultado === 'E' ? '🟡' : '🔴');
-      const placar = m.status !== 'scheduled' ? `${m.isHome ? m.homeGoals : m.awayGoals}x${m.isHome ? m.awayGoals : m.homeGoals}` : '--';
+      const isDone = m.status !== 'scheduled' && m.status !== 'live';
+      const status = isDone ? (m.resultado === 'V' ? '🟢' : m.resultado === 'E' ? '🟡' : '🔴') : '';
+      const placar = isDone ? `${m.isHome ? m.homeGoals : m.awayGoals}x${m.isHome ? m.awayGoals : m.homeGoals}` : (m.status === 'live' ? 'AO VIVO' : '--');
       html += `<div class="cal-item">
         <span class="cal-data">${fmtData(m.date)}</span>
         <span class="cal-placar">${placar}</span>
