@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-27T22:04:25.630Z",
+  "lastUpdated": "2026-05-28T00:06:25.223Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -1000,9 +1000,9 @@
       "awayTeam": "Platense",
       "awayAcronym": "CAP",
       "stadium": "Neo Química Arena",
-      "homeGoals": null,
-      "awayGoals": null,
-      "status": "scheduled",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "status": "draw",
       "championship": "Copa Libertadores",
       "championshipKey": "libertadores",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
@@ -1375,7 +1375,7 @@
           "goalDiff": -2,
           "pct": 33,
           "zone": 0,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 2,
@@ -1423,7 +1423,7 @@
           "goalDiff": 2,
           "pct": 53,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 2,
@@ -1439,7 +1439,7 @@
           "goalDiff": 3,
           "pct": 66,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         }
       ]
     },
@@ -1448,20 +1448,20 @@
       "championshipKey": "sudamericana",
       "teams": [
         {
-          "pos": 3,
+          "pos": 1,
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
-          "points": 7,
-          "games": 5,
-          "wins": 2,
+          "points": 10,
+          "games": 6,
+          "wins": 3,
           "draws": 1,
           "losses": 2,
-          "goalsFor": 7,
+          "goalsFor": 8,
           "goalsAgainst": 6,
-          "goalDiff": 1,
-          "pct": 46,
+          "goalDiff": 2,
+          "pct": 55,
           "zone": 0,
-          "movement": "S1"
+          "movement": "S3"
         },
         {
           "pos": 1,
@@ -1499,15 +1499,15 @@
           "pos": 1,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
-          "points": 13,
-          "games": 5,
-          "wins": 4,
+          "points": 16,
+          "games": 6,
+          "wins": 5,
           "draws": 1,
           "losses": 0,
-          "goalsFor": 12,
-          "goalsAgainst": 4,
-          "goalDiff": 8,
-          "pct": 86,
+          "goalsFor": 15,
+          "goalsAgainst": 5,
+          "goalDiff": 10,
+          "pct": 88,
           "zone": 0,
           "movement": "S"
         },
@@ -1531,15 +1531,15 @@
           "pos": 2,
           "name": "Vasco da Gama",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5odkrqilcbhim28j7j10lgpsn7.png",
-          "points": 7,
-          "games": 5,
-          "wins": 2,
+          "points": 10,
+          "games": 6,
+          "wins": 3,
           "draws": 1,
           "losses": 2,
-          "goalsFor": 7,
+          "goalsFor": 10,
           "goalsAgainst": 6,
-          "goalDiff": 1,
-          "pct": 46,
+          "goalDiff": 4,
+          "pct": 55,
           "zone": 0,
           "movement": "S"
         },
