@@ -179,6 +179,7 @@ async function buscarJogos() {
         league: m.championship, championshipKey: m.championshipKey,
         ch: getBRD(m.championship), isHome: m.isHome,
         opponent: m.opponent, round: m.round, matchId: m.matchId,
+        liveMinute: m.liveMinute || (isLive ? Math.min(Math.floor(-diff / 60000), 120) : null),
         status: m.status, resultado, isLive,
         homeGoals: m.homeGoals, awayGoals: m.awayGoals,
       };
@@ -208,24 +209,26 @@ function render() {
   // Próximo jogo em destaque
   let html = '';
 
-  // AO VIVO banner
+  // AO VIVO banner (agora com escudos, nomes e estadio)
   const liveMatch = filtrados.find(m => m.isLive);
   if (liveMatch) {
-    html += `<div class="live-banner">
-      <div class="live-dot"></div>
-      <div class="live-info">
-        <strong>JOGO EM ANDAMENTO</strong>
-        <span>${liveMatch.league} &bull; ${liveMatch.isHome ? liveMatch.awayName : liveMatch.homeName}</span>
-        <span class="live-score">${liveMatch.homeGoals !== null ? liveMatch.homeGoals : '?'} x ${liveMatch.awayGoals !== null ? liveMatch.awayGoals : '?'}</span>
+    html += `<div class="live-banner card card-destaque card-live" style="cursor:pointer" id="liveBanner">
+      <div class="ct">
+        <div class="tc">${liveMatch.homeLogo ? `<img class="bd" src="${liveMatch.homeLogo}" alt="">` : ''}<span class="nm h">${liveMatch.homeName}</span><span class="ls-num">${liveMatch.homeGoals !== null ? liveMatch.homeGoals : '?'}</span></div>
+        <span class="ls-dot"></span>
+        <div class="tc"><span class="ls-num">${liveMatch.awayGoals !== null ? liveMatch.awayGoals : '?'}</span><span class="nm a">${liveMatch.awayName}</span>${liveMatch.awayLogo ? `<img class="bd" src="${liveMatch.awayLogo}" alt="">` : ''}</div>
       </div>
+      <div class="destaque-info">
+        <div class="di-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${liveMatch.venue} <span class="habadge ${liveMatch.isHome ? 'h' : 'a'}">${liveMatch.isHome ? 'casa' : 'fora'}</span></div>
+        <div class="di-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>${liveMatch.league} &bull; Rodada ${liveMatch.round}</div>
+        <div class="di-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>${liveMatch.ch.map(c => `${c}`).join(' / ')}</div>
+      </div>
+      <div class="cdwn cdwn-grande"><span class="live-dot"></span> AO VIVO${liveMatch.liveMinute ? ` <span class="live-minuto">${liveMatch.liveMinute}'</span>` : ''}</div>
     </div>`;
-  }
-
-  if (filtrados.length > 0) {
+  } else if (filtrados.length > 0) {
     const p = filtrados[0];
-    const isLive = p.isLive;
-    html += `<div class="card card-destaque ${isLive ? 'card-live' : ''}">
-      <div class="cd">${isLive ? '<span class="live-dot"></span> AO VIVO' : `PROXIMO JOGO &bull; ${fmtD(p.date)} &bull; ${fmtT(p.date)}`}</div>
+    html += `<div class="card card-destaque">
+      <div class="cd">PROXIMO JOGO &bull; ${fmtD(p.date)} &bull; ${fmtT(p.date)}</div>
       <div class="ct">
         <div class="tc">${p.homeLogo ? `<img class="bd" src="${p.homeLogo}" alt="">` : ''}<span class="nm h">${p.homeName}</span></div>
         <div class="vs">VS</div>
@@ -297,9 +300,8 @@ function render() {
   c.innerHTML = html;
 
   // Live match card click → detail modal
-  const liveCard = c.querySelector('.card-destaque.card-live');
+  const liveCard = document.getElementById('liveBanner');
   if (liveCard) {
-    liveCard.style.cursor = 'pointer';
     liveCard.addEventListener('click', () => {
       const liveMatch = st.filtered.find(m => m.isLive);
       if (liveMatch) renderMatchModal(liveMatch);
