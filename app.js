@@ -149,12 +149,22 @@ async function buscarJogos() {
       const d = new Date(m.datetime + (m.datetime.endsWith('Z') ? '' : '-03:00'));
       let resultado = '';
       let isLive = false;
+      const agora = new Date();
+      const diff = d - agora;
       if (m.status === 'live') {
         isLive = true;
       } else if (m.status === 'scheduled') {
-        const agora = new Date();
-        const diff = d - agora;
         isLive = diff <= 0 && diff >= -7200000;
+      } else if (m.homeGoals !== null && m.awayGoals !== null) {
+        // If the raw date matches today, goals means match is live/in-progress
+        const rawDate = m.date;
+        const todayStr = new Date().toISOString().substring(0, 10);
+        if (rawDate === todayStr) {
+          isLive = true;
+        } else {
+          // Otherwise check time window (2.5h)
+          isLive = diff <= 0 && diff >= -9000000;
+        }
       }
       if ((m.status === 'finished' || m.status === 'draw') && m.homeGoals !== null && m.awayGoals !== null) {
         if (m.isHome) resultado = m.homeGoals > m.awayGoals ? 'V' : m.homeGoals < m.awayGoals ? 'D' : 'E';

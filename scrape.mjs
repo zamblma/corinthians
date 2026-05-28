@@ -187,8 +187,21 @@ function parseHtml(html, compName, compKey) {
       const hasLiveText = /ao\s*vivo/i.test(mh);
       let status = 'scheduled';
       if (started) {
-        if (hasLiveText) status = 'live';
-        else status = (homeGoals !== awayGoals ? 'finished' : 'draw');
+        if (hasLiveText) {
+          status = 'live';
+        } else {
+          // Time-based fallback
+          const isToday = rawDate === new Date().toISOString().substring(0, 10);
+          if (isToday) {
+            // Match is today with goals → live for sure
+            status = 'live';
+          } else {
+            const matchTime = new Date(datetime + (datetime.endsWith('Z') ? '' : '-03:00'));
+            const minsSinceStart = (Date.now() - matchTime.getTime()) / 60000;
+            if (minsSinceStart >= 0 && minsSinceStart <= 150) status = 'live';
+            else status = (homeGoals !== awayGoals ? 'finished' : 'draw');
+          }
+        }
       }
 
       const linkMatch = mh.match(/<a[^>]+href="([^"]*\/ao-vivo\/[^"]+)"/);
