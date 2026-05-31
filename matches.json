@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-30T22:06:43.195Z",
+  "lastUpdated": "2026-05-31T00:09:07.099Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -404,13 +404,13 @@
       "stadium": "Grêmio Arena",
       "homeGoals": 1,
       "awayGoals": 3,
-      "status": "live",
+      "status": "finished",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
       "awayLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
-      "matchUrl": "",
-      "matchId": "",
+      "matchUrl": "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/gremio-x-corinthians/95619",
+      "matchId": "95619",
       "isHome": false,
       "opponent": "Grêmio",
       "opponentAcronym": "GRE"
@@ -963,6 +963,22 @@
         },
         {
           "pos": 6,
+          "name": "Bahia",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
+          "points": 26,
+          "games": 17,
+          "wins": 7,
+          "draws": 5,
+          "losses": 5,
+          "goalsFor": 25,
+          "goalsAgainst": 23,
+          "goalDiff": 2,
+          "pct": 50,
+          "zone": 2,
+          "movement": "S2"
+        },
+        {
+          "pos": 7,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 26,
@@ -975,10 +991,10 @@
           "goalDiff": 0,
           "pct": 48,
           "zone": 2,
-          "movement": "S"
+          "movement": "D1"
         },
         {
-          "pos": 7,
+          "pos": 8,
           "name": "São Paulo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
           "points": 25,
@@ -990,24 +1006,8 @@
           "goalsAgainst": 19,
           "goalDiff": 4,
           "pct": 49,
-          "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 8,
-          "name": "Bahia",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
-          "points": 24,
-          "games": 17,
-          "wins": 6,
-          "draws": 6,
-          "losses": 5,
-          "goalsFor": 24,
-          "goalsAgainst": 23,
-          "goalDiff": 1,
-          "pct": 47,
           "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 9,
@@ -1027,22 +1027,6 @@
         },
         {
           "pos": 10,
-          "name": "Botafogo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
-          "points": 23,
-          "games": 17,
-          "wins": 6,
-          "draws": 5,
-          "losses": 6,
-          "goalsFor": 31,
-          "goalsAgainst": 30,
-          "goalDiff": 1,
-          "pct": 45,
-          "zone": 3,
-          "movement": "S"
-        },
-        {
-          "pos": 11,
           "name": "Cruzeiro",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
           "points": 23,
@@ -1055,21 +1039,37 @@
           "goalDiff": -4,
           "pct": 45,
           "zone": 3,
-          "movement": "D2"
+          "movement": "D1"
+        },
+        {
+          "pos": 11,
+          "name": "Botafogo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
+          "points": 22,
+          "games": 17,
+          "wins": 6,
+          "draws": 4,
+          "losses": 7,
+          "goalsFor": 31,
+          "goalsAgainst": 31,
+          "goalDiff": 0,
+          "pct": 43,
+          "zone": 3,
+          "movement": "D1"
         },
         {
           "pos": 12,
           "name": "Vitória",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
           "points": 22,
-          "games": 16,
+          "games": 17,
           "wins": 6,
           "draws": 4,
-          "losses": 6,
+          "losses": 7,
           "goalsFor": 20,
-          "goalsAgainst": 22,
-          "goalDiff": -2,
-          "pct": 45,
+          "goalsAgainst": 23,
+          "goalDiff": -3,
+          "pct": 43,
           "zone": 3,
           "movement": "D1"
         },
@@ -1123,6 +1123,22 @@
         },
         {
           "pos": 16,
+          "name": "Santos",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
+          "points": 21,
+          "games": 18,
+          "wins": 5,
+          "draws": 6,
+          "losses": 7,
+          "goalsFor": 24,
+          "goalsAgainst": 28,
+          "goalDiff": -4,
+          "pct": 38,
+          "zone": 0,
+          "movement": "S1"
+        },
+        {
+          "pos": 17,
           "name": "Vasco da Gama",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5odkrqilcbhim28j7j10lgpsn7.png",
           "points": 20,
@@ -1134,24 +1150,8 @@
           "goalsAgainst": 28,
           "goalDiff": -6,
           "pct": 39,
-          "zone": 0,
-          "movement": "S"
-        },
-        {
-          "pos": 17,
-          "name": "Santos",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
-          "points": 18,
-          "games": 17,
-          "wins": 4,
-          "draws": 6,
-          "losses": 7,
-          "goalsFor": 23,
-          "goalsAgainst": 28,
-          "goalDiff": -5,
-          "pct": 35,
           "zone": 4,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 18,
@@ -3422,6 +3422,130 @@
             "num": "9",
             "pos": "Atacante",
             "name": "Mateo Cassierra"
+          }
+        ]
+      }
+    ],
+    "95619": [
+      {
+        "team": "Grêmio",
+        "acronym": "GRE",
+        "players": [
+          {
+            "num": "24",
+            "pos": "Goleiro",
+            "name": "Thiago Beltrame"
+          },
+          {
+            "num": "3",
+            "pos": "Zagueiro",
+            "name": "Wagner Leonardo"
+          },
+          {
+            "num": "14",
+            "pos": "Zagueiro",
+            "name": "Marcos Rocha"
+          },
+          {
+            "num": "44",
+            "pos": "Zagueiro",
+            "name": "Viery"
+          },
+          {
+            "num": "54",
+            "pos": "Zagueiro",
+            "name": "Pedro Gabriel"
+          },
+          {
+            "num": "8",
+            "pos": "Meia",
+            "name": "Arthur"
+          },
+          {
+            "num": "21",
+            "pos": "Meia",
+            "name": "Tete"
+          },
+          {
+            "num": "22",
+            "pos": "Meia",
+            "name": "Martin Braithwaite"
+          },
+          {
+            "num": "33",
+            "pos": "Meia",
+            "name": "Leonel Perez"
+          },
+          {
+            "num": "37",
+            "pos": "Meia",
+            "name": "Gabriel Mec"
+          },
+          {
+            "num": "95",
+            "pos": "Atacante",
+            "name": "Carlos Vinicius"
+          }
+        ]
+      },
+      {
+        "team": "Corinthians",
+        "acronym": "COR",
+        "players": [
+          {
+            "num": "1",
+            "pos": "Goleiro",
+            "name": "Hugo Souza"
+          },
+          {
+            "num": "2",
+            "pos": "Zagueiro",
+            "name": "Matheuzinho"
+          },
+          {
+            "num": "3",
+            "pos": "Zagueiro",
+            "name": "Gabriel Paulista"
+          },
+          {
+            "num": "13",
+            "pos": "Zagueiro",
+            "name": "Gustavo Henrique"
+          },
+          {
+            "num": "21",
+            "pos": "Zagueiro",
+            "name": "Matheus Bidu"
+          },
+          {
+            "num": "7",
+            "pos": "Meia",
+            "name": "Breno Bidon"
+          },
+          {
+            "num": "8",
+            "pos": "Meia",
+            "name": "Rodrigo Garro"
+          },
+          {
+            "num": "14",
+            "pos": "Meia",
+            "name": "Raniele"
+          },
+          {
+            "num": "37",
+            "pos": "Meia",
+            "name": "Kaio Cesar"
+          },
+          {
+            "num": "49",
+            "pos": "Meia",
+            "name": "Andre"
+          },
+          {
+            "num": "9",
+            "pos": "Atacante",
+            "name": "Yuri Alberto"
           }
         ]
       }
