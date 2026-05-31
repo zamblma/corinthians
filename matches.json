@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-31T20:18:19.553Z",
+  "lastUpdated": "2026-05-31T22:07:34.923Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -885,15 +885,15 @@
           "pos": 1,
           "name": "Palmeiras",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
-          "points": 39,
+          "points": 41,
           "games": 18,
-          "wins": 11,
-          "draws": 6,
+          "wins": 12,
+          "draws": 5,
           "losses": 1,
-          "goalsFor": 29,
+          "goalsFor": 30,
           "goalsAgainst": 13,
-          "goalDiff": 16,
-          "pct": 72,
+          "goalDiff": 17,
+          "pct": 75,
           "zone": 1,
           "movement": "S"
         },
@@ -1189,15 +1189,15 @@
           "pos": 20,
           "name": "Chapecoense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/45pmtlqrtqh52qnch6fl7cdc1f.png",
-          "points": 10,
+          "points": 9,
           "games": 17,
           "wins": 1,
-          "draws": 7,
-          "losses": 9,
+          "draws": 6,
+          "losses": 10,
           "goalsFor": 17,
-          "goalsAgainst": 32,
-          "goalDiff": -15,
-          "pct": 19,
+          "goalsAgainst": 33,
+          "goalDiff": -16,
+          "pct": 17,
           "zone": 4,
           "movement": "S"
         }
@@ -2263,16 +2263,6 @@
             "name": "Guillermo Varela"
           },
           {
-            "num": "13",
-            "pos": "Zagueiro",
-            "name": "Danilo"
-          },
-          {
-            "num": "26",
-            "pos": "Zagueiro",
-            "name": "Alex Sandro"
-          },
-          {
             "num": "44",
             "pos": "Zagueiro",
             "name": "Vitao"
@@ -2286,11 +2276,6 @@
             "num": "16",
             "pos": "Meia",
             "name": "Samuel Lino"
-          },
-          {
-            "num": "20",
-            "pos": "Meia",
-            "name": "Lucas Paqueta"
           },
           {
             "num": "21",
@@ -3217,11 +3202,6 @@
             "num": "10",
             "pos": "Meia",
             "name": "Alvaro Montoro"
-          },
-          {
-            "num": "37",
-            "pos": "Meia",
-            "name": "Kadir Barria"
           },
           {
             "num": "75",
