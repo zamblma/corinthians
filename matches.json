@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-31T22:07:34.923Z",
+  "lastUpdated": "2026-06-01T00:12:10.534Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -915,6 +915,22 @@
         },
         {
           "pos": 3,
+          "name": "Fluminense",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
+          "points": 31,
+          "games": 18,
+          "wins": 9,
+          "draws": 4,
+          "losses": 5,
+          "goalsFor": 27,
+          "goalsAgainst": 22,
+          "goalDiff": 5,
+          "pct": 57,
+          "zone": 1,
+          "movement": "S"
+        },
+        {
+          "pos": 4,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
           "points": 30,
@@ -927,23 +943,7 @@
           "goalDiff": 6,
           "pct": 55,
           "zone": 1,
-          "movement": "S1"
-        },
-        {
-          "pos": 4,
-          "name": "Fluminense",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
-          "points": 30,
-          "games": 17,
-          "wins": 9,
-          "draws": 3,
-          "losses": 5,
-          "goalsFor": 27,
-          "goalsAgainst": 22,
-          "goalDiff": 5,
-          "pct": 58,
-          "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 5,
@@ -963,6 +963,22 @@
         },
         {
           "pos": 6,
+          "name": "São Paulo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+          "points": 26,
+          "games": 18,
+          "wins": 7,
+          "draws": 5,
+          "losses": 6,
+          "goalsFor": 23,
+          "goalsAgainst": 19,
+          "goalDiff": 4,
+          "pct": 48,
+          "zone": 2,
+          "movement": "S1"
+        },
+        {
+          "pos": 7,
           "name": "Bahia",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
           "points": 26,
@@ -975,10 +991,10 @@
           "goalDiff": 2,
           "pct": 50,
           "zone": 2,
-          "movement": "S2"
+          "movement": "S1"
         },
         {
-          "pos": 7,
+          "pos": 8,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 26,
@@ -990,24 +1006,8 @@
           "goalsAgainst": 24,
           "goalDiff": 0,
           "pct": 48,
-          "zone": 2,
-          "movement": "D1"
-        },
-        {
-          "pos": 8,
-          "name": "São Paulo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 25,
-          "games": 17,
-          "wins": 7,
-          "draws": 4,
-          "losses": 6,
-          "goalsFor": 23,
-          "goalsAgainst": 19,
-          "goalDiff": 4,
-          "pct": 49,
           "zone": 3,
-          "movement": "D1"
+          "movement": "D2"
         },
         {
           "pos": 9,
@@ -1045,15 +1045,15 @@
           "pos": 11,
           "name": "Cruzeiro",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
-          "points": 23,
-          "games": 17,
+          "points": 24,
+          "games": 18,
           "wins": 6,
-          "draws": 5,
+          "draws": 6,
           "losses": 6,
           "goalsFor": 23,
           "goalsAgainst": 27,
           "goalDiff": -4,
-          "pct": 45,
+          "pct": 44,
           "zone": 3,
           "movement": "D2"
         },
@@ -1173,10 +1173,10 @@
           "pos": 19,
           "name": "Remo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
-          "points": 15,
-          "games": 17,
+          "points": 16,
+          "games": 18,
           "wins": 3,
-          "draws": 6,
+          "draws": 7,
           "losses": 8,
           "goalsFor": 20,
           "goalsAgainst": 29,
