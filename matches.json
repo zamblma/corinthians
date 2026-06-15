@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-15T17:59:06.820Z",
+  "lastUpdated": "2026-06-15T21:16:46.015Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -2193,11 +2193,6 @@
             "name": "Agustin Rossi"
           },
           {
-            "num": "2",
-            "pos": "Zagueiro",
-            "name": "Guillermo Varela"
-          },
-          {
             "num": "44",
             "pos": "Zagueiro",
             "name": "Vitao"
@@ -2420,11 +2415,6 @@
         "team": "Internacional",
         "acronym": "INT",
         "players": [
-          {
-            "num": "1",
-            "pos": "Goleiro",
-            "name": "Sergio Rochet"
-          },
           {
             "num": "6",
             "pos": "Zagueiro",
