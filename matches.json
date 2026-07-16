@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-16T20:07:15.247Z",
+  "lastUpdated": "2026-07-16T22:09:42.745Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -3049,6 +3049,11 @@
             "name": "Mateo Ponte"
           },
           {
+            "num": "5",
+            "pos": "Zagueiro",
+            "name": "Nahuel Ferraresi"
+          },
+          {
             "num": "13",
             "pos": "Zagueiro",
             "name": "Alex Telles"
@@ -3067,6 +3072,11 @@
             "num": "10",
             "pos": "Meia",
             "name": "Alvaro Montoro"
+          },
+          {
+            "num": "37",
+            "pos": "Meia",
+            "name": "Kadir Barria"
           },
           {
             "num": "75",
