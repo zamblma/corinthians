@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T22:00:18.664Z",
+  "lastUpdated": "2026-07-17T23:01:38.470Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -965,15 +965,15 @@
           "pos": 6,
           "name": "Bahia",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
-          "points": 26,
-          "games": 17,
-          "wins": 7,
+          "points": 29,
+          "games": 18,
+          "wins": 8,
           "draws": 5,
           "losses": 5,
-          "goalsFor": 25,
+          "goalsFor": 26,
           "goalsAgainst": 23,
-          "goalDiff": 2,
-          "pct": 50,
+          "goalDiff": 3,
+          "pct": 53,
           "zone": 2,
           "movement": "S"
         },
@@ -1190,14 +1190,14 @@
           "name": "Chapecoense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/45pmtlqrtqh52qnch6fl7cdc1f.png",
           "points": 9,
-          "games": 17,
+          "games": 18,
           "wins": 1,
           "draws": 6,
-          "losses": 10,
+          "losses": 11,
           "goalsFor": 17,
-          "goalsAgainst": 33,
-          "goalDiff": -16,
-          "pct": 17,
+          "goalsAgainst": 34,
+          "goalDiff": -17,
+          "pct": 16,
           "zone": 4,
           "movement": "S"
         }
