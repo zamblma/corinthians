@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-17T23:01:38.470Z",
+  "lastUpdated": "2026-07-18T03:15:07.253Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -917,20 +917,36 @@
           "pos": 3,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
-          "points": 31,
-          "games": 18,
+          "points": 32,
+          "games": 19,
           "wins": 9,
-          "draws": 4,
+          "draws": 5,
           "losses": 5,
-          "goalsFor": 28,
-          "goalsAgainst": 23,
+          "goalsFor": 29,
+          "goalsAgainst": 24,
           "goalDiff": 5,
-          "pct": 57,
+          "pct": 56,
           "zone": 1,
           "movement": "S"
         },
         {
           "pos": 4,
+          "name": "Bragantino",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
+          "points": 30,
+          "games": 19,
+          "wins": 9,
+          "draws": 3,
+          "losses": 7,
+          "goalsFor": 26,
+          "goalsAgainst": 20,
+          "goalDiff": 6,
+          "pct": 52,
+          "zone": 1,
+          "movement": "S1"
+        },
+        {
+          "pos": 5,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
           "points": 30,
@@ -943,23 +959,7 @@
           "goalDiff": 6,
           "pct": 55,
           "zone": 1,
-          "movement": "S"
-        },
-        {
-          "pos": 5,
-          "name": "Bragantino",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
-          "points": 29,
-          "games": 18,
-          "wins": 9,
-          "draws": 2,
-          "losses": 7,
-          "goalsFor": 25,
-          "goalsAgainst": 19,
-          "goalDiff": 6,
-          "pct": 53,
-          "zone": 1,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 6,
@@ -970,9 +970,9 @@
           "wins": 8,
           "draws": 5,
           "losses": 5,
-          "goalsFor": 26,
+          "goalsFor": 27,
           "goalsAgainst": 23,
-          "goalDiff": 3,
+          "goalDiff": 4,
           "pct": 53,
           "zone": 2,
           "movement": "S"
@@ -1107,22 +1107,6 @@
         },
         {
           "pos": 15,
-          "name": "Grêmio",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
-          "points": 21,
-          "games": 18,
-          "wins": 5,
-          "draws": 6,
-          "losses": 7,
-          "goalsFor": 20,
-          "goalsAgainst": 23,
-          "goalDiff": -3,
-          "pct": 38,
-          "zone": 0,
-          "movement": "S1"
-        },
-        {
-          "pos": 16,
           "name": "Santos",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
           "points": 21,
@@ -1135,7 +1119,23 @@
           "goalDiff": -4,
           "pct": 36,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
+        },
+        {
+          "pos": 16,
+          "name": "Grêmio",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
+          "points": 21,
+          "games": 19,
+          "wins": 5,
+          "draws": 6,
+          "losses": 8,
+          "goalsFor": 21,
+          "goalsAgainst": 25,
+          "goalDiff": -4,
+          "pct": 36,
+          "zone": 0,
+          "movement": "S"
         },
         {
           "pos": 17,
@@ -1155,6 +1155,22 @@
         },
         {
           "pos": 18,
+          "name": "Mirassol",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
+          "points": 19,
+          "games": 18,
+          "wins": 5,
+          "draws": 4,
+          "losses": 9,
+          "goalsFor": 20,
+          "goalsAgainst": 25,
+          "goalDiff": -5,
+          "pct": 35,
+          "zone": 4,
+          "movement": "S1"
+        },
+        {
+          "pos": 19,
           "name": "Remo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
           "points": 18,
@@ -1167,23 +1183,7 @@
           "goalDiff": -8,
           "pct": 33,
           "zone": 4,
-          "movement": "S"
-        },
-        {
-          "pos": 19,
-          "name": "Mirassol",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
-          "points": 16,
-          "games": 17,
-          "wins": 4,
-          "draws": 4,
-          "losses": 9,
-          "goalsFor": 18,
-          "goalsAgainst": 24,
-          "goalDiff": -6,
-          "pct": 31,
-          "zone": 4,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 20,
@@ -1195,8 +1195,8 @@
           "draws": 6,
           "losses": 11,
           "goalsFor": 17,
-          "goalsAgainst": 34,
-          "goalDiff": -17,
+          "goalsAgainst": 35,
+          "goalDiff": -18,
           "pct": 16,
           "zone": 4,
           "movement": "S"
