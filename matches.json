@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-22T20:17:03.439Z",
+  "lastUpdated": "2026-07-22T22:11:15.377Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -2412,6 +2412,11 @@
             "name": "Khellven"
           },
           {
+            "num": "15",
+            "pos": "Zagueiro",
+            "name": "Gustavo Gomez"
+          },
+          {
             "num": "26",
             "pos": "Zagueiro",
             "name": "Murilo"
@@ -2425,6 +2430,11 @@
             "num": "17",
             "pos": "Meia",
             "name": "Marlon Freitas"
+          },
+          {
+            "num": "19",
+            "pos": "Meia",
+            "name": "Ramon Sosa"
           },
           {
             "num": "40",
@@ -2944,11 +2954,6 @@
             "num": "13",
             "pos": "Zagueiro",
             "name": "Alex Telles"
-          },
-          {
-            "num": "20",
-            "pos": "Zagueiro",
-            "name": "Alexander Barboza"
           },
           {
             "num": "6",
