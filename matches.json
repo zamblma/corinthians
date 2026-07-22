@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T23:04:11.197Z",
+  "lastUpdated": "2026-07-22T03:28:31.443Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -965,15 +965,15 @@
           "pos": 6,
           "name": "Bahia",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
-          "points": 29,
-          "games": 18,
+          "points": 30,
+          "games": 19,
           "wins": 8,
-          "draws": 5,
+          "draws": 6,
           "losses": 5,
-          "goalsFor": 27,
-          "goalsAgainst": 23,
+          "goalsFor": 28,
+          "goalsAgainst": 24,
           "goalDiff": 4,
-          "pct": 53,
+          "pct": 52,
           "zone": 2,
           "movement": "S"
         },
@@ -1027,6 +1027,22 @@
         },
         {
           "pos": 10,
+          "name": "Atlético-MG",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
+          "points": 25,
+          "games": 19,
+          "wins": 7,
+          "draws": 4,
+          "losses": 8,
+          "goalsFor": 23,
+          "goalsAgainst": 24,
+          "goalDiff": -1,
+          "pct": 43,
+          "zone": 3,
+          "movement": "D1"
+        },
+        {
+          "pos": 11,
           "name": "Vitória",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
           "points": 25,
@@ -1039,23 +1055,7 @@
           "goalDiff": -3,
           "pct": 46,
           "zone": 3,
-          "movement": "S3"
-        },
-        {
-          "pos": 11,
-          "name": "Atlético-MG",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
-          "points": 24,
-          "games": 18,
-          "wins": 7,
-          "draws": 3,
-          "losses": 8,
-          "goalsFor": 22,
-          "goalsAgainst": 23,
-          "goalDiff": -1,
-          "pct": 44,
-          "zone": 3,
-          "movement": "D2"
+          "movement": "S2"
         },
         {
           "pos": 12,
