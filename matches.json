@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-23T00:07:46.203Z",
+  "lastUpdated": "2026-07-23T04:21:31.879Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -901,20 +901,36 @@
           "pos": 2,
           "name": "Flamengo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6juc9voua610blou9p2ih6r6pj.png",
-          "points": 34,
-          "games": 17,
-          "wins": 10,
+          "points": 37,
+          "games": 18,
+          "wins": 11,
           "draws": 4,
           "losses": 3,
-          "goalsFor": 31,
+          "goalsFor": 35,
           "goalsAgainst": 16,
-          "goalDiff": 15,
-          "pct": 66,
+          "goalDiff": 19,
+          "pct": 68,
           "zone": 1,
           "movement": "S"
         },
         {
           "pos": 3,
+          "name": "Athletico-PR",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
+          "points": 33,
+          "games": 19,
+          "wins": 10,
+          "draws": 3,
+          "losses": 6,
+          "goalsFor": 26,
+          "goalsAgainst": 19,
+          "goalDiff": 7,
+          "pct": 57,
+          "zone": 1,
+          "movement": "S1"
+        },
+        {
+          "pos": 4,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
           "points": 32,
@@ -927,10 +943,10 @@
           "goalDiff": 5,
           "pct": 56,
           "zone": 1,
-          "movement": "S"
+          "movement": "D1"
         },
         {
-          "pos": 4,
+          "pos": 5,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
           "points": 30,
@@ -943,23 +959,7 @@
           "goalDiff": 6,
           "pct": 52,
           "zone": 1,
-          "movement": "S1"
-        },
-        {
-          "pos": 5,
-          "name": "Athletico-PR",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
-          "points": 30,
-          "games": 18,
-          "wins": 9,
-          "draws": 3,
-          "losses": 6,
-          "goalsFor": 24,
-          "goalsAgainst": 18,
-          "goalDiff": 6,
-          "pct": 55,
-          "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -979,6 +979,22 @@
         },
         {
           "pos": 7,
+          "name": "Cruzeiro",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
+          "points": 27,
+          "games": 19,
+          "wins": 7,
+          "draws": 6,
+          "losses": 6,
+          "goalsFor": 26,
+          "goalsAgainst": 29,
+          "goalDiff": -3,
+          "pct": 47,
+          "zone": 2,
+          "movement": "S4"
+        },
+        {
+          "pos": 8,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 26,
@@ -990,27 +1006,27 @@
           "goalsAgainst": 27,
           "goalDiff": -2,
           "pct": 45,
-          "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 8,
-          "name": "São Paulo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 25,
-          "games": 18,
-          "wins": 7,
-          "draws": 4,
-          "losses": 7,
-          "goalsFor": 23,
-          "goalsAgainst": 20,
-          "goalDiff": 3,
-          "pct": 46,
           "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 9,
+          "name": "São Paulo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+          "points": 25,
+          "games": 19,
+          "wins": 7,
+          "draws": 4,
+          "losses": 8,
+          "goalsFor": 24,
+          "goalsAgainst": 22,
+          "goalDiff": 2,
+          "pct": 43,
+          "zone": 3,
+          "movement": "D1"
+        },
+        {
+          "pos": 10,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 25,
@@ -1023,10 +1039,10 @@
           "goalDiff": 1,
           "pct": 46,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S2"
         },
         {
-          "pos": 10,
+          "pos": 11,
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
           "points": 25,
@@ -1039,10 +1055,10 @@
           "goalDiff": -1,
           "pct": 43,
           "zone": 3,
-          "movement": "D1"
+          "movement": "D2"
         },
         {
-          "pos": 11,
+          "pos": 12,
           "name": "Vitória",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
           "points": 25,
@@ -1055,10 +1071,10 @@
           "goalDiff": -3,
           "pct": 46,
           "zone": 3,
-          "movement": "S2"
+          "movement": "S1"
         },
         {
-          "pos": 12,
+          "pos": 13,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
           "points": 24,
@@ -1071,37 +1087,21 @@
           "goalDiff": -1,
           "pct": 44,
           "zone": 3,
-          "movement": "D2"
-        },
-        {
-          "pos": 13,
-          "name": "Cruzeiro",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
-          "points": 24,
-          "games": 18,
-          "wins": 6,
-          "draws": 6,
-          "losses": 6,
-          "goalsFor": 24,
-          "goalsAgainst": 28,
-          "goalDiff": -4,
-          "pct": 44,
-          "zone": 3,
-          "movement": "D2"
+          "movement": "D3"
         },
         {
           "pos": 14,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
           "points": 21,
-          "games": 18,
+          "games": 19,
           "wins": 5,
           "draws": 6,
-          "losses": 7,
-          "goalsFor": 21,
-          "goalsAgainst": 22,
-          "goalDiff": -1,
-          "pct": 38,
+          "losses": 8,
+          "goalsFor": 22,
+          "goalsAgainst": 24,
+          "goalDiff": -2,
+          "pct": 36,
           "zone": 0,
           "movement": "S"
         },
@@ -1190,14 +1190,14 @@
           "name": "Chapecoense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/45pmtlqrtqh52qnch6fl7cdc1f.png",
           "points": 9,
-          "games": 18,
+          "games": 19,
           "wins": 1,
           "draws": 6,
-          "losses": 11,
+          "losses": 12,
           "goalsFor": 17,
-          "goalsAgainst": 35,
-          "goalDiff": -18,
-          "pct": 16,
+          "goalsAgainst": 39,
+          "goalDiff": -22,
+          "pct": 15,
           "zone": 4,
           "movement": "S"
         }
