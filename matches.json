@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-22T22:11:15.377Z",
+  "lastUpdated": "2026-07-23T00:07:46.203Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -885,15 +885,15 @@
           "pos": 1,
           "name": "Palmeiras",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
-          "points": 41,
-          "games": 18,
-          "wins": 12,
+          "points": 44,
+          "games": 19,
+          "wins": 13,
           "draws": 5,
           "losses": 1,
-          "goalsFor": 30,
-          "goalsAgainst": 13,
-          "goalDiff": 17,
-          "pct": 75,
+          "goalsFor": 33,
+          "goalsAgainst": 14,
+          "goalDiff": 19,
+          "pct": 77,
           "zone": 1,
           "movement": "S"
         },
@@ -982,14 +982,14 @@
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 26,
-          "games": 18,
+          "games": 19,
           "wins": 7,
           "draws": 5,
-          "losses": 6,
-          "goalsFor": 24,
-          "goalsAgainst": 24,
-          "goalDiff": 0,
-          "pct": 48,
+          "losses": 7,
+          "goalsFor": 25,
+          "goalsAgainst": 27,
+          "goalDiff": -2,
+          "pct": 45,
           "zone": 2,
           "movement": "S"
         },
@@ -1267,11 +1267,6 @@
             "name": "Ronaldo"
           },
           {
-            "num": "2",
-            "pos": "Zagueiro",
-            "name": "Gilberto"
-          },
-          {
             "num": "21",
             "pos": "Zagueiro",
             "name": "Santiago Ramos Mingo"
@@ -1424,6 +1419,11 @@
             "num": "30",
             "pos": "Meia",
             "name": "Henry Mosquera"
+          },
+          {
+            "num": "9",
+            "pos": "Atacante",
+            "name": "Isidro Pitta"
           }
         ]
       }
@@ -1477,6 +1477,11 @@
             "num": "20",
             "pos": "Meia",
             "name": "Julimar"
+          },
+          {
+            "num": "27",
+            "pos": "Meia",
+            "name": "Juan Portilla"
           },
           {
             "num": "9",
@@ -2065,9 +2070,29 @@
             "name": "Agustin Rossi"
           },
           {
+            "num": "2",
+            "pos": "Zagueiro",
+            "name": "Guillermo Varela"
+          },
+          {
+            "num": "13",
+            "pos": "Zagueiro",
+            "name": "Danilo"
+          },
+          {
+            "num": "26",
+            "pos": "Zagueiro",
+            "name": "Alex Sandro"
+          },
+          {
             "num": "44",
             "pos": "Zagueiro",
             "name": "Vitao"
+          },
+          {
+            "num": "10",
+            "pos": "Meia",
+            "name": "Giorgian de Arrascaeta"
           },
           {
             "num": "16",
@@ -2911,6 +2936,11 @@
             "num": "11",
             "pos": "Meia",
             "name": "Ferreira"
+          },
+          {
+            "num": "16",
+            "pos": "Meia",
+            "name": "Damian Bobadilla"
           },
           {
             "num": "37",
