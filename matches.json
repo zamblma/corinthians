@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-23T23:04:17.065Z",
+  "lastUpdated": "2026-07-24T03:29:19.770Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -425,14 +425,14 @@
       "awayTeam": "Remo",
       "awayAcronym": "REM",
       "stadium": "Neo Química Arena",
-      "homeGoals": 0,
+      "homeGoals": 3,
       "awayGoals": 0,
-      "status": "live",
+      "status": "finished",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
       "awayLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
-      "matchUrl": "",
+      "matchUrl": "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/corinthians-x-remo/96188/",
       "matchId": "",
       "isHome": true,
       "opponent": "Remo",
@@ -979,6 +979,22 @@
         },
         {
           "pos": 7,
+          "name": "Corinthians",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+          "points": 27,
+          "games": 19,
+          "wins": 7,
+          "draws": 6,
+          "losses": 6,
+          "goalsFor": 21,
+          "goalsAgainst": 19,
+          "goalDiff": 2,
+          "pct": 47,
+          "zone": 2,
+          "movement": "S3"
+        },
+        {
+          "pos": 8,
           "name": "Cruzeiro",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
           "points": 27,
@@ -990,11 +1006,11 @@
           "goalsAgainst": 29,
           "goalDiff": -3,
           "pct": 47,
-          "zone": 2,
-          "movement": "S4"
+          "zone": 3,
+          "movement": "S3"
         },
         {
-          "pos": 8,
+          "pos": 9,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 26,
@@ -1007,10 +1023,10 @@
           "goalDiff": 1,
           "pct": 45,
           "zone": 3,
-          "movement": "S4"
+          "movement": "S3"
         },
         {
-          "pos": 9,
+          "pos": 10,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 26,
@@ -1023,10 +1039,10 @@
           "goalDiff": -2,
           "pct": 45,
           "zone": 3,
-          "movement": "D2"
+          "movement": "D3"
         },
         {
-          "pos": 10,
+          "pos": 11,
           "name": "Vitória",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
           "points": 26,
@@ -1039,10 +1055,10 @@
           "goalDiff": -3,
           "pct": 45,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S2"
         },
         {
-          "pos": 11,
+          "pos": 12,
           "name": "São Paulo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
           "points": 25,
@@ -1055,10 +1071,10 @@
           "goalDiff": 2,
           "pct": 43,
           "zone": 3,
-          "movement": "D3"
+          "movement": "D4"
         },
         {
-          "pos": 12,
+          "pos": 13,
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
           "points": 25,
@@ -1071,23 +1087,7 @@
           "goalDiff": -1,
           "pct": 43,
           "zone": 3,
-          "movement": "D3"
-        },
-        {
-          "pos": 13,
-          "name": "Corinthians",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
-          "points": 25,
-          "games": 19,
-          "wins": 6,
-          "draws": 7,
-          "losses": 6,
-          "goalsFor": 18,
-          "goalsAgainst": 19,
-          "goalDiff": -1,
-          "pct": 43,
-          "zone": 3,
-          "movement": "D3"
+          "movement": "D4"
         },
         {
           "pos": 14,
@@ -1173,15 +1173,15 @@
           "pos": 19,
           "name": "Remo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
-          "points": 19,
+          "points": 18,
           "games": 19,
           "wins": 4,
-          "draws": 7,
-          "losses": 8,
+          "draws": 6,
+          "losses": 9,
           "goalsFor": 21,
-          "goalsAgainst": 29,
-          "goalDiff": -8,
-          "pct": 33,
+          "goalsAgainst": 32,
+          "goalDiff": -11,
+          "pct": 31,
           "zone": 4,
           "movement": "D1"
         },
