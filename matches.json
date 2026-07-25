@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-25T19:19:28.178Z",
+  "lastUpdated": "2026-07-25T21:01:35.560Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -1849,6 +1849,11 @@
             "num": "9",
             "pos": "Atacante",
             "name": "Gabriel Barbosa"
+          },
+          {
+            "num": "10",
+            "pos": "Atacante",
+            "name": "Neymar"
           }
         ]
       },
