@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-25T21:01:35.560Z",
+  "lastUpdated": "2026-07-25T23:01:19.273Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -917,17 +917,17 @@
           "pos": 3,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
-          "points": 33,
-          "games": 19,
-          "wins": 10,
+          "points": 36,
+          "games": 20,
+          "wins": 11,
           "draws": 3,
           "losses": 6,
-          "goalsFor": 26,
+          "goalsFor": 28,
           "goalsAgainst": 19,
-          "goalDiff": 7,
-          "pct": 57,
+          "goalDiff": 9,
+          "pct": 60,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 4,
@@ -943,7 +943,7 @@
           "goalDiff": 5,
           "pct": 56,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 5,
@@ -991,7 +991,7 @@
           "goalDiff": 2,
           "pct": 47,
           "zone": 2,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1007,7 +1007,7 @@
           "goalDiff": -3,
           "pct": 47,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 9,
@@ -1023,7 +1023,7 @@
           "goalDiff": 1,
           "pct": 45,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 10,
@@ -1039,7 +1039,7 @@
           "goalDiff": -2,
           "pct": 45,
           "zone": 3,
-          "movement": "D3"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": -3,
           "pct": 45,
           "zone": 3,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": 2,
           "pct": 43,
           "zone": 3,
-          "movement": "D4"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,42 +1087,26 @@
           "goalDiff": -1,
           "pct": 43,
           "zone": 3,
-          "movement": "D4"
+          "movement": "S"
         },
         {
           "pos": 14,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
           "points": 21,
-          "games": 19,
+          "games": 20,
           "wins": 5,
           "draws": 6,
-          "losses": 8,
+          "losses": 9,
           "goalsFor": 22,
-          "goalsAgainst": 24,
-          "goalDiff": -2,
-          "pct": 36,
+          "goalsAgainst": 26,
+          "goalDiff": -4,
+          "pct": 35,
           "zone": 0,
           "movement": "S"
         },
         {
           "pos": 15,
-          "name": "Santos",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
-          "points": 21,
-          "games": 19,
-          "wins": 5,
-          "draws": 6,
-          "losses": 8,
-          "goalsFor": 27,
-          "goalsAgainst": 31,
-          "goalDiff": -4,
-          "pct": 36,
-          "zone": 0,
-          "movement": "S"
-        },
-        {
-          "pos": 16,
           "name": "Grêmio",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
           "points": 21,
@@ -1135,7 +1119,23 @@
           "goalDiff": -4,
           "pct": 36,
           "zone": 0,
-          "movement": "S"
+          "movement": "S1"
+        },
+        {
+          "pos": 16,
+          "name": "Santos",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
+          "points": 21,
+          "games": 20,
+          "wins": 5,
+          "draws": 6,
+          "losses": 9,
+          "goalsFor": 28,
+          "goalsAgainst": 33,
+          "goalDiff": -5,
+          "pct": 35,
+          "zone": 0,
+          "movement": "D1"
         },
         {
           "pos": 17,
@@ -1167,7 +1167,7 @@
           "goalDiff": -5,
           "pct": 35,
           "zone": 4,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 19,
@@ -1183,21 +1183,21 @@
           "goalDiff": -11,
           "pct": 31,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 20,
           "name": "Chapecoense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/45pmtlqrtqh52qnch6fl7cdc1f.png",
-          "points": 9,
-          "games": 19,
-          "wins": 1,
+          "points": 12,
+          "games": 20,
+          "wins": 2,
           "draws": 6,
           "losses": 12,
-          "goalsFor": 17,
-          "goalsAgainst": 39,
-          "goalDiff": -22,
-          "pct": 15,
+          "goalsFor": 19,
+          "goalsAgainst": 40,
+          "goalDiff": -21,
+          "pct": 20,
           "zone": 4,
           "movement": "S"
         }
