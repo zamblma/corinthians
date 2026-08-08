@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-08T18:49:32.347Z",
+  "lastUpdated": "2026-08-08T19:36:02.864Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -959,7 +959,7 @@
           "goalDiff": 4,
           "pct": 50,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": 6,
           "pct": 51,
           "zone": 2,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -991,7 +991,7 @@
           "goalDiff": -3,
           "pct": 47,
           "zone": 2,
-          "movement": "S4"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1007,7 +1007,7 @@
           "goalDiff": 2,
           "pct": 48,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 9,
@@ -1039,10 +1039,26 @@
           "goalDiff": 0,
           "pct": 46,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 11,
+          "name": "São Paulo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+          "points": 27,
+          "games": 21,
+          "wins": 7,
+          "draws": 6,
+          "losses": 8,
+          "goalsFor": 25,
+          "goalsAgainst": 23,
+          "goalDiff": 2,
+          "pct": 42,
+          "zone": 3,
+          "movement": "S1"
+        },
+        {
+          "pos": 12,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 27,
@@ -1056,22 +1072,6 @@
           "pct": 42,
           "zone": 3,
           "movement": "D1"
-        },
-        {
-          "pos": 12,
-          "name": "São Paulo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 26,
-          "games": 20,
-          "wins": 7,
-          "draws": 5,
-          "losses": 8,
-          "goalsFor": 25,
-          "goalsAgainst": 23,
-          "goalDiff": 2,
-          "pct": 43,
-          "zone": 3,
-          "movement": "S"
         },
         {
           "pos": 13,
@@ -1103,10 +1103,26 @@
           "goalDiff": -4,
           "pct": 38,
           "zone": 0,
-          "movement": "S5"
+          "movement": "S"
         },
         {
           "pos": 15,
+          "name": "Grêmio",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
+          "points": 23,
+          "games": 21,
+          "wins": 5,
+          "draws": 8,
+          "losses": 8,
+          "goalsFor": 22,
+          "goalsAgainst": 26,
+          "goalDiff": -4,
+          "pct": 36,
+          "zone": 0,
+          "movement": "S2"
+        },
+        {
+          "pos": 16,
           "name": "Santos",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
           "points": 22,
@@ -1122,7 +1138,7 @@
           "movement": "D1"
         },
         {
-          "pos": 16,
+          "pos": 17,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
           "points": 22,
@@ -1134,24 +1150,8 @@
           "goalsAgainst": 27,
           "goalDiff": -4,
           "pct": 34,
-          "zone": 0,
-          "movement": "S"
-        },
-        {
-          "pos": 17,
-          "name": "Grêmio",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
-          "points": 22,
-          "games": 20,
-          "wins": 5,
-          "draws": 7,
-          "losses": 8,
-          "goalsFor": 22,
-          "goalsAgainst": 26,
-          "goalDiff": -4,
-          "pct": 36,
           "zone": 4,
-          "movement": "D2"
+          "movement": "D1"
         },
         {
           "pos": 18,
@@ -1167,7 +1167,7 @@
           "goalDiff": -8,
           "pct": 35,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 19,
@@ -1183,7 +1183,7 @@
           "goalDiff": -10,
           "pct": 33,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 20,
