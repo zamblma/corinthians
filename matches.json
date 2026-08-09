@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-09T15:38:35.024Z",
+  "lastUpdated": "2026-08-09T16:44:33.849Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -947,6 +947,22 @@
         },
         {
           "pos": 5,
+          "name": "Cruzeiro",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
+          "points": 33,
+          "games": 22,
+          "wins": 9,
+          "draws": 6,
+          "losses": 7,
+          "goalsFor": 30,
+          "goalsAgainst": 31,
+          "goalDiff": -1,
+          "pct": 50,
+          "zone": 1,
+          "movement": "S2"
+        },
+        {
+          "pos": 6,
           "name": "Bahia",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
           "points": 32,
@@ -958,11 +974,11 @@
           "goalsAgainst": 25,
           "goalDiff": 4,
           "pct": 50,
-          "zone": 1,
-          "movement": "S"
+          "zone": 2,
+          "movement": "D1"
         },
         {
-          "pos": 6,
+          "pos": 7,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
           "points": 31,
@@ -975,23 +991,7 @@
           "goalDiff": 6,
           "pct": 51,
           "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 7,
-          "name": "Cruzeiro",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
-          "points": 31,
-          "games": 22,
-          "wins": 8,
-          "draws": 7,
-          "losses": 7,
-          "goalsFor": 28,
-          "goalsAgainst": 31,
-          "goalDiff": -3,
-          "pct": 46,
-          "zone": 2,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 8,
@@ -1109,15 +1109,15 @@
           "pos": 15,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
-          "points": 24,
+          "points": 23,
           "games": 21,
           "wins": 6,
-          "draws": 6,
-          "losses": 9,
+          "draws": 5,
+          "losses": 10,
           "goalsFor": 24,
-          "goalsAgainst": 28,
-          "goalDiff": -4,
-          "pct": 38,
+          "goalsAgainst": 30,
+          "goalDiff": -6,
+          "pct": 36,
           "zone": 0,
           "movement": "D1"
         },
