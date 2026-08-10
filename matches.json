@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-09T23:38:31.698Z",
+  "lastUpdated": "2026-08-10T02:22:42.012Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -496,12 +496,12 @@
       "stadium": "Estádio Cicero de Souza Marques",
       "homeGoals": 0,
       "awayGoals": 2,
-      "status": "live",
+      "status": "finished",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
       "awayLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
-      "matchUrl": "",
+      "matchUrl": "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/bragantino-x-corinthians/96330/",
       "matchId": "",
       "isHome": false,
       "opponent": "Bragantino",
@@ -906,9 +906,9 @@
           "wins": 12,
           "draws": 6,
           "losses": 3,
-          "goalsFor": 38,
+          "goalsFor": 39,
           "goalsAgainst": 18,
-          "goalDiff": 20,
+          "goalDiff": 21,
           "pct": 66,
           "zone": 1,
           "movement": "S"
@@ -1083,8 +1083,8 @@
           "draws": 5,
           "losses": 10,
           "goalsFor": 22,
-          "goalsAgainst": 32,
-          "goalDiff": -10,
+          "goalsAgainst": 33,
+          "goalDiff": -11,
           "pct": 39,
           "zone": 3,
           "movement": "S"
