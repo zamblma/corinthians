@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T19:27:25.803Z",
+  "lastUpdated": "2026-08-15T20:30:13.631Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -885,15 +885,15 @@
           "pos": 1,
           "name": "Palmeiras",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
-          "points": 48,
-          "games": 22,
+          "points": 49,
+          "games": 23,
           "wins": 14,
-          "draws": 6,
+          "draws": 7,
           "losses": 2,
-          "goalsFor": 38,
-          "goalsAgainst": 16,
+          "goalsFor": 39,
+          "goalsAgainst": 17,
           "goalDiff": 22,
-          "pct": 72,
+          "pct": 71,
           "zone": 1,
           "movement": "S"
         },
@@ -933,15 +933,15 @@
           "pos": 4,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
-          "points": 35,
-          "games": 22,
+          "points": 36,
+          "games": 23,
           "wins": 9,
-          "draws": 8,
+          "draws": 9,
           "losses": 5,
-          "goalsFor": 31,
-          "goalsAgainst": 26,
+          "goalsFor": 32,
+          "goalsAgainst": 27,
           "goalDiff": 5,
-          "pct": 53,
+          "pct": 52,
           "zone": 1,
           "movement": "S"
         },
@@ -959,7 +959,7 @@
           "goalDiff": -1,
           "pct": 50,
           "zone": 1,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": 4,
           "pct": 50,
           "zone": 2,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -991,7 +991,7 @@
           "goalDiff": 4,
           "pct": 48,
           "zone": 2,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1007,7 +1007,7 @@
           "goalDiff": 4,
           "pct": 49,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 9,
@@ -1023,7 +1023,7 @@
           "goalDiff": 2,
           "pct": 47,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 10,
@@ -1039,7 +1039,7 @@
           "goalDiff": -2,
           "pct": 45,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": 0,
           "pct": 46,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1103,7 +1103,7 @@
           "goalDiff": -3,
           "pct": 39,
           "zone": 0,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 15,
@@ -1119,7 +1119,7 @@
           "goalDiff": -6,
           "pct": 36,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 16,
@@ -1151,7 +1151,7 @@
           "goalDiff": -6,
           "pct": 34,
           "zone": 4,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 18,
