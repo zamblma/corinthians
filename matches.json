@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T21:27:35.682Z",
+  "lastUpdated": "2026-08-15T22:29:18.549Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -917,15 +917,15 @@
           "pos": 3,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
-          "points": 40,
-          "games": 22,
+          "points": 41,
+          "games": 23,
           "wins": 12,
-          "draws": 4,
+          "draws": 5,
           "losses": 6,
           "goalsFor": 30,
           "goalsAgainst": 19,
           "goalDiff": 11,
-          "pct": 60,
+          "pct": 59,
           "zone": 1,
           "movement": "S"
         },
@@ -979,6 +979,22 @@
         },
         {
           "pos": 7,
+          "name": "Bragantino",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
+          "points": 32,
+          "games": 22,
+          "wins": 9,
+          "draws": 5,
+          "losses": 8,
+          "goalsFor": 26,
+          "goalsAgainst": 22,
+          "goalDiff": 4,
+          "pct": 48,
+          "zone": 2,
+          "movement": "S1"
+        },
+        {
+          "pos": 8,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
           "points": 32,
@@ -990,24 +1006,8 @@
           "goalsAgainst": 20,
           "goalDiff": 4,
           "pct": 48,
-          "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 8,
-          "name": "Bragantino",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
-          "points": 31,
-          "games": 21,
-          "wins": 9,
-          "draws": 4,
-          "losses": 8,
-          "goalsFor": 26,
-          "goalsAgainst": 22,
-          "goalDiff": 4,
-          "pct": 49,
           "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 9,
