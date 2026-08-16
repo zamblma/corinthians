@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-15T23:26:43.440Z",
+  "lastUpdated": "2026-08-16T01:48:05.396Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -1011,6 +1011,22 @@
         },
         {
           "pos": 9,
+          "name": "Coritiba",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
+          "points": 31,
+          "games": 23,
+          "wins": 8,
+          "draws": 7,
+          "losses": 8,
+          "goalsFor": 28,
+          "goalsAgainst": 30,
+          "goalDiff": -2,
+          "pct": 44,
+          "zone": 3,
+          "movement": "S1"
+        },
+        {
+          "pos": 10,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 30,
@@ -1023,23 +1039,7 @@
           "goalDiff": 2,
           "pct": 47,
           "zone": 3,
-          "movement": "S"
-        },
-        {
-          "pos": 10,
-          "name": "Coritiba",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
-          "points": 30,
-          "games": 22,
-          "wins": 8,
-          "draws": 6,
-          "losses": 8,
-          "goalsFor": 27,
-          "goalsAgainst": 29,
-          "goalDiff": -2,
-          "pct": 45,
-          "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 11,
@@ -1061,15 +1061,15 @@
           "pos": 12,
           "name": "São Paulo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 26,
-          "games": 21,
+          "points": 27,
+          "games": 22,
           "wins": 7,
-          "draws": 5,
+          "draws": 6,
           "losses": 9,
-          "goalsFor": 26,
-          "goalsAgainst": 25,
+          "goalsFor": 27,
+          "goalsAgainst": 26,
           "goalDiff": 1,
-          "pct": 41,
+          "pct": 40,
           "zone": 3,
           "movement": "S"
         },
