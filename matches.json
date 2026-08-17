@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-17T05:40:30.040Z",
+  "lastUpdated": "2026-08-17T07:08:47.687Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -555,9 +555,9 @@
     },
     {
       "round": 25,
-      "date": "2026-08-28",
-      "time": "20:00",
-      "datetime": "2026-08-28T20:00:00",
+      "date": "2026-08-30",
+      "time": "16:00",
+      "datetime": "2026-08-30T16:00:00",
       "homeTeam": "Corinthians",
       "homeAcronym": "COR",
       "awayTeam": "Santos",
@@ -578,9 +578,9 @@
     },
     {
       "round": 26,
-      "date": "2026-09-04",
-      "time": "20:00",
-      "datetime": "2026-09-04T20:00:00",
+      "date": "2026-09-06",
+      "time": "19:30",
+      "datetime": "2026-09-06T19:30:00",
       "homeTeam": "Corinthians",
       "homeAcronym": "COR",
       "awayTeam": "Chapecoense",
