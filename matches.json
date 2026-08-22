@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-22T21:28:42.996Z",
+  "lastUpdated": "2026-08-22T22:29:03.471Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -979,6 +979,22 @@
         },
         {
           "pos": 7,
+          "name": "Atlético-MG",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
+          "points": 33,
+          "games": 23,
+          "wins": 9,
+          "draws": 6,
+          "losses": 8,
+          "goalsFor": 30,
+          "goalsAgainst": 27,
+          "goalDiff": 3,
+          "pct": 47,
+          "zone": 2,
+          "movement": "S1"
+        },
+        {
+          "pos": 8,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
           "points": 32,
@@ -990,24 +1006,8 @@
           "goalsAgainst": 23,
           "goalDiff": 4,
           "pct": 48,
-          "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 8,
-          "name": "Atlético-MG",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
-          "points": 32,
-          "games": 22,
-          "wins": 9,
-          "draws": 5,
-          "losses": 8,
-          "goalsFor": 30,
-          "goalsAgainst": 27,
-          "goalDiff": 3,
-          "pct": 48,
           "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 9,
@@ -1125,10 +1125,10 @@
           "pos": 16,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
-          "points": 24,
-          "games": 23,
+          "points": 25,
+          "games": 24,
           "wins": 5,
-          "draws": 9,
+          "draws": 10,
           "losses": 9,
           "goalsFor": 24,
           "goalsAgainst": 28,
