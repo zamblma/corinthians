@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-22T20:31:14.461Z",
+  "lastUpdated": "2026-08-22T21:28:42.996Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -933,15 +933,15 @@
           "pos": 4,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
-          "points": 38,
+          "points": 41,
           "games": 24,
-          "wins": 10,
+          "wins": 11,
           "draws": 8,
-          "losses": 6,
-          "goalsFor": 34,
+          "losses": 5,
+          "goalsFor": 36,
           "goalsAgainst": 29,
-          "goalDiff": 5,
-          "pct": 52,
+          "goalDiff": 7,
+          "pct": 56,
           "zone": 1,
           "movement": "S"
         },
@@ -1091,22 +1091,6 @@
         },
         {
           "pos": 14,
-          "name": "Remo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
-          "points": 26,
-          "games": 24,
-          "wins": 6,
-          "draws": 8,
-          "losses": 10,
-          "goalsFor": 28,
-          "goalsAgainst": 37,
-          "goalDiff": -9,
-          "pct": 36,
-          "zone": 0,
-          "movement": "S4"
-        },
-        {
-          "pos": 15,
           "name": "Santos",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
           "points": 25,
@@ -1119,10 +1103,10 @@
           "goalDiff": -3,
           "pct": 37,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
-          "pos": 16,
+          "pos": 15,
           "name": "Grêmio",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
           "points": 25,
@@ -1135,10 +1119,10 @@
           "goalDiff": -6,
           "pct": 37,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
-          "pos": 17,
+          "pos": 16,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
           "points": 24,
@@ -1150,11 +1134,11 @@
           "goalsAgainst": 28,
           "goalDiff": -4,
           "pct": 34,
-          "zone": 4,
-          "movement": "D1"
+          "zone": 0,
+          "movement": "S"
         },
         {
-          "pos": 18,
+          "pos": 17,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
           "points": 23,
@@ -1167,7 +1151,23 @@
           "goalDiff": -10,
           "pct": 34,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
+        },
+        {
+          "pos": 18,
+          "name": "Remo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
+          "points": 23,
+          "games": 24,
+          "wins": 5,
+          "draws": 8,
+          "losses": 11,
+          "goalsFor": 28,
+          "goalsAgainst": 39,
+          "goalDiff": -11,
+          "pct": 31,
+          "zone": 4,
+          "movement": "S"
         },
         {
           "pos": 19,
