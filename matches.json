@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-22T18:39:39.229Z",
+  "lastUpdated": "2026-08-22T19:28:40.505Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -933,15 +933,15 @@
           "pos": 4,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
-          "points": 38,
-          "games": 23,
+          "points": 39,
+          "games": 24,
           "wins": 10,
-          "draws": 8,
+          "draws": 9,
           "losses": 5,
           "goalsFor": 34,
           "goalsAgainst": 28,
           "goalDiff": 6,
-          "pct": 55,
+          "pct": 54,
           "zone": 1,
           "movement": "S"
         },
@@ -991,7 +991,7 @@
           "goalDiff": 4,
           "pct": 48,
           "zone": 2,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1007,7 +1007,7 @@
           "goalDiff": 3,
           "pct": 48,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 9,
@@ -1023,7 +1023,7 @@
           "goalDiff": 3,
           "pct": 46,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 10,
@@ -1055,7 +1055,7 @@
           "goalDiff": 1,
           "pct": 45,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": -10,
           "pct": 42,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,7 +1087,7 @@
           "goalDiff": 1,
           "pct": 40,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 14,
@@ -1103,7 +1103,7 @@
           "goalDiff": -3,
           "pct": 37,
           "zone": 0,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 15,
@@ -1119,7 +1119,7 @@
           "goalDiff": -6,
           "pct": 37,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 16,
@@ -1139,6 +1139,22 @@
         },
         {
           "pos": 17,
+          "name": "Remo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
+          "points": 24,
+          "games": 24,
+          "wins": 5,
+          "draws": 9,
+          "losses": 10,
+          "goalsFor": 27,
+          "goalsAgainst": 37,
+          "goalDiff": -10,
+          "pct": 33,
+          "zone": 4,
+          "movement": "S1"
+        },
+        {
+          "pos": 18,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
           "points": 23,
@@ -1151,23 +1167,7 @@
           "goalDiff": -10,
           "pct": 34,
           "zone": 4,
-          "movement": "D2"
-        },
-        {
-          "pos": 18,
-          "name": "Remo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
-          "points": 23,
-          "games": 23,
-          "wins": 5,
-          "draws": 8,
-          "losses": 10,
-          "goalsFor": 27,
-          "goalsAgainst": 37,
-          "goalDiff": -10,
-          "pct": 33,
-          "zone": 4,
-          "movement": "S1"
+          "movement": "D1"
         },
         {
           "pos": 19,
@@ -1183,7 +1183,7 @@
           "goalDiff": -11,
           "pct": 33,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 20,
