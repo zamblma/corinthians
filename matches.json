@@ -1,0 +1,1655 @@
+﻿{
+    "lastUpdated":  "2026-05-27T12:00:00.000Z",
+    "corinthiansMatches":  [
+                               {
+                                   "round":  1,
+                                   "date":  "2026-05-10",
+                                   "time":  "16:00",
+                                   "datetime":  "2026-05-10T16:00:00",
+                                   "homeTeam":  "São Paulo",
+                                   "homeAcronym":  "SAO",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+                                   "awayTeam":  "Corinthians",
+                                   "awayAcronym":  "COR",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "stadium":  "Morumbi",
+                                   "homeGoals":  1,
+                                   "awayGoals":  2,
+                                   "status":  "finished",
+                                   "championship":  "Brasileirão Série A",
+                                   "championshipKey":  "brasileirao",
+                                   "isHome":  false,
+                                   "opponent":  "São Paulo",
+                                   "opponentAcronym":  "SAO",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/sao-paulo-x-corinthians/93201",
+                                   "matchId":  "93201"
+                               },
+                               {
+                                   "round":  2,
+                                   "date":  "2026-05-16",
+                                   "time":  "21:00",
+                                   "datetime":  "2026-05-16T21:00:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Palmeiras",
+                                   "awayAcronym":  "PAL",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  0,
+                                   "awayGoals":  1,
+                                   "status":  "finished",
+                                   "championship":  "Brasileirão Série A",
+                                   "championshipKey":  "brasileirao",
+                                   "isHome":  true,
+                                   "opponent":  "Palmeiras",
+                                   "opponentAcronym":  "PAL",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/corinthians-x-palmeiras/93202",
+                                   "matchId":  "93202"
+                               },
+                               {
+                                   "round":  1,
+                                   "date":  "2026-05-20",
+                                   "time":  "19:00",
+                                   "datetime":  "2026-05-20T19:00:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Flamengo",
+                                   "awayAcronym":  "FLA",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6juc9voua610blou9p2ih6r6pj.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  2,
+                                   "awayGoals":  2,
+                                   "status":  "draw",
+                                   "championship":  "Brasileirão Série A",
+                                   "championshipKey":  "brasileirao",
+                                   "isHome":  true,
+                                   "opponent":  "Flamengo",
+                                   "opponentAcronym":  "FLA",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/corinthians-x-flamengo/93203",
+                                   "matchId":  "93203"
+                               },
+                               {
+                                   "round":  3,
+                                   "date":  "2026-05-23",
+                                   "time":  "18:30",
+                                   "datetime":  "2026-05-23T18:30:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Santos",
+                                   "awayAcronym":  "SAN",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  3,
+                                   "awayGoals":  0,
+                                   "status":  "finished",
+                                   "championship":  "Brasileirão Série A",
+                                   "championshipKey":  "brasileirao",
+                                   "isHome":  true,
+                                   "opponent":  "Santos",
+                                   "opponentAcronym":  "SAN",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/corinthians-x-santos/93204",
+                                   "matchId":  "93204"
+                               },
+                               {
+                                   "round":  1,
+                                   "date":  "2026-05-18",
+                                   "time":  "21:30",
+                                   "datetime":  "2026-05-18T21:30:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "River Plate",
+                                   "awayAcronym":  "RIV",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  1,
+                                   "awayGoals":  1,
+                                   "status":  "draw",
+                                   "championship":  "Copa Libertadores",
+                                   "championshipKey":  "libertadores",
+                                   "isHome":  true,
+                                   "opponent":  "River Plate",
+                                   "opponentAcronym":  "RIV",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/copa-libertadores/ao-vivo/corinthians-x-river-plate/93205",
+                                   "matchId":  "93205"
+                               },
+                               {
+                                   "round":  2,
+                                   "date":  "2026-05-25",
+                                   "time":  "19:15",
+                                   "datetime":  "2026-05-25T19:15:00",
+                                   "homeTeam":  "Nacional",
+                                   "homeAcronym":  "NAC",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Corinthians",
+                                   "awayAcronym":  "COR",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "stadium":  "Estádio Gran Parque Central",
+                                   "homeGoals":  0,
+                                   "awayGoals":  3,
+                                   "status":  "finished",
+                                   "championship":  "Copa Libertadores",
+                                   "championshipKey":  "libertadores",
+                                   "isHome":  false,
+                                   "opponent":  "Nacional",
+                                   "opponentAcronym":  "NAC",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/copa-libertadores/ao-vivo/nacional-x-corinthians/93206",
+                                   "matchId":  "93206"
+                               },
+                               {
+                                   "round":  1,
+                                   "date":  "2026-05-14",
+                                   "time":  "20:00",
+                                   "datetime":  "2026-05-14T20:00:00",
+                                   "homeTeam":  "Cruzeiro",
+                                   "homeAcronym":  "CRU",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
+                                   "awayTeam":  "Corinthians",
+                                   "awayAcronym":  "COR",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "stadium":  "Mineirão",
+                                   "homeGoals":  0,
+                                   "awayGoals":  2,
+                                   "status":  "finished",
+                                   "championship":  "Copa do Brasil",
+                                   "championshipKey":  "copabrasil",
+                                   "isHome":  false,
+                                   "opponent":  "Cruzeiro",
+                                   "opponentAcronym":  "CRU",
+                                   "matchUrl":  "https://www.terra.com.br/esportes/futebol/copa-do-brasil/ao-vivo/cruzeiro-x-corinthians/93207",
+                                   "matchId":  "93207"
+                               },
+                               {
+                                   "round":  4,
+                                   "date":  "2026-05-27",
+                                   "time":  "21:30",
+                                   "datetime":  "2026-05-27T21:30:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Grêmio",
+                                   "awayAcronym":  "GRE",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
+                                   "stadium":  "Neo Química Arena",
+                                    "homeGoals":  1,
+                                    "awayGoals":  0,
+                                    "status":  "live",
+                                    "championship":  "Brasileirão Série A",
+                                    "championshipKey":  "brasileirao",
+                                    "isHome":  true,
+                                    "opponent":  "Grêmio",
+                                    "opponentAcronym":  "GRE",
+                                    "matchUrl":  "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/corinthians-x-gremio/93208",
+                                    "matchId":  "93208"
+                               },
+                               {
+                                   "round":  5,
+                                   "date":  "2026-06-13",
+                                   "time":  "16:00",
+                                   "datetime":  "2026-06-13T16:00:00",
+                                   "homeTeam":  "Internacional",
+                                   "homeAcronym":  "INT",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
+                                   "awayTeam":  "Corinthians",
+                                   "awayAcronym":  "COR",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "stadium":  "Beira-Rio",
+                                   "homeGoals":  null,
+                                   "awayGoals":  null,
+                                   "status":  "scheduled",
+                                   "championship":  "Brasileirão Série A",
+                                   "championshipKey":  "brasileirao",
+                                   "isHome":  false,
+                                   "opponent":  "Internacional",
+                                   "opponentAcronym":  "INT"
+                               },
+                               {
+                                   "round":  6,
+                                   "date":  "2026-06-20",
+                                   "time":  "18:30",
+                                   "datetime":  "2026-06-20T18:30:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Bahia",
+                                   "awayAcronym":  "BAH",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  null,
+                                   "awayGoals":  null,
+                                   "status":  "scheduled",
+                                   "championship":  "Brasileirão Série A",
+                                   "championshipKey":  "brasileirao",
+                                   "isHome":  true,
+                                   "opponent":  "Bahia",
+                                   "opponentAcronym":  "BAH"
+                               },
+                               {
+                                   "round":  3,
+                                   "date":  "2026-06-10",
+                                   "time":  "19:00",
+                                   "datetime":  "2026-06-10T19:00:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Boca Juniors",
+                                   "awayAcronym":  "BOC",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  null,
+                                   "awayGoals":  null,
+                                   "status":  "scheduled",
+                                   "championship":  "Copa Libertadores",
+                                   "championshipKey":  "libertadores",
+                                   "isHome":  true,
+                                   "opponent":  "Boca Juniors",
+                                   "opponentAcronym":  "BOC"
+                               },
+                               {
+                                   "round":  2,
+                                   "date":  "2026-06-24",
+                                   "time":  "20:00",
+                                   "datetime":  "2026-06-24T20:00:00",
+                                   "homeTeam":  "Corinthians",
+                                   "homeAcronym":  "COR",
+                                   "homeLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                   "awayTeam":  "Atlético-MG",
+                                   "awayAcronym":  "CAM",
+                                   "awayLogo":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
+                                   "stadium":  "Neo Química Arena",
+                                   "homeGoals":  null,
+                                   "awayGoals":  null,
+                                   "status":  "scheduled",
+                                   "championship":  "Copa do Brasil",
+                                   "championshipKey":  "copabrasil",
+                                   "isHome":  true,
+                                   "opponent":  "Atlético-MG",
+                                   "opponentAcronym":  "CAM"
+                               }
+                           ],
+    "standings":  [
+                      {
+                          "championship":  "Brasileirão Série A",
+                          "championshipKey":  "brasileirao",
+                          "teams":  [
+                                        {
+                                            "pos":  1,
+                                            "name":  "Palmeiras",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
+                                            "points":  38,
+                                            "games":  17,
+                                            "wins":  11,
+                                            "draws":  5,
+                                            "losses":  1,
+                                            "goalsFor":  29,
+                                            "goalsAgainst":  13,
+                                            "goalDiff":  16,
+                                            "pct":  74,
+                                            "zone":  1,
+                                            "movement":  ""
+                                        },
+                                        {
+                                            "pos":  2,
+                                            "name":  "Flamengo",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6juc9voua610blou9p2ih6r6pj.png",
+                                            "points":  31,
+                                            "games":  16,
+                                            "wins":  9,
+                                            "draws":  4,
+                                            "losses":  3,
+                                            "goalsFor":  28,
+                                            "goalsAgainst":  16,
+                                            "goalDiff":  12,
+                                            "pct":  64,
+                                            "zone":  1,
+                                            "movement":  ""
+                                        },
+                                        {
+                                            "pos":  3,
+                                            "name":  "Fluminense",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
+                                            "points":  30,
+                                            "games":  17,
+                                            "wins":  9,
+                                            "draws":  3,
+                                            "losses":  5,
+                                            "goalsFor":  27,
+                                            "goalsAgainst":  22,
+                                            "goalDiff":  5,
+                                            "pct":  58,
+                                            "zone":  1,
+                                            "movement":  ""
+                                        },
+                                        {
+                                            "pos":  4,
+                                            "name":  "Athletico-PR",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
+                                            "points":  27,
+                                            "games":  17,
+                                            "wins":  8,
+                                            "draws":  3,
+                                            "losses":  6,
+                                            "goalsFor":  23,
+                                            "goalsAgainst":  18,
+                                            "goalDiff":  5,
+                                            "pct":  52,
+                                            "zone":  1,
+                                            "movement":  "S1"
+                                        },
+                                        {
+                                            "pos":  5,
+                                            "name":  "Bragantino",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
+                                            "points":  26,
+                                            "games":  17,
+                                            "wins":  8,
+                                            "draws":  2,
+                                            "losses":  7,
+                                            "goalsFor":  22,
+                                            "goalsAgainst":  18,
+                                            "goalDiff":  4,
+                                            "pct":  50,
+                                            "zone":  1,
+                                            "movement":  "S1"
+                                        },
+                                        {
+                                            "pos":  6,
+                                            "name":  "Coritiba",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
+                                            "points":  26,
+                                            "games":  17,
+                                            "wins":  7,
+                                            "draws":  5,
+                                            "losses":  5,
+                                            "goalsFor":  24,
+                                            "goalsAgainst":  21,
+                                            "goalDiff":  3,
+                                            "pct":  50,
+                                            "zone":  2,
+                                            "movement":  "S2"
+                                        },
+                                        {
+                                            "pos":  7,
+                                            "name":  "São Paulo",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+                                            "points":  25,
+                                            "games":  17,
+                                            "wins":  7,
+                                            "draws":  4,
+                                            "losses":  6,
+                                            "goalsFor":  23,
+                                            "goalsAgainst":  19,
+                                            "goalDiff":  4,
+                                            "pct":  49,
+                                            "zone":  2,
+                                            "movement":  "D3"
+                                        },
+                                        {
+                                            "pos":  8,
+                                            "name":  "Bahia",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
+                                            "points":  23,
+                                            "games":  16,
+                                            "wins":  6,
+                                            "draws":  5,
+                                            "losses":  5,
+                                            "goalsFor":  22,
+                                            "goalsAgainst":  23,
+                                            "goalDiff":  -1,
+                                            "pct":  47,
+                                            "zone":  2,
+                                            "movement":  "D1"
+                                        },
+                                        {
+                                            "pos":  9,
+                                            "name":  "Cruzeiro",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
+                                            "points":  23,
+                                            "games":  17,
+                                            "wins":  6,
+                                            "draws":  5,
+                                            "losses":  6,
+                                            "goalsFor":  23,
+                                            "goalsAgainst":  27,
+                                            "goalDiff":  -4,
+                                            "pct":  45,
+                                            "zone":  2,
+                                            "movement":  "S4"
+                                        },
+                                        {
+                                            "pos":  10,
+                                            "name":  "Botafogo",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/tcqnk0sg0h1rnb0tfkpfpphg.png",
+                                            "points":  22,
+                                            "games":  16,
+                                            "wins":  6,
+                                            "draws":  4,
+                                            "losses":  6,
+                                            "goalsFor":  30,
+                                            "goalsAgainst":  29,
+                                            "goalDiff":  1,
+                                            "pct":  45,
+                                            "zone":  2,
+                                            "movement":  "D2"
+                                        },
+                                        {
+                                            "pos":  11,
+                                            "name":  "Vitória",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6i1s87dug4dqvsbcrmqr0q3b3.png",
+                                            "points":  22,
+                                            "games":  16,
+                                            "wins":  6,
+                                            "draws":  4,
+                                            "losses":  6,
+                                            "goalsFor":  20,
+                                            "goalsAgainst":  22,
+                                            "goalDiff":  -2,
+                                            "pct":  45,
+                                            "zone":  2,
+                                            "movement":  "S3"
+                                        },
+                                        {
+                                            "pos":  12,
+                                            "name":  "Atlético-MG",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
+                                            "points":  21,
+                                            "games":  17,
+                                            "wins":  6,
+                                            "draws":  3,
+                                            "losses":  8,
+                                            "goalsFor":  21,
+                                            "goalsAgainst":  23,
+                                            "goalDiff":  -2,
+                                            "pct":  41,
+                                            "zone":  3,
+                                            "movement":  "D2"
+                                        },
+                                        {
+                                            "pos":  13,
+                                            "name":  "Internacional",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
+                                            "points":  21,
+                                            "games":  17,
+                                            "wins":  5,
+                                            "draws":  6,
+                                            "losses":  6,
+                                            "goalsFor":  20,
+                                            "goalsAgainst":  19,
+                                            "goalDiff":  1,
+                                            "pct":  41,
+                                            "zone":  3,
+                                            "movement":  "D2"
+                                        },
+                                        {
+                                            "pos":  14,
+                                            "name":  "Grêmio",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
+                                            "points":  21,
+                                            "games":  17,
+                                            "wins":  5,
+                                            "draws":  6,
+                                            "losses":  6,
+                                            "goalsFor":  19,
+                                            "goalsAgainst":  20,
+                                            "goalDiff":  -1,
+                                            "pct":  41,
+                                            "zone":  3,
+                                            "movement":  "S1"
+                                        },
+                                        {
+                                            "pos":  15,
+                                            "name":  "Corinthians",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  21,
+                                            "games":  17,
+                                            "wins":  5,
+                                            "draws":  6,
+                                            "losses":  6,
+                                            "goalsFor":  15,
+                                            "goalsAgainst":  18,
+                                            "goalDiff":  -3,
+                                            "pct":  41,
+                                            "zone":  3,
+                                            "movement":  "S2"
+                                        },
+                                        {
+                                            "pos":  16,
+                                            "name":  "Vasco da Gama",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/51lj98l638hdi18rdaglc28lo3.png",
+                                            "points":  20,
+                                            "games":  17,
+                                            "wins":  5,
+                                            "draws":  5,
+                                            "losses":  7,
+                                            "goalsFor":  22,
+                                            "goalsAgainst":  28,
+                                            "goalDiff":  -6,
+                                            "pct":  39,
+                                            "zone":  3,
+                                            "movement":  "D4"
+                                        },
+                                        {
+                                            "pos":  17,
+                                            "name":  "Santos",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
+                                            "points":  18,
+                                            "games":  17,
+                                            "wins":  4,
+                                            "draws":  6,
+                                            "losses":  7,
+                                            "goalsFor":  23,
+                                            "goalsAgainst":  28,
+                                            "goalDiff":  -5,
+                                            "pct":  35,
+                                            "zone":  4,
+                                            "movement":  "D1"
+                                        },
+                                        {
+                                            "pos":  18,
+                                            "name":  "Mirassol",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  16,
+                                            "games":  16,
+                                            "wins":  4,
+                                            "draws":  4,
+                                            "losses":  8,
+                                            "goalsFor":  18,
+                                            "goalsAgainst":  23,
+                                            "goalDiff":  -5,
+                                            "pct":  33,
+                                            "zone":  4,
+                                            "movement":  "S1"
+                                        },
+                                        {
+                                            "pos":  19,
+                                            "name":  "Remo",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  15,
+                                            "games":  17,
+                                            "wins":  3,
+                                            "draws":  6,
+                                            "losses":  8,
+                                            "goalsFor":  20,
+                                            "goalsAgainst":  29,
+                                            "goalDiff":  -9,
+                                            "pct":  29,
+                                            "zone":  4,
+                                            "movement":  "D1"
+                                        },
+                                        {
+                                            "pos":  20,
+                                            "name":  "Chapecoense",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  9,
+                                            "games":  16,
+                                            "wins":  1,
+                                            "draws":  6,
+                                            "losses":  9,
+                                            "goalsFor":  17,
+                                            "goalsAgainst":  32,
+                                            "goalDiff":  -15,
+                                            "pct":  18,
+                                            "zone":  4,
+                                            "movement":  ""
+                                        }
+                                    ]
+                      },
+                      {
+                          "championship":  "Copa Libertadores",
+                          "championshipKey":  "libertadores",
+                          "teams":  [
+                                        {
+                                            "pos":  1,
+                                            "name":  "River Plate",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  6,
+                                            "games":  2,
+                                            "wins":  2,
+                                            "draws":  0,
+                                            "losses":  0,
+                                            "goalsFor":  5,
+                                            "goalsAgainst":  1,
+                                            "goalDiff":  4,
+                                            "pct":  100,
+                                            "zone":  1,
+                                            "movement":  ""
+                                        },
+                                        {
+                                            "pos":  2,
+                                            "name":  "Corinthians",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  4,
+                                            "games":  2,
+                                            "wins":  1,
+                                            "draws":  1,
+                                            "losses":  0,
+                                            "goalsFor":  4,
+                                            "goalsAgainst":  1,
+                                            "goalDiff":  3,
+                                            "pct":  66,
+                                            "zone":  1,
+                                            "movement":  ""
+                                        },
+                                        {
+                                            "pos":  3,
+                                            "name":  "Boca Juniors",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  1,
+                                            "games":  2,
+                                            "wins":  0,
+                                            "draws":  1,
+                                            "losses":  1,
+                                            "goalsFor":  2,
+                                            "goalsAgainst":  4,
+                                            "goalDiff":  -2,
+                                            "pct":  16,
+                                            "zone":  2,
+                                            "movement":  ""
+                                        },
+                                        {
+                                            "pos":  4,
+                                            "name":  "Nacional",
+                                            "shield":  "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
+                                            "points":  0,
+                                            "games":  2,
+                                            "wins":  0,
+                                            "draws":  0,
+                                            "losses":  2,
+                                            "goalsFor":  1,
+                                            "goalsAgainst":  6,
+                                            "goalDiff":  -5,
+                                            "pct":  0,
+                                            "zone":  3,
+                                            "movement":  ""
+                                        }
+                                    ]
+                      }
+                  ],
+    "lineups":  {
+                    "93201":  [
+                                  {
+                                      "team":  "São Paulo",
+                                      "acronym":  "SAO",
+                                      "players":  [
+                                                      {
+                                                          "num":  "1",
+                                                          "pos":  "Goleiro",
+                                                          "name":  "Rafael"
+                                                      },
+                                                      {
+                                                          "num":  "2",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Igor Vinicius"
+                                                      },
+                                                      {
+                                                          "num":  "3",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Arboleda"
+                                                      },
+                                                      {
+                                                          "num":  "4",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Alan Franco"
+                                                      },
+                                                      {
+                                                          "num":  "6",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Welington"
+                                                      },
+                                                      {
+                                                          "num":  "5",
+                                                          "pos":  "Volante",
+                                                          "name":  "Pablo Maia"
+                                                      },
+                                                      {
+                                                          "num":  "8",
+                                                          "pos":  "Meia",
+                                                          "name":  "Lucas Moura"
+                                                      },
+                                                      {
+                                                          "num":  "10",
+                                                          "pos":  "Meia",
+                                                          "name":  "Luciano"
+                                                      },
+                                                      {
+                                                          "num":  "7",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Ferreira"
+                                                      },
+                                                      {
+                                                          "num":  "9",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Calleri"
+                                                      },
+                                                      {
+                                                          "num":  "11",
+                                                          "pos":  "Atacante",
+                                                          "name":  "André Silva"
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "team":  "Corinthians",
+                                      "acronym":  "COR",
+                                      "players":  [
+                                                      {
+                                                          "num":  "1",
+                                                          "pos":  "Goleiro",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "num":  "2",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "num":  "3",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gabriel Paulista"
+                                                      },
+                                                      {
+                                                          "num":  "4",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "num":  "6",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Matheus Bidu"
+                                                      },
+                                                      {
+                                                          "num":  "5",
+                                                          "pos":  "Volante",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "num":  "8",
+                                                          "pos":  "Meia",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "num":  "7",
+                                                          "pos":  "Meia",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "num":  "10",
+                                                          "pos":  "Meia",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "num":  "9",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "num":  "11",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Pedro Raul"
+                                                      }
+                                                  ]
+                                  }
+                              ],
+                    "93204":  [
+                                  {
+                                      "team":  "Corinthians",
+                                      "acronym":  "COR",
+                                      "players":  [
+                                                      {
+                                                          "num":  "1",
+                                                          "pos":  "Goleiro",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "num":  "2",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "num":  "3",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gabriel Paulista"
+                                                      },
+                                                      {
+                                                          "num":  "4",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "num":  "6",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Matheus Bidu"
+                                                      },
+                                                      {
+                                                          "num":  "5",
+                                                          "pos":  "Volante",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "num":  "8",
+                                                          "pos":  "Meia",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "num":  "7",
+                                                          "pos":  "Meia",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "num":  "10",
+                                                          "pos":  "Meia",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "num":  "9",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "num":  "11",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Talles Magno"
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "team":  "Santos",
+                                      "acronym":  "SAN",
+                                      "players":  [
+                                                      {
+                                                          "num":  "1",
+                                                          "pos":  "Goleiro",
+                                                          "name":  "João Paulo"
+                                                      },
+                                                      {
+                                                          "num":  "2",
+                                                          "pos":  "Lateral",
+                                                          "name":  "J. Medeiros"
+                                                      },
+                                                      {
+                                                          "num":  "3",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gil"
+                                                      },
+                                                      {
+                                                          "num":  "4",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "João Basso"
+                                                      },
+                                                      {
+                                                          "num":  "6",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Escobar"
+                                                      },
+                                                      {
+                                                          "num":  "5",
+                                                          "pos":  "Volante",
+                                                          "name":  "João Schmidt"
+                                                      },
+                                                      {
+                                                          "num":  "8",
+                                                          "pos":  "Meia",
+                                                          "name":  "Diego Pituca"
+                                                      },
+                                                      {
+                                                          "num":  "10",
+                                                          "pos":  "Meia",
+                                                          "name":  "Soteldo"
+                                                      },
+                                                      {
+                                                          "num":  "7",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Guilherme"
+                                                      },
+                                                      {
+                                                          "num":  "9",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Furch"
+                                                      },
+                                                      {
+                                                          "num":  "11",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Weslley Patati"
+                                                      }
+                                                  ]
+                                  }
+                              ],
+                    "93207":  [
+                                  {
+                                      "team":  "Cruzeiro",
+                                      "acronym":  "CRU",
+                                      "players":  [
+                                                      {
+                                                          "num":  "1",
+                                                          "pos":  "Goleiro",
+                                                          "name":  "Cássio"
+                                                      },
+                                                      {
+                                                          "num":  "2",
+                                                          "pos":  "Lateral",
+                                                          "name":  "William"
+                                                      },
+                                                      {
+                                                          "num":  "3",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Lucas Oliveira"
+                                                      },
+                                                      {
+                                                          "num":  "4",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Luciano Castán"
+                                                      },
+                                                      {
+                                                          "num":  "6",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Marlon"
+                                                      },
+                                                      {
+                                                          "num":  "5",
+                                                          "pos":  "Volante",
+                                                          "name":  "Lucas Silva"
+                                                      },
+                                                      {
+                                                          "num":  "8",
+                                                          "pos":  "Meia",
+                                                          "name":  "Matheus Pereira"
+                                                      },
+                                                      {
+                                                          "num":  "10",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Gabriel Veron"
+                                                      },
+                                                      {
+                                                          "num":  "7",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Rafael Bilu"
+                                                      }
+                                                  ]
+                                  },
+                                  {
+                                      "team":  "Corinthians",
+                                      "acronym":  "COR",
+                                      "players":  [
+                                                      {
+                                                          "num":  "1",
+                                                          "pos":  "Goleiro",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "num":  "2",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "num":  "3",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gabriel Paulista"
+                                                      },
+                                                      {
+                                                          "num":  "4",
+                                                          "pos":  "Zagueiro",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "num":  "6",
+                                                          "pos":  "Lateral",
+                                                          "name":  "Matheus Bidu"
+                                                      },
+                                                      {
+                                                          "num":  "5",
+                                                          "pos":  "Volante",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "num":  "8",
+                                                          "pos":  "Meia",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "num":  "7",
+                                                          "pos":  "Meia",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "num":  "10",
+                                                          "pos":  "Meia",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "num":  "9",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "num":  "11",
+                                                          "pos":  "Atacante",
+                                                          "name":  "Talles Magno"
+                                                      }
+                                                  ]
+                                  }
+                              ],
+                    "93202":  [
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Andre Ramalho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "6",
+                                                          "name":  "Matheus Bidu"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "7",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Pedro Raul"
+                                                      }
+                                                  ],
+                                      "acronym":  "COR",
+                                      "team":  "Corinthians"
+                                  },
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "21",
+                                                          "name":  "Weverton"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Marcos Rocha"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "15",
+                                                          "name":  "Gustavo Gomez"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "26",
+                                                          "name":  "Murilo"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "22",
+                                                          "name":  "Piquerez"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "8",
+                                                          "name":  "Z� Rafael"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "27",
+                                                          "name":  "Richard Rios"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "9",
+                                                          "name":  "Raphael Veiga"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "10",
+                                                          "name":  "Estevao"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "7",
+                                                          "name":  "Dudu"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "19",
+                                                          "name":  "Lopez"
+                                                      }
+                                                  ],
+                                      "acronym":  "PAL",
+                                      "team":  "Palmeiras"
+                                  }
+                              ],
+                    "93203":  [
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Gabriel Paulista"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "25",
+                                                          "name":  "Caca"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "21",
+                                                          "name":  "Diego Palacios"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "7",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Memphis Depay"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Talles Magno"
+                                                      }
+                                                  ],
+                                      "acronym":  "COR",
+                                      "team":  "Corinthians"
+                                  },
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Agust�n Rossi"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Guillermo Varela"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Leo Ortiz"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Leo Pereira"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "6",
+                                                          "name":  "Ayrton Lucas"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Erick Pulgar"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Gerson"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "7",
+                                                          "name":  "De Arrascaeta"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "10",
+                                                          "name":  "Bruno Henrique"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Pedro"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Michael"
+                                                      }
+                                                  ],
+                                      "acronym":  "FLA",
+                                      "team":  "Flamengo"
+                                  }
+                              ],
+                    "93205":  [
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Gabriel Paulista"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "21",
+                                                          "name":  "Diego Palacios"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "7",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "14",
+                                                          "name":  "Pedro Raul"
+                                                      }
+                                                  ],
+                                      "acronym":  "COR",
+                                      "team":  "Corinthians"
+                                  },
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Franco Armani"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Sebastian Boselli"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Leandro Gonzalez Pirez"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Paulo D�az"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "5",
+                                                          "name":  "Marcelo Acu�a"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "6",
+                                                          "name":  "Enzo P�rez"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Ignacio Fernandez"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Manuel Lanzini"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "7",
+                                                          "name":  "Pablo Solari"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Facundo Colidio"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Miguel Borja"
+                                                      }
+                                                  ],
+                                      "acronym":  "RIV",
+                                      "team":  "River Plate"
+                                  }
+                              ],
+                    "93206":  [
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Luis Mej�a"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Leandro Lozano"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Juan Izquierdo"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Daniel Bocanegra"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "6",
+                                                          "name":  "Mateo Antoni"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Yonatan Rodriguez"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Mauricio Pereyra"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Diego Zabala"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "7",
+                                                          "name":  "Rodrigo Amaral"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Sebastian Palacios"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Gustavo Caraballo"
+                                                      }
+                                                  ],
+                                      "acronym":  "NAC",
+                                      "team":  "Nacional"
+                                  },
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Gabriel Paulista"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "21",
+                                                          "name":  "Diego Palacios"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "7",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Talles Magno"
+                                                      }
+                                                  ],
+                                      "acronym":  "COR",
+                                      "team":  "Corinthians"
+                                  }
+                              ],
+                    "93208":  [
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Hugo Souza"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Matheuzinho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "25",
+                                                          "name":  "Andre Ramalho"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Gustavo Henrique"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "21",
+                                                          "name":  "Diego Palacios"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Raniele"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Rodrigo Garro"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "7",
+                                                          "name":  "Breno Bidon"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Andre Carrillo"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Yuri Alberto"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Talles Magno"
+                                                      }
+                                                  ],
+                                      "acronym":  "COR",
+                                      "team":  "Corinthians"
+                                  },
+                                  {
+                                      "players":  [
+                                                      {
+                                                          "pos":  "Goleiro",
+                                                          "num":  "1",
+                                                          "name":  "Tiago Volpi"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "2",
+                                                          "name":  "Jo�o Pedro"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "3",
+                                                          "name":  "Rodrigo Ely"
+                                                      },
+                                                      {
+                                                          "pos":  "Zagueiro",
+                                                          "num":  "4",
+                                                          "name":  "Kannemann"
+                                                      },
+                                                      {
+                                                          "pos":  "Lateral",
+                                                          "num":  "6",
+                                                          "name":  "Reinaldo"
+                                                      },
+                                                      {
+                                                          "pos":  "Volante",
+                                                          "num":  "5",
+                                                          "name":  "Villasanti"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "8",
+                                                          "name":  "Cristaldo"
+                                                      },
+                                                      {
+                                                          "pos":  "Meia",
+                                                          "num":  "10",
+                                                          "name":  "Monsalve"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "7",
+                                                          "name":  "Pavon"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "9",
+                                                          "name":  "Braithwaite"
+                                                      },
+                                                      {
+                                                          "pos":  "Atacante",
+                                                          "num":  "11",
+                                                          "name":  "Soteldo"
+                                                      }
+                                                  ],
+                                      "acronym":  "GRE",
+                                      "team":  "Gremio"
+                                  }
+                              ]
+                }
+}

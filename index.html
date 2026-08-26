@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Acompanhe os proximos jogos do Corinthians: placar ao vivo, escalações, classificação e notificações.">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Corinthians Tracker">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="logocorinthians.svg">
+<link rel="manifest" href="manifest.json">
+<title>Corinthians - Proximos Jogos</title>
+</head>
+<body>
+<div class="container">
+  <header>
+    <img src="logocorinthians.svg" alt="Corinthians" class="logo">
+    <h1>Corinthians <span>Tracker</span></h1>
+    <p>Proximos jogos do Timao</p>
+    <div class="sbar"><span class="sdot gray" id="sdot"></span><span class="stxt" id="stxt">Carregando...</span></div>
+    <button class="notif-btn" id="notifBtn" title="Notificacoes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></button>
+    <button class="ham-btn" id="hamBtn" title="Classificacao"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  </header>
+
+  <div class="notif-overlay" id="notifOverlay"></div>
+  <section class="panel" id="notifPanel">
+    <div class="panel-header"><h2>Notificacoes</h2><button class="panel-close" id="panelClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="nrow"><label for="notifT">Notificacoes do navegador</label><label class="switch"><input type="checkbox" id="notifT"><span class="sl"></span></label></div>
+    <div class="nrow"><label for="remindT">Lembrar 1 hora antes</label><label class="switch"><input type="checkbox" id="remindT" checked><span class="sl"></span></label></div>
+  </section>
+
+  <div class="ham-overlay" id="hamOverlay"></div>
+  <section class="panel panel-standings" id="hamPanel">
+    <div class="panel-header"><h2>Menu</h2><button class="panel-close" id="hamClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ham-tabs" id="hamTabs">
+      <button class="htab ativo" data-tab="classif">Classificacão</button>
+      <button class="htab" data-tab="escalacao">Escalação</button>
+      <button class="htab" data-tab="historico">Histórico</button>
+      <button class="htab" data-tab="aproveitamento">Aproveitamento</button>
+      <button class="htab" data-tab="sequencia">Sequência</button>
+      <button class="htab" data-tab="calendario">Calendário</button>
+      <button class="htab" data-tab="exportar">Exportar</button>
+    </div>
+    <div class="ham-content" id="hamContent"></div>
+  </section>
+
+  <div class="mtop"><h2>Proximos Jogos</h2><button class="btn" id="refreshBtn">Atualizar</button></div>
+  <div class="filtros" id="filtros"></div>
+  <div id="matches"><div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><p>Carregando jogos...</p></div></div>
+  <footer>Corinthians Tracker &mdash; Ultima atualizacao: <span id="lastUpd">--</span></footer>
+</div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
