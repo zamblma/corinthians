@@ -716,11 +716,18 @@ function init() {
   $('#notifT').checked = st.notif;
   $('#remindT').checked = st.remind;
 
-  $('#notifT').addEventListener('change', () => {
-    st.notif = $('#notifT').checked; save();
-    if (st.notif && 'Notification' in window) {
-      if (Notification.permission === 'default') Notification.requestPermission();
-      else if (Notification.permission === 'denied') { toast('Notificacoes bloqueadas.'); st.notif = false; $('#notifT').checked = false; save(); }
+  $('#notifT').addEventListener('change', async () => {
+    const enabled = $('#notifT').checked;
+    st.notif = enabled; save();
+    if (enabled) {
+      toast('Ativando notificacoes...');
+      await toggleOneSignal(true);
+      const isSubscribed = await new Promise(r => OneSignal.push(async () => r(await OneSignal.isPushNotificationsEnabled())));
+      if (isSubscribed) toast('Notificacoes ativadas!');
+      else { toast('Notificacoes bloqueadas pelo navegador.'); st.notif = false; $('#notifT').checked = false; save(); }
+    } else {
+      await toggleOneSignal(false);
+      toast('Notificacoes desativadas.');
     }
   });
   $('#remindT').addEventListener('change', () => { st.remind = $('#remindT').checked; save(); });
@@ -749,6 +756,15 @@ function init() {
   if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission();
   buscarJogos();
   setInterval(buscarJogos, 60000);
+
+  // Check OneSignal subscription status on load
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(async function() {
+    const isSubscribed = await OneSignal.isPushNotificationsEnabled();
+    st.notif = isSubscribed;
+    $('#notifT').checked = isSubscribed;
+    save();
+  });
 
   // Touch swipe gestures
   let tx = 0, touchPanel = false;
@@ -781,20 +797,6 @@ function init() {
     }
   }, { passive: true });
 }
-
-async function registrarSW() {
-  if ('serviceWorker' in navigator) {
-    try {
-      const reg = await navigator.serviceWorker.register('sw.js');
-      await navigator.serviceWorker.ready;
-      return reg;
-    } catch(e) { return null; }
-  }
-  return null;
-}
-
-let swReg = null;
-registrarSW().then(r => swReg = r);
 
 function renderMatchModal(m) {
   if (!m || !m.isLive) return;
@@ -839,9 +841,35 @@ function renderMatchModal(m) {
 }
 
 function notificar(title, body, tag) {
-  if (!st.notif || Notification.permission !== 'granted') return;
-  if (swReg) swReg.active.postMessage({ type: 'notify', title, body, tag });
-  else new Notification(title, { body, icon: 'logocorinthians.svg' });
+  if (!st.notif) return;
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+      if (isEnabled) {
+        OneSignal.sendSelfNotification(title, body, 'logocorinthians.svg', { tag: tag || 'cor-match' });
+      } else if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification(title, { body, icon: 'logocorinthians.svg' });
+      }
+    });
+  });
+}
+
+async function toggleOneSignal(enable) {
+  window.OneSignal = window.OneSignal || [];
+  return new Promise((resolve) => {
+    OneSignal.push(async function() {
+      if (enable) {
+        const isSubscribed = await OneSignal.isPushNotificationsEnabled();
+        if (!isSubscribed) {
+          await OneSignal.Slidedown.promptPush();
+        }
+        resolve(true);
+      } else {
+        await OneSignal.setSubscription(false);
+        resolve(false);
+      }
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', init);
