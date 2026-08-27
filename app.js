@@ -716,6 +716,46 @@ function init() {
   $('#notifT').checked = st.notif;
   $('#remindT').checked = st.remind;
 
+  // Check OneSignal subscription status on load and show/hide CTA
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(async function() {
+    const isSubscribed = await OneSignal.isPushNotificationsEnabled();
+    st.notif = isSubscribed;
+    $('#notifT').checked = isSubscribed;
+    if (isSubscribed) {
+      $('#notifCta').style.display = 'none';
+      $('#notifSettings').style.display = 'block';
+    } else {
+      $('#notifCta').style.display = 'block';
+      $('#notifSettings').style.display = 'none';
+    }
+    save();
+  });
+
+  // Big "Ativar Notificações" button
+  $('#notifEnableBtn').addEventListener('click', async () => {
+    toast('Abrindo permissao...');
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(async function() {
+      try {
+        await OneSignal.Slidedown.promptPush();
+        const isSubscribed = await OneSignal.isPushNotificationsEnabled();
+        if (isSubscribed) {
+          st.notif = true;
+          $('#notifT').checked = true;
+          $('#notifCta').style.display = 'none';
+          $('#notifSettings').style.display = 'block';
+          save();
+          toast('Notificacoes ativadas!');
+        } else {
+          toast('Permissao negada. Ative manualmente nas configuracoes do navegador.');
+        }
+      } catch (e) {
+        toast('Erro ao ativar notificacoes.');
+      }
+    });
+  });
+
   $('#notifT').addEventListener('change', async () => {
     const enabled = $('#notifT').checked;
     st.notif = enabled; save();
@@ -723,11 +763,16 @@ function init() {
       toast('Ativando notificacoes...');
       await toggleOneSignal(true);
       const isSubscribed = await new Promise(r => OneSignal.push(async () => r(await OneSignal.isPushNotificationsEnabled())));
-      if (isSubscribed) toast('Notificacoes ativadas!');
-      else { toast('Notificacoes bloqueadas pelo navegador.'); st.notif = false; $('#notifT').checked = false; save(); }
+      if (isSubscribed) {
+        toast('Notificacoes ativadas!');
+        $('#notifCta').style.display = 'none';
+        $('#notifSettings').style.display = 'block';
+      } else { toast('Notificacoes bloqueadas pelo navegador.'); st.notif = false; $('#notifT').checked = false; save(); }
     } else {
       await toggleOneSignal(false);
       toast('Notificacoes desativadas.');
+      $('#notifCta').style.display = 'block';
+      $('#notifSettings').style.display = 'none';
     }
   });
   $('#remindT').addEventListener('change', () => { st.remind = $('#remindT').checked; save(); });
@@ -756,15 +801,6 @@ function init() {
   if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission();
   buscarJogos();
   setInterval(buscarJogos, 60000);
-
-  // Check OneSignal subscription status on load
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(async function() {
-    const isSubscribed = await OneSignal.isPushNotificationsEnabled();
-    st.notif = isSubscribed;
-    $('#notifT').checked = isSubscribed;
-    save();
-  });
 
   // Touch swipe gestures
   let tx = 0, touchPanel = false;

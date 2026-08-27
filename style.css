@@ -231,6 +231,20 @@ header p { color: var(--gray-400); margin-top: 6px; font-size: 0.85rem; letter-s
 .nrow { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .nrow:last-child { margin-bottom: 0; }
 .nrow label { color: var(--gray-200); font-size: 0.9rem; cursor: pointer; }
+
+/* Notification CTA */
+.notif-cta {
+  text-align: center; padding: 20px 0;
+}
+.notif-cta p {
+  color: var(--gray-300); font-size: 0.9rem; margin-bottom: 16px;
+}
+.btn-notif {
+  background: var(--accent); color: var(--black); border: none;
+  padding: 12px 28px; border-radius: 12px; font-size: 0.9rem; font-weight: 700;
+  cursor: pointer; transition: 0.2s; width: 100%;
+}
+.btn-notif:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,255,255,0.15); }
 .switch { position: relative; width: 44px; height: 24px; flex-shrink: 0; }
 .switch input { opacity: 0; width: 0; height: 0; }
 .switch .sl {

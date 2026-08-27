@@ -27,8 +27,14 @@
   <div class="notif-overlay" id="notifOverlay"></div>
   <section class="panel" id="notifPanel">
     <div class="panel-header"><h2>Notificacoes</h2><button class="panel-close" id="panelClose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
-    <div class="nrow"><label for="notifT">Notificacoes do navegador</label><label class="switch"><input type="checkbox" id="notifT"><span class="sl"></span></label></div>
-    <div class="nrow"><label for="remindT">Lembrar 1 hora antes</label><label class="switch"><input type="checkbox" id="remindT" checked><span class="sl"></span></label></div>
+    <div class="notif-cta" id="notifCta">
+      <p>Receba alertas de gols e jogos no celular</p>
+      <button class="btn btn-notif" id="notifEnableBtn">Ativar Notificacoes</button>
+    </div>
+    <div class="notif-settings" id="notifSettings" style="display:none">
+      <div class="nrow"><label for="notifT">Notificacoes do navegador</label><label class="switch"><input type="checkbox" id="notifT"><span class="sl"></span></label></div>
+      <div class="nrow"><label for="remindT">Lembrar 1 hora antes</label><label class="switch"><input type="checkbox" id="remindT" checked><span class="sl"></span></label></div>
+    </div>
   </section>
 
   <div class="ham-overlay" id="hamOverlay"></div>
