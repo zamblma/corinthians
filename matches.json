@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-30T23:21:40.324Z",
+  "lastUpdated": "2026-08-31T05:10:55.599Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -565,7 +565,7 @@
       "stadium": "Neo Química Arena",
       "homeGoals": 0,
       "awayGoals": 1,
-      "status": "live",
+      "status": "finished",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
@@ -954,8 +954,8 @@
           "wins": 10,
           "draws": 10,
           "losses": 5,
-          "goalsFor": 36,
-          "goalsAgainst": 29,
+          "goalsFor": 37,
+          "goalsAgainst": 30,
           "goalDiff": 7,
           "pct": 53,
           "zone": 1,
@@ -1162,8 +1162,8 @@
           "wins": 5,
           "draws": 10,
           "losses": 10,
-          "goalsFor": 25,
-          "goalsAgainst": 30,
+          "goalsFor": 26,
+          "goalsAgainst": 31,
           "goalDiff": -5,
           "pct": 33,
           "zone": 4,
