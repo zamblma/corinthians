@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T18:05:21.910Z",
+  "lastUpdated": "2026-09-05T21:04:52.788Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -931,6 +931,22 @@
         },
         {
           "pos": 4,
+          "name": "Bahia",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
+          "points": 43,
+          "games": 26,
+          "wins": 11,
+          "draws": 10,
+          "losses": 5,
+          "goalsFor": 40,
+          "goalsAgainst": 32,
+          "goalDiff": 8,
+          "pct": 55,
+          "zone": 1,
+          "movement": "S1"
+        },
+        {
+          "pos": 5,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
           "points": 42,
@@ -943,23 +959,7 @@
           "goalDiff": 7,
           "pct": 56,
           "zone": 1,
-          "movement": "S"
-        },
-        {
-          "pos": 5,
-          "name": "Bahia",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
-          "points": 40,
-          "games": 25,
-          "wins": 10,
-          "draws": 10,
-          "losses": 5,
-          "goalsFor": 37,
-          "goalsAgainst": 30,
-          "goalDiff": 7,
-          "pct": 53,
-          "zone": 1,
-          "movement": "S1"
+          "movement": "D1"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": -1,
           "pct": 52,
           "zone": 2,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -991,7 +991,7 @@
           "goalDiff": 0,
           "pct": 49,
           "zone": 2,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1007,23 +1007,23 @@
           "goalDiff": 4,
           "pct": 50,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 9,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
           "points": 35,
-          "games": 24,
+          "games": 25,
           "wins": 10,
           "draws": 5,
-          "losses": 9,
-          "goalsFor": 29,
-          "goalsAgainst": 25,
-          "goalDiff": 4,
-          "pct": 48,
+          "losses": 10,
+          "goalsFor": 31,
+          "goalsAgainst": 28,
+          "goalDiff": 3,
+          "pct": 46,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 10,
@@ -1055,7 +1055,7 @@
           "goalDiff": 1,
           "pct": 41,
           "zone": 3,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": -3,
           "pct": 41,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,7 +1087,7 @@
           "goalDiff": -13,
           "pct": 38,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 14,
@@ -1135,7 +1135,7 @@
           "goalDiff": -12,
           "pct": 33,
           "zone": 0,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 17,
@@ -1151,7 +1151,7 @@
           "goalDiff": -12,
           "pct": 34,
           "zone": 4,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 18,
@@ -1167,7 +1167,7 @@
           "goalDiff": -5,
           "pct": 33,
           "zone": 4,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 19,
@@ -1183,7 +1183,7 @@
           "goalDiff": -12,
           "pct": 30,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 20,
