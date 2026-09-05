@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T21:04:52.788Z",
+  "lastUpdated": "2026-09-05T23:44:14.013Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -998,14 +998,14 @@
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
           "points": 36,
-          "games": 24,
+          "games": 25,
           "wins": 10,
           "draws": 6,
-          "losses": 8,
+          "losses": 9,
           "goalsFor": 32,
-          "goalsAgainst": 28,
-          "goalDiff": 4,
-          "pct": 50,
+          "goalsAgainst": 30,
+          "goalDiff": 2,
+          "pct": 48,
           "zone": 3,
           "movement": "S"
         },
@@ -1027,6 +1027,22 @@
         },
         {
           "pos": 10,
+          "name": "São Paulo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+          "points": 33,
+          "games": 25,
+          "wins": 9,
+          "draws": 6,
+          "losses": 10,
+          "goalsFor": 31,
+          "goalsAgainst": 28,
+          "goalDiff": 3,
+          "pct": 44,
+          "zone": 3,
+          "movement": "S1"
+        },
+        {
+          "pos": 11,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
           "points": 32,
@@ -1039,23 +1055,7 @@
           "goalDiff": 1,
           "pct": 42,
           "zone": 3,
-          "movement": "S"
-        },
-        {
-          "pos": 11,
-          "name": "São Paulo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 30,
-          "games": 24,
-          "wins": 8,
-          "draws": 6,
-          "losses": 10,
-          "goalsFor": 29,
-          "goalsAgainst": 28,
-          "goalDiff": 1,
-          "pct": 41,
-          "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 12,
