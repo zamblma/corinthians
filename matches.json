@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-11T22:25:07.790Z",
+  "lastUpdated": "2026-09-12T01:00:48.586Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -895,7 +895,7 @@
           "goalDiff": 30,
           "pct": 69,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 2,
@@ -911,21 +911,21 @@
           "goalDiff": 24,
           "pct": 67,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 3,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
-          "points": 45,
-          "games": 26,
-          "wins": 13,
+          "points": 48,
+          "games": 27,
+          "wins": 14,
           "draws": 6,
           "losses": 7,
-          "goalsFor": 38,
+          "goalsFor": 40,
           "goalsAgainst": 28,
-          "goalDiff": 10,
-          "pct": 57,
+          "goalDiff": 12,
+          "pct": 59,
           "zone": 1,
           "movement": "S"
         },
@@ -982,14 +982,14 @@
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 37,
-          "games": 26,
+          "games": 27,
           "wins": 10,
           "draws": 7,
-          "losses": 9,
+          "losses": 10,
           "goalsFor": 34,
-          "goalsAgainst": 35,
-          "goalDiff": -1,
-          "pct": 47,
+          "goalsAgainst": 37,
+          "goalDiff": -3,
+          "pct": 45,
           "zone": 2,
           "movement": "S"
         },
@@ -1039,7 +1039,7 @@
           "goalDiff": 3,
           "pct": 44,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": -12,
           "pct": 41,
           "zone": 3,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": 0,
           "pct": 41,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,7 +1087,7 @@
           "goalDiff": -1,
           "pct": 42,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 14,
@@ -1103,7 +1103,7 @@
           "goalDiff": -3,
           "pct": 41,
           "zone": 0,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 15,
