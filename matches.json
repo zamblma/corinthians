@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-14T23:02:59.339Z",
+  "lastUpdated": "2026-09-15T04:35:55.250Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -931,6 +931,22 @@
         },
         {
           "pos": 4,
+          "name": "Bahia",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
+          "points": 46,
+          "games": 27,
+          "wins": 12,
+          "draws": 10,
+          "losses": 5,
+          "goalsFor": 42,
+          "goalsAgainst": 33,
+          "goalDiff": 9,
+          "pct": 56,
+          "zone": 1,
+          "movement": "S1"
+        },
+        {
+          "pos": 5,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
           "points": 45,
@@ -943,23 +959,7 @@
           "goalDiff": 6,
           "pct": 55,
           "zone": 1,
-          "movement": "S"
-        },
-        {
-          "pos": 5,
-          "name": "Bahia",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
-          "points": 43,
-          "games": 26,
-          "wins": 11,
-          "draws": 10,
-          "losses": 5,
-          "goalsFor": 40,
-          "goalsAgainst": 32,
-          "goalDiff": 8,
-          "pct": 55,
-          "zone": 1,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 6,
@@ -1174,14 +1174,14 @@
           "name": "Remo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
           "points": 23,
-          "games": 26,
+          "games": 27,
           "wins": 5,
           "draws": 8,
-          "losses": 13,
-          "goalsFor": 30,
-          "goalsAgainst": 43,
-          "goalDiff": -13,
-          "pct": 29,
+          "losses": 14,
+          "goalsFor": 31,
+          "goalsAgainst": 45,
+          "goalDiff": -14,
+          "pct": 28,
           "zone": 4,
           "movement": "S"
         },
