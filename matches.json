@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19T17:08:30.088Z",
+  "lastUpdated": "2026-09-19T20:27:39.656Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -943,7 +943,7 @@
           "goalDiff": 9,
           "pct": 56,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 5,
@@ -959,7 +959,7 @@
           "goalDiff": 6,
           "pct": 55,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -982,16 +982,16 @@
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
           "points": 39,
-          "games": 26,
+          "games": 27,
           "wins": 11,
           "draws": 6,
-          "losses": 9,
+          "losses": 10,
           "goalsFor": 35,
-          "goalsAgainst": 31,
-          "goalDiff": 4,
-          "pct": 50,
+          "goalsAgainst": 32,
+          "goalDiff": 3,
+          "pct": 48,
           "zone": 2,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1007,7 +1007,7 @@
           "goalDiff": -1,
           "pct": 46,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 9,
@@ -1039,23 +1039,23 @@
           "goalDiff": 0,
           "pct": 44,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 11,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 35,
-          "games": 27,
+          "games": 28,
           "wins": 9,
           "draws": 8,
-          "losses": 10,
+          "losses": 11,
           "goalsFor": 41,
-          "goalsAgainst": 43,
-          "goalDiff": -2,
-          "pct": 43,
+          "goalsAgainst": 44,
+          "goalDiff": -3,
+          "pct": 41,
           "zone": 3,
-          "movement": "S3"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": 1,
           "pct": 42,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,7 +1087,7 @@
           "goalDiff": -12,
           "pct": 40,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 14,
@@ -1103,23 +1103,23 @@
           "goalDiff": -1,
           "pct": 39,
           "zone": 0,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 15,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
-          "points": 29,
-          "games": 27,
-          "wins": 7,
+          "points": 32,
+          "games": 28,
+          "wins": 8,
           "draws": 8,
           "losses": 12,
-          "goalsFor": 31,
+          "goalsFor": 32,
           "goalsAgainst": 42,
-          "goalDiff": -11,
-          "pct": 35,
+          "goalDiff": -10,
+          "pct": 38,
           "zone": 0,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 16,
@@ -1135,7 +1135,7 @@
           "goalDiff": -8,
           "pct": 34,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 17,
@@ -1189,15 +1189,15 @@
           "pos": 20,
           "name": "Chapecoense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/45pmtlqrtqh52qnch6fl7cdc1f.png",
-          "points": 17,
-          "games": 26,
-          "wins": 3,
+          "points": 20,
+          "games": 27,
+          "wins": 4,
           "draws": 8,
           "losses": 15,
-          "goalsFor": 28,
+          "goalsFor": 29,
           "goalsAgainst": 52,
-          "goalDiff": -24,
-          "pct": 21,
+          "goalDiff": -23,
+          "pct": 24,
           "zone": 4,
           "movement": "S"
         }
