@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-20T15:54:43.870Z",
+  "lastUpdated": "2026-09-20T18:40:00.810Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -632,9 +632,9 @@
       "awayTeam": "Fluminense",
       "awayAcronym": "FLU",
       "stadium": "Neo Química Arena",
-      "homeGoals": null,
-      "awayGoals": null,
-      "status": "scheduled",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "status": "live",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
