@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T00:04:50.906Z",
+  "lastUpdated": "2026-09-21T06:05:51.474Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -915,6 +915,22 @@
         },
         {
           "pos": 3,
+          "name": "Athletico-PR",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
+          "points": 49,
+          "games": 28,
+          "wins": 14,
+          "draws": 7,
+          "losses": 7,
+          "goalsFor": 43,
+          "goalsAgainst": 32,
+          "goalDiff": 11,
+          "pct": 58,
+          "zone": 1,
+          "movement": "S"
+        },
+        {
+          "pos": 4,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
           "points": 48,
@@ -927,37 +943,21 @@
           "goalDiff": 8,
           "pct": 57,
           "zone": 1,
-          "movement": "S2"
-        },
-        {
-          "pos": 4,
-          "name": "Athletico-PR",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
-          "points": 47,
-          "games": 28,
-          "wins": 13,
-          "draws": 8,
-          "losses": 7,
-          "goalsFor": 42,
-          "goalsAgainst": 32,
-          "goalDiff": 10,
-          "pct": 55,
-          "zone": 1,
-          "movement": "D1"
+          "movement": "S1"
         },
         {
           "pos": 5,
           "name": "Bahia",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
-          "points": 47,
+          "points": 46,
           "games": 28,
           "wins": 12,
-          "draws": 11,
-          "losses": 5,
+          "draws": 10,
+          "losses": 6,
           "goalsFor": 43,
-          "goalsAgainst": 34,
-          "goalDiff": 9,
-          "pct": 55,
+          "goalsAgainst": 35,
+          "goalDiff": 8,
+          "pct": 54,
           "zone": 1,
           "movement": "D1"
         },
