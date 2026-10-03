@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T23:41:15.328Z",
+  "lastUpdated": "2026-10-03T05:00:14.201Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -979,6 +979,22 @@
         },
         {
           "pos": 7,
+          "name": "Santos",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
+          "points": 41,
+          "games": 28,
+          "wins": 11,
+          "draws": 8,
+          "losses": 9,
+          "goalsFor": 43,
+          "goalsAgainst": 41,
+          "goalDiff": 2,
+          "pct": 48,
+          "zone": 2,
+          "movement": "S3"
+        },
+        {
+          "pos": 8,
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
           "points": 40,
@@ -990,43 +1006,11 @@
           "goalsAgainst": 32,
           "goalDiff": 4,
           "pct": 49,
-          "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 8,
-          "name": "São Paulo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 39,
-          "games": 28,
-          "wins": 11,
-          "draws": 6,
-          "losses": 11,
-          "goalsFor": 33,
-          "goalsAgainst": 30,
-          "goalDiff": 3,
-          "pct": 46,
           "zone": 3,
-          "movement": "S4"
+          "movement": "D1"
         },
         {
           "pos": 9,
-          "name": "Santos",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
-          "points": 38,
-          "games": 28,
-          "wins": 10,
-          "draws": 8,
-          "losses": 10,
-          "goalsFor": 41,
-          "goalsAgainst": 41,
-          "goalDiff": 0,
-          "pct": 45,
-          "zone": 3,
-          "movement": "S1"
-        },
-        {
-          "pos": 10,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 38,
@@ -1039,10 +1023,10 @@
           "goalDiff": -6,
           "pct": 45,
           "zone": 3,
-          "movement": "D2"
+          "movement": "D1"
         },
         {
-          "pos": 11,
+          "pos": 10,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
           "points": 36,
@@ -1055,7 +1039,23 @@
           "goalDiff": 2,
           "pct": 44,
           "zone": 3,
-          "movement": "D2"
+          "movement": "D1"
+        },
+        {
+          "pos": 11,
+          "name": "São Paulo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
+          "points": 36,
+          "games": 28,
+          "wins": 10,
+          "draws": 6,
+          "losses": 12,
+          "goalsFor": 33,
+          "goalsAgainst": 32,
+          "goalDiff": 1,
+          "pct": 42,
+          "zone": 3,
+          "movement": "S1"
         },
         {
           "pos": 12,
