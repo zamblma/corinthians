@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-03T19:09:25.478Z",
+  "lastUpdated": "2026-10-03T22:48:43.256Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -979,6 +979,22 @@
         },
         {
           "pos": 7,
+          "name": "Atlético-MG",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
+          "points": 43,
+          "games": 28,
+          "wins": 12,
+          "draws": 7,
+          "losses": 9,
+          "goalsFor": 37,
+          "goalsAgainst": 32,
+          "goalDiff": 5,
+          "pct": 51,
+          "zone": 2,
+          "movement": "S"
+        },
+        {
+          "pos": 8,
           "name": "Santos",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
           "points": 41,
@@ -990,24 +1006,8 @@
           "goalsAgainst": 41,
           "goalDiff": 2,
           "pct": 48,
-          "zone": 2,
-          "movement": "S3"
-        },
-        {
-          "pos": 8,
-          "name": "Atlético-MG",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
-          "points": 40,
-          "games": 27,
-          "wins": 11,
-          "draws": 7,
-          "losses": 9,
-          "goalsFor": 36,
-          "goalsAgainst": 32,
-          "goalDiff": 4,
-          "pct": 49,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S2"
         },
         {
           "pos": 9,
@@ -1027,22 +1027,6 @@
         },
         {
           "pos": 10,
-          "name": "Bragantino",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
-          "points": 36,
-          "games": 27,
-          "wins": 10,
-          "draws": 6,
-          "losses": 11,
-          "goalsFor": 33,
-          "goalsAgainst": 31,
-          "goalDiff": 2,
-          "pct": 44,
-          "zone": 3,
-          "movement": "D1"
-        },
-        {
-          "pos": 11,
           "name": "São Paulo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
           "points": 36,
@@ -1055,7 +1039,23 @@
           "goalDiff": 1,
           "pct": 42,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S2"
+        },
+        {
+          "pos": 11,
+          "name": "Bragantino",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
+          "points": 36,
+          "games": 28,
+          "wins": 10,
+          "draws": 6,
+          "losses": 12,
+          "goalsFor": 33,
+          "goalsAgainst": 32,
+          "goalDiff": 1,
+          "pct": 42,
+          "zone": 3,
+          "movement": "D2"
         },
         {
           "pos": 12,
