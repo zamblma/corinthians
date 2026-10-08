@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T01:44:43.333Z",
+  "lastUpdated": "2026-10-08T08:46:04.209Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -938,9 +938,9 @@
           "wins": 14,
           "draws": 6,
           "losses": 9,
-          "goalsFor": 43,
+          "goalsFor": 44,
           "goalsAgainst": 40,
-          "goalDiff": 3,
+          "goalDiff": 4,
           "pct": 55,
           "zone": 1,
           "movement": "S2"
@@ -1051,8 +1051,8 @@
           "draws": 6,
           "losses": 13,
           "goalsFor": 33,
-          "goalsAgainst": 33,
-          "goalDiff": 0,
+          "goalsAgainst": 34,
+          "goalDiff": -1,
           "pct": 41,
           "zone": 3,
           "movement": "D1"
