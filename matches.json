@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T19:58:45.314Z",
+  "lastUpdated": "2026-10-10T23:27:47.154Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -927,7 +927,7 @@
           "goalDiff": 12,
           "pct": 58,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 4,
@@ -943,7 +943,7 @@
           "goalDiff": 11,
           "pct": 57,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 5,
@@ -959,7 +959,7 @@
           "goalDiff": 4,
           "pct": 55,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": 7,
           "pct": 52,
           "zone": 2,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -1039,7 +1039,7 @@
           "goalDiff": 1,
           "pct": 42,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": -1,
           "pct": 41,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": -10,
           "pct": 41,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,23 +1087,23 @@
           "goalDiff": -5,
           "pct": 40,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 14,
           "name": "Vasco da Gama",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5odkrqilcbhim28j7j10lgpsn7.png",
-          "points": 34,
-          "games": 28,
+          "points": 35,
+          "games": 29,
           "wins": 9,
-          "draws": 7,
+          "draws": 8,
           "losses": 12,
           "goalsFor": 36,
           "goalsAgainst": 42,
           "goalDiff": -6,
           "pct": 40,
           "zone": 0,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 15,
@@ -1135,7 +1135,7 @@
           "goalDiff": -4,
           "pct": 36,
           "zone": 0,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 17,
@@ -1151,7 +1151,7 @@
           "goalDiff": -5,
           "pct": 35,
           "zone": 4,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 18,
@@ -1167,16 +1167,16 @@
           "goalDiff": -8,
           "pct": 34,
           "zone": 4,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 19,
           "name": "Remo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
-          "points": 24,
-          "games": 29,
+          "points": 25,
+          "games": 30,
           "wins": 5,
-          "draws": 9,
+          "draws": 10,
           "losses": 15,
           "goalsFor": 33,
           "goalsAgainst": 48,
