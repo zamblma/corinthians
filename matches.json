@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T20:52:03.709Z",
+  "lastUpdated": "2026-10-16T23:25:27.307Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -927,7 +927,7 @@
           "goalDiff": 14,
           "pct": 58,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 4,
@@ -943,7 +943,7 @@
           "goalDiff": 11,
           "pct": 56,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 5,
@@ -959,7 +959,7 @@
           "goalDiff": 8,
           "pct": 54,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": 2,
           "pct": 53,
           "zone": 2,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -1023,7 +1023,7 @@
           "goalDiff": 3,
           "pct": 44,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 10,
@@ -1039,7 +1039,7 @@
           "goalDiff": 0,
           "pct": 43,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": -10,
           "pct": 43,
           "zone": 3,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1109,10 +1109,10 @@
           "pos": 15,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
-          "points": 33,
-          "games": 30,
+          "points": 34,
+          "games": 31,
           "wins": 8,
-          "draws": 9,
+          "draws": 10,
           "losses": 13,
           "goalsFor": 34,
           "goalsAgainst": 44,
@@ -1123,6 +1123,22 @@
         },
         {
           "pos": 16,
+          "name": "Internacional",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
+          "points": 33,
+          "games": 31,
+          "wins": 7,
+          "draws": 12,
+          "losses": 12,
+          "goalsFor": 33,
+          "goalsAgainst": 38,
+          "goalDiff": -5,
+          "pct": 35,
+          "zone": 0,
+          "movement": "S1"
+        },
+        {
+          "pos": 17,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
           "points": 32,
@@ -1134,24 +1150,8 @@
           "goalsAgainst": 38,
           "goalDiff": -7,
           "pct": 35,
-          "zone": 0,
-          "movement": "S"
-        },
-        {
-          "pos": 17,
-          "name": "Internacional",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
-          "points": 32,
-          "games": 30,
-          "wins": 7,
-          "draws": 11,
-          "losses": 12,
-          "goalsFor": 33,
-          "goalsAgainst": 38,
-          "goalDiff": -5,
-          "pct": 35,
           "zone": 4,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 18,
