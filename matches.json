@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T22:08:45.187Z",
+  "lastUpdated": "2026-10-18T00:48:56.686Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -883,6 +883,22 @@
       "teams": [
         {
           "pos": 1,
+          "name": "Palmeiras",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
+          "points": 66,
+          "games": 31,
+          "wins": 19,
+          "draws": 9,
+          "losses": 3,
+          "goalsFor": 54,
+          "goalsAgainst": 22,
+          "goalDiff": 32,
+          "pct": 70,
+          "zone": 1,
+          "movement": "S1"
+        },
+        {
+          "pos": 2,
           "name": "Flamengo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6juc9voua610blou9p2ih6r6pj.png",
           "points": 64,
@@ -895,37 +911,21 @@
           "goalDiff": 33,
           "pct": 71,
           "zone": 1,
-          "movement": "S"
-        },
-        {
-          "pos": 2,
-          "name": "Palmeiras",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
-          "points": 63,
-          "games": 30,
-          "wins": 18,
-          "draws": 9,
-          "losses": 3,
-          "goalsFor": 52,
-          "goalsAgainst": 22,
-          "goalDiff": 30,
-          "pct": 70,
-          "zone": 1,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 3,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
           "points": 53,
-          "games": 30,
+          "games": 31,
           "wins": 15,
           "draws": 8,
-          "losses": 7,
+          "losses": 8,
           "goalsFor": 49,
-          "goalsAgainst": 35,
-          "goalDiff": 14,
-          "pct": 58,
+          "goalsAgainst": 37,
+          "goalDiff": 12,
+          "pct": 56,
           "zone": 1,
           "movement": "S"
         },
@@ -947,6 +947,22 @@
         },
         {
           "pos": 5,
+          "name": "Atlético-MG",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
+          "points": 50,
+          "games": 31,
+          "wins": 14,
+          "draws": 8,
+          "losses": 9,
+          "goalsFor": 42,
+          "goalsAgainst": 35,
+          "goalDiff": 7,
+          "pct": 53,
+          "zone": 1,
+          "movement": "S2"
+        },
+        {
+          "pos": 6,
           "name": "Bahia",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3rsh22t1gaqjv2pccvs5h9dni0.png",
           "points": 49,
@@ -958,11 +974,11 @@
           "goalsAgainst": 36,
           "goalDiff": 8,
           "pct": 54,
-          "zone": 1,
-          "movement": "S"
+          "zone": 2,
+          "movement": "D1"
         },
         {
-          "pos": 6,
+          "pos": 7,
           "name": "Cruzeiro",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
           "points": 48,
@@ -975,23 +991,7 @@
           "goalDiff": 2,
           "pct": 53,
           "zone": 2,
-          "movement": "S"
-        },
-        {
-          "pos": 7,
-          "name": "Atlético-MG",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
-          "points": 48,
-          "games": 31,
-          "wins": 13,
-          "draws": 9,
-          "losses": 9,
-          "goalsFor": 41,
-          "goalsAgainst": 35,
-          "goalDiff": 6,
-          "pct": 51,
-          "zone": 2,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 8,
@@ -1027,38 +1027,22 @@
         },
         {
           "pos": 10,
-          "name": "Coritiba",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
-          "points": 40,
-          "games": 31,
-          "wins": 10,
-          "draws": 10,
-          "losses": 11,
-          "goalsFor": 38,
-          "goalsAgainst": 48,
-          "goalDiff": -10,
-          "pct": 43,
-          "zone": 3,
-          "movement": "S1"
-        },
-        {
-          "pos": 11,
           "name": "São Paulo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/55dlofem9vrqj0e9h85q3et784.png",
-          "points": 39,
-          "games": 30,
+          "points": 40,
+          "games": 31,
           "wins": 11,
-          "draws": 6,
+          "draws": 7,
           "losses": 13,
           "goalsFor": 35,
           "goalsAgainst": 35,
           "goalDiff": 0,
           "pct": 43,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
-          "pos": 12,
+          "pos": 11,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 39,
@@ -1071,7 +1055,23 @@
           "goalDiff": -4,
           "pct": 41,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S2"
+        },
+        {
+          "pos": 12,
+          "name": "Coritiba",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
+          "points": 39,
+          "games": 31,
+          "wins": 10,
+          "draws": 9,
+          "losses": 12,
+          "goalsFor": 38,
+          "goalsAgainst": 49,
+          "goalDiff": -11,
+          "pct": 41,
+          "zone": 3,
+          "movement": "D1"
         },
         {
           "pos": 13,
@@ -1091,6 +1091,22 @@
         },
         {
           "pos": 14,
+          "name": "Vasco da Gama",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5odkrqilcbhim28j7j10lgpsn7.png",
+          "points": 36,
+          "games": 30,
+          "wins": 9,
+          "draws": 9,
+          "losses": 12,
+          "goalsFor": 36,
+          "goalsAgainst": 42,
+          "goalDiff": -6,
+          "pct": 40,
+          "zone": 0,
+          "movement": "S"
+        },
+        {
+          "pos": 15,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
           "points": 36,
@@ -1103,23 +1119,7 @@
           "goalDiff": -8,
           "pct": 38,
           "zone": 0,
-          "movement": "S1"
-        },
-        {
-          "pos": 15,
-          "name": "Vasco da Gama",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5odkrqilcbhim28j7j10lgpsn7.png",
-          "points": 35,
-          "games": 29,
-          "wins": 9,
-          "draws": 8,
-          "losses": 12,
-          "goalsFor": 36,
-          "goalsAgainst": 42,
-          "goalDiff": -6,
-          "pct": 40,
-          "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 16,
