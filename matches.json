@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T00:14:07.013Z",
+  "lastUpdated": "2026-10-20T05:51:05.549Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -701,14 +701,14 @@
       "awayTeam": "Vitória",
       "awayAcronym": "VIT",
       "stadium": "Neo Química Arena",
-      "homeGoals": 0,
+      "homeGoals": 1,
       "awayGoals": 1,
-      "status": "live",
+      "status": "draw",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
       "awayLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
-      "matchUrl": "",
+      "matchUrl": "https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/ao-vivo/corinthians-x-vitoria/97542/",
       "matchId": "",
       "isHome": true,
       "opponent": "Vitória",
@@ -1043,22 +1043,6 @@
         },
         {
           "pos": 11,
-          "name": "Vitória",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
-          "points": 39,
-          "games": 31,
-          "wins": 11,
-          "draws": 6,
-          "losses": 14,
-          "goalsFor": 34,
-          "goalsAgainst": 44,
-          "goalDiff": -10,
-          "pct": 41,
-          "zone": 3,
-          "movement": "S1"
-        },
-        {
-          "pos": 12,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 39,
@@ -1071,10 +1055,10 @@
           "goalDiff": -4,
           "pct": 41,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S2"
         },
         {
-          "pos": 13,
+          "pos": 12,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
           "points": 39,
@@ -1087,7 +1071,23 @@
           "goalDiff": -11,
           "pct": 41,
           "zone": 3,
-          "movement": "D2"
+          "movement": "D1"
+        },
+        {
+          "pos": 13,
+          "name": "Vitória",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
+          "points": 37,
+          "games": 31,
+          "wins": 10,
+          "draws": 7,
+          "losses": 14,
+          "goalsFor": 34,
+          "goalsAgainst": 45,
+          "goalDiff": -11,
+          "pct": 39,
+          "zone": 3,
+          "movement": "D1"
         },
         {
           "pos": 14,
@@ -1125,15 +1125,15 @@
           "pos": 16,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
-          "points": 32,
+          "points": 33,
           "games": 31,
           "wins": 8,
-          "draws": 8,
-          "losses": 15,
-          "goalsFor": 31,
+          "draws": 9,
+          "losses": 14,
+          "goalsFor": 32,
           "goalsAgainst": 39,
-          "goalDiff": -8,
-          "pct": 34,
+          "goalDiff": -7,
+          "pct": 35,
           "zone": 0,
           "movement": "S"
         },
