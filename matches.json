@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T23:00:55.238Z",
+  "lastUpdated": "2026-10-24T04:16:54.229Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -915,6 +915,22 @@
         },
         {
           "pos": 3,
+          "name": "Cruzeiro",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
+          "points": 54,
+          "games": 32,
+          "wins": 16,
+          "draws": 6,
+          "losses": 10,
+          "goalsFor": 51,
+          "goalsAgainst": 46,
+          "goalDiff": 5,
+          "pct": 56,
+          "zone": 1,
+          "movement": "S1"
+        },
+        {
+          "pos": 4,
           "name": "Athletico-PR",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
           "points": 53,
@@ -927,23 +943,7 @@
           "goalDiff": 12,
           "pct": 56,
           "zone": 1,
-          "movement": "S"
-        },
-        {
-          "pos": 4,
-          "name": "Cruzeiro",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1tii84ip9opfetqj4atdchcgo8.png",
-          "points": 51,
-          "games": 31,
-          "wins": 15,
-          "draws": 6,
-          "losses": 10,
-          "goalsFor": 50,
-          "goalsAgainst": 46,
-          "goalDiff": 4,
-          "pct": 54,
-          "zone": 1,
-          "movement": "S2"
+          "movement": "D1"
         },
         {
           "pos": 5,
@@ -959,7 +959,7 @@
           "goalDiff": 10,
           "pct": 54,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": 7,
           "pct": 53,
           "zone": 2,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -991,7 +991,7 @@
           "goalDiff": 5,
           "pct": 52,
           "zone": 2,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 8,
@@ -1023,7 +1023,7 @@
           "goalDiff": 1,
           "pct": 45,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 10,
@@ -1039,7 +1039,7 @@
           "goalDiff": 3,
           "pct": 44,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": -4,
           "pct": 41,
           "zone": 3,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": -11,
           "pct": 41,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1087,7 +1087,7 @@
           "goalDiff": -11,
           "pct": 39,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 14,
@@ -1103,7 +1103,7 @@
           "goalDiff": -8,
           "pct": 38,
           "zone": 0,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 15,
@@ -1119,7 +1119,7 @@
           "goalDiff": -7,
           "pct": 38,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 16,
@@ -1174,13 +1174,13 @@
           "name": "Remo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/1aa07bo5lpbm9u7riqh8ishv8d.png",
           "points": 26,
-          "games": 31,
+          "games": 32,
           "wins": 5,
           "draws": 11,
-          "losses": 15,
+          "losses": 16,
           "goalsFor": 34,
-          "goalsAgainst": 49,
-          "goalDiff": -15,
+          "goalsAgainst": 50,
+          "goalDiff": -16,
           "pct": 27,
           "zone": 4,
           "movement": "S"
