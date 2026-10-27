@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-26T23:42:49.761Z",
+  "lastUpdated": "2026-10-27T04:42:36.962Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -883,6 +883,22 @@
       "teams": [
         {
           "pos": 1,
+          "name": "Flamengo",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6juc9voua610blou9p2ih6r6pj.png",
+          "points": 70,
+          "games": 32,
+          "wins": 21,
+          "draws": 7,
+          "losses": 4,
+          "goalsFor": 64,
+          "goalsAgainst": 27,
+          "goalDiff": 37,
+          "pct": 72,
+          "zone": 1,
+          "movement": "S"
+        },
+        {
+          "pos": 2,
           "name": "Palmeiras",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/ghfutv8fqghq9l826jsnmt2c6.png",
           "points": 69,
@@ -895,23 +911,7 @@
           "goalDiff": 34,
           "pct": 71,
           "zone": 1,
-          "movement": "S1"
-        },
-        {
-          "pos": 2,
-          "name": "Flamengo",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/6juc9voua610blou9p2ih6r6pj.png",
-          "points": 68,
-          "games": 32,
-          "wins": 20,
-          "draws": 8,
-          "losses": 4,
-          "goalsFor": 62,
-          "goalsAgainst": 26,
-          "goalDiff": 36,
-          "pct": 70,
-          "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 3,
@@ -965,15 +965,15 @@
           "pos": 6,
           "name": "Atlético-MG",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
-          "points": 51,
+          "points": 50,
           "games": 32,
           "wins": 14,
-          "draws": 9,
-          "losses": 9,
-          "goalsFor": 43,
-          "goalsAgainst": 36,
-          "goalDiff": 7,
-          "pct": 53,
+          "draws": 8,
+          "losses": 10,
+          "goalsFor": 44,
+          "goalsAgainst": 38,
+          "goalDiff": 6,
+          "pct": 52,
           "zone": 2,
           "movement": "S"
         },
@@ -1043,22 +1043,6 @@
         },
         {
           "pos": 11,
-          "name": "Coritiba",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
-          "points": 40,
-          "games": 32,
-          "wins": 10,
-          "draws": 10,
-          "losses": 12,
-          "goalsFor": 38,
-          "goalsAgainst": 49,
-          "goalDiff": -11,
-          "pct": 41,
-          "zone": 3,
-          "movement": "S1"
-        },
-        {
-          "pos": 12,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 39,
@@ -1071,7 +1055,23 @@
           "goalDiff": -7,
           "pct": 40,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
+        },
+        {
+          "pos": 12,
+          "name": "Coritiba",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
+          "points": 39,
+          "games": 32,
+          "wins": 10,
+          "draws": 9,
+          "losses": 13,
+          "goalsFor": 38,
+          "goalsAgainst": 50,
+          "goalDiff": -12,
+          "pct": 40,
+          "zone": 3,
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1139,6 +1139,22 @@
         },
         {
           "pos": 17,
+          "name": "Grêmio",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
+          "points": 34,
+          "games": 32,
+          "wins": 8,
+          "draws": 10,
+          "losses": 14,
+          "goalsFor": 35,
+          "goalsAgainst": 44,
+          "goalDiff": -9,
+          "pct": 35,
+          "zone": 4,
+          "movement": "S1"
+        },
+        {
+          "pos": 18,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
           "points": 33,
@@ -1151,23 +1167,7 @@
           "goalDiff": -8,
           "pct": 34,
           "zone": 4,
-          "movement": "D1"
-        },
-        {
-          "pos": 18,
-          "name": "Grêmio",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
-          "points": 32,
-          "games": 32,
-          "wins": 7,
-          "draws": 11,
-          "losses": 14,
-          "goalsFor": 34,
-          "goalsAgainst": 44,
-          "goalDiff": -10,
-          "pct": 33,
-          "zone": 4,
-          "movement": "S"
+          "movement": "D2"
         },
         {
           "pos": 19,
