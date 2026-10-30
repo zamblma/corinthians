@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T19:13:54.737Z",
+  "lastUpdated": "2026-10-30T23:35:29.770Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -747,9 +747,9 @@
       "awayTeam": "Mirassol",
       "awayAcronym": "MFC",
       "stadium": "Neo Química Arena",
-      "homeGoals": null,
-      "awayGoals": null,
-      "status": "scheduled",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "status": "live",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
@@ -1107,6 +1107,22 @@
         },
         {
           "pos": 15,
+          "name": "Mirassol",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
+          "points": 38,
+          "games": 33,
+          "wins": 9,
+          "draws": 11,
+          "losses": 13,
+          "goalsFor": 37,
+          "goalsAgainst": 45,
+          "goalDiff": -8,
+          "pct": 38,
+          "zone": 0,
+          "movement": "S"
+        },
+        {
+          "pos": 16,
           "name": "Grêmio",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
           "points": 37,
@@ -1119,23 +1135,7 @@
           "goalDiff": -7,
           "pct": 37,
           "zone": 0,
-          "movement": "S2"
-        },
-        {
-          "pos": 16,
-          "name": "Mirassol",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
-          "points": 37,
-          "games": 32,
-          "wins": 9,
-          "draws": 10,
-          "losses": 13,
-          "goalsFor": 37,
-          "goalsAgainst": 45,
-          "goalDiff": -8,
-          "pct": 38,
-          "zone": 0,
-          "movement": "D1"
+          "movement": "S1"
         },
         {
           "pos": 17,
@@ -1157,10 +1157,10 @@
           "pos": 18,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
-          "points": 33,
-          "games": 32,
+          "points": 34,
+          "games": 33,
           "wins": 8,
-          "draws": 9,
+          "draws": 10,
           "losses": 15,
           "goalsFor": 34,
           "goalsAgainst": 42,
