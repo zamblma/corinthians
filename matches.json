@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T06:57:48.536Z",
+  "lastUpdated": "2026-10-30T13:59:40.655Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -785,9 +785,9 @@
     },
     {
       "round": 35,
-      "date": "2026-11-17",
-      "time": "21:00",
-      "datetime": "2026-11-17T21:00:00",
+      "date": "2026-11-18",
+      "time": "21:30",
+      "datetime": "2026-11-18T21:30:00",
       "homeTeam": "Corinthians",
       "homeAcronym": "COR",
       "awayTeam": "Botafogo",
@@ -808,9 +808,9 @@
     },
     {
       "round": 36,
-      "date": "2026-11-20",
-      "time": "21:00",
-      "datetime": "2026-11-20T21:00:00",
+      "date": "2026-11-25",
+      "time": "20:00",
+      "datetime": "2026-11-25T20:00:00",
       "homeTeam": "Atlético-MG",
       "homeAcronym": "CAM",
       "awayTeam": "Corinthians",
