@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T00:45:04.307Z",
+  "lastUpdated": "2026-10-30T06:57:48.536Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -890,9 +890,9 @@
           "wins": 22,
           "draws": 7,
           "losses": 4,
-          "goalsFor": 67,
+          "goalsFor": 68,
           "goalsAgainst": 28,
-          "goalDiff": 39,
+          "goalDiff": 40,
           "pct": 73,
           "zone": 1,
           "movement": "S"
@@ -931,22 +931,6 @@
         },
         {
           "pos": 4,
-          "name": "Athletico-PR",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
-          "points": 55,
-          "games": 33,
-          "wins": 15,
-          "draws": 10,
-          "losses": 8,
-          "goalsFor": 50,
-          "goalsAgainst": 38,
-          "goalDiff": 12,
-          "pct": 55,
-          "zone": 1,
-          "movement": "S"
-        },
-        {
-          "pos": 5,
           "name": "Fluminense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/7ilimo1mms4bd7etug3pom84e6.png",
           "points": 54,
@@ -959,7 +943,23 @@
           "goalDiff": 10,
           "pct": 54,
           "zone": 1,
-          "movement": "S"
+          "movement": "S1"
+        },
+        {
+          "pos": 5,
+          "name": "Athletico-PR",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/75o43o0earfc5dq32bhtbpph3f.png",
+          "points": 54,
+          "games": 33,
+          "wins": 15,
+          "draws": 9,
+          "losses": 9,
+          "goalsFor": 50,
+          "goalsAgainst": 40,
+          "goalDiff": 10,
+          "pct": 54,
+          "zone": 1,
+          "movement": "D1"
         },
         {
           "pos": 6,
@@ -1083,8 +1083,8 @@
           "draws": 8,
           "losses": 14,
           "goalsFor": 40,
-          "goalsAgainst": 48,
-          "goalDiff": -8,
+          "goalsAgainst": 49,
+          "goalDiff": -9,
           "pct": 39,
           "zone": 3,
           "movement": "S"
@@ -1107,6 +1107,22 @@
         },
         {
           "pos": 15,
+          "name": "Grêmio",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
+          "points": 37,
+          "games": 33,
+          "wins": 9,
+          "draws": 10,
+          "losses": 14,
+          "goalsFor": 37,
+          "goalsAgainst": 44,
+          "goalDiff": -7,
+          "pct": 37,
+          "zone": 0,
+          "movement": "S2"
+        },
+        {
+          "pos": 16,
           "name": "Mirassol",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
           "points": 37,
@@ -1119,10 +1135,10 @@
           "goalDiff": -8,
           "pct": 38,
           "zone": 0,
-          "movement": "S"
+          "movement": "D1"
         },
         {
-          "pos": 16,
+          "pos": 17,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
           "points": 35,
@@ -1134,24 +1150,8 @@
           "goalsAgainst": 42,
           "goalDiff": -5,
           "pct": 35,
-          "zone": 0,
-          "movement": "S"
-        },
-        {
-          "pos": 17,
-          "name": "Grêmio",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
-          "points": 35,
-          "games": 33,
-          "wins": 8,
-          "draws": 11,
-          "losses": 14,
-          "goalsFor": 35,
-          "goalsAgainst": 44,
-          "goalDiff": -9,
-          "pct": 35,
           "zone": 4,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 18,
