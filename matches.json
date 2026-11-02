@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T15:29:19.732Z",
+  "lastUpdated": "2026-11-02T23:24:23.096Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -943,7 +943,7 @@
           "goalDiff": 10,
           "pct": 54,
           "zone": 1,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 5,
@@ -959,7 +959,7 @@
           "goalDiff": 10,
           "pct": 54,
           "zone": 1,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 6,
@@ -975,7 +975,7 @@
           "goalDiff": 6,
           "pct": 53,
           "zone": 2,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 7,
@@ -991,39 +991,39 @@
           "goalDiff": 5,
           "pct": 50,
           "zone": 2,
-          "movement": "D1"
-        },
-        {
-          "pos": 8,
-          "name": "Santos",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
-          "points": 47,
-          "games": 33,
-          "wins": 12,
-          "draws": 11,
-          "losses": 10,
-          "goalsFor": 49,
-          "goalsAgainst": 47,
-          "goalDiff": 2,
-          "pct": 47,
-          "zone": 3,
           "movement": "S"
         },
         {
-          "pos": 9,
+          "pos": 8,
           "name": "Bragantino",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3qdrsdhtkgqqevuvn4b2iveek7.png",
-          "points": 44,
-          "games": 33,
-          "wins": 12,
+          "points": 47,
+          "games": 34,
+          "wins": 13,
           "draws": 8,
           "losses": 13,
-          "goalsFor": 42,
+          "goalsFor": 43,
           "goalsAgainst": 38,
-          "goalDiff": 4,
-          "pct": 44,
+          "goalDiff": 5,
+          "pct": 46,
           "zone": 3,
           "movement": "S1"
+        },
+        {
+          "pos": 9,
+          "name": "Santos",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/13uv2icig361a912n5uau9c4th.png",
+          "points": 47,
+          "games": 34,
+          "wins": 12,
+          "draws": 11,
+          "losses": 11,
+          "goalsFor": 49,
+          "goalsAgainst": 48,
+          "goalDiff": 1,
+          "pct": 46,
+          "zone": 3,
+          "movement": "D1"
         },
         {
           "pos": 10,
@@ -1039,7 +1039,7 @@
           "goalDiff": 0,
           "pct": 43,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 11,
@@ -1055,7 +1055,7 @@
           "goalDiff": -10,
           "pct": 42,
           "zone": 3,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 12,
@@ -1071,7 +1071,7 @@
           "goalDiff": -8,
           "pct": 39,
           "zone": 3,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 13,
@@ -1119,7 +1119,7 @@
           "goalDiff": -7,
           "pct": 37,
           "zone": 0,
-          "movement": "S2"
+          "movement": "S"
         },
         {
           "pos": 16,
@@ -1135,7 +1135,7 @@
           "goalDiff": -10,
           "pct": 37,
           "zone": 0,
-          "movement": "D1"
+          "movement": "S"
         },
         {
           "pos": 17,
@@ -1151,7 +1151,7 @@
           "goalDiff": -6,
           "pct": 36,
           "zone": 4,
-          "movement": "S1"
+          "movement": "S"
         },
         {
           "pos": 18,
@@ -1167,7 +1167,7 @@
           "goalDiff": -5,
           "pct": 35,
           "zone": 4,
-          "movement": "D2"
+          "movement": "S"
         },
         {
           "pos": 19,
