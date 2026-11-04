@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T20:53:52.376Z",
+  "lastUpdated": "2026-11-04T01:10:47.663Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -1045,10 +1045,10 @@
           "pos": 11,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
-          "points": 42,
-          "games": 33,
+          "points": 43,
+          "games": 34,
           "wins": 11,
-          "draws": 9,
+          "draws": 10,
           "losses": 13,
           "goalsFor": 40,
           "goalsAgainst": 50,
@@ -1059,6 +1059,22 @@
         },
         {
           "pos": 12,
+          "name": "Mirassol",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
+          "points": 40,
+          "games": 34,
+          "wins": 10,
+          "draws": 10,
+          "losses": 14,
+          "goalsFor": 39,
+          "goalsAgainst": 48,
+          "goalDiff": -9,
+          "pct": 39,
+          "zone": 3,
+          "movement": "S4"
+        },
+        {
+          "pos": 13,
           "name": "Botafogo",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3ppgu6k4ce5dlkln5pcad8qplf.png",
           "points": 39,
@@ -1071,10 +1087,10 @@
           "goalDiff": -8,
           "pct": 39,
           "zone": 3,
-          "movement": "S"
+          "movement": "D1"
         },
         {
-          "pos": 13,
+          "pos": 14,
           "name": "Vasco da Gama",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5odkrqilcbhim28j7j10lgpsn7.png",
           "points": 38,
@@ -1086,11 +1102,11 @@
           "goalsAgainst": 49,
           "goalDiff": -9,
           "pct": 39,
-          "zone": 3,
-          "movement": "S"
+          "zone": 0,
+          "movement": "D1"
         },
         {
-          "pos": 14,
+          "pos": 15,
           "name": "Vitória",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/8vr6p9914pod4crds8o647iap.png",
           "points": 38,
@@ -1103,10 +1119,10 @@
           "goalDiff": -13,
           "pct": 38,
           "zone": 0,
-          "movement": "S"
+          "movement": "D1"
         },
         {
-          "pos": 15,
+          "pos": 16,
           "name": "Grêmio",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
           "points": 37,
@@ -1119,23 +1135,7 @@
           "goalDiff": -7,
           "pct": 37,
           "zone": 0,
-          "movement": "S"
-        },
-        {
-          "pos": 16,
-          "name": "Mirassol",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5g3vhdoe2s9e6q1qpsq823h5b1.png",
-          "points": 37,
-          "games": 33,
-          "wins": 9,
-          "draws": 10,
-          "losses": 14,
-          "goalsFor": 37,
-          "goalsAgainst": 47,
-          "goalDiff": -10,
-          "pct": 37,
-          "zone": 0,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 17,
@@ -1157,10 +1157,10 @@
           "pos": 18,
           "name": "Internacional",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
-          "points": 35,
-          "games": 33,
+          "points": 36,
+          "games": 34,
           "wins": 8,
-          "draws": 11,
+          "draws": 12,
           "losses": 14,
           "goalsFor": 37,
           "goalsAgainst": 42,
@@ -1190,13 +1190,13 @@
           "name": "Chapecoense",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/45pmtlqrtqh52qnch6fl7cdc1f.png",
           "points": 21,
-          "games": 32,
+          "games": 33,
           "wins": 4,
           "draws": 9,
-          "losses": 19,
-          "goalsFor": 32,
-          "goalsAgainst": 66,
-          "goalDiff": -34,
+          "losses": 20,
+          "goalsFor": 33,
+          "goalsAgainst": 68,
+          "goalDiff": -35,
           "pct": 21,
           "zone": 4,
           "movement": "S"
