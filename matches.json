@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-04T01:10:47.663Z",
+  "lastUpdated": "2026-11-04T08:55:12.223Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -1045,15 +1045,15 @@
           "pos": 11,
           "name": "Coritiba",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/3p9vcs09idkg4n8qchesbbk143.png",
-          "points": 43,
+          "points": 42,
           "games": 34,
           "wins": 11,
-          "draws": 10,
-          "losses": 13,
+          "draws": 9,
+          "losses": 14,
           "goalsFor": 40,
-          "goalsAgainst": 50,
-          "goalDiff": -10,
-          "pct": 42,
+          "goalsAgainst": 51,
+          "goalDiff": -11,
+          "pct": 41,
           "zone": 3,
           "movement": "S"
         },
@@ -1123,6 +1123,22 @@
         },
         {
           "pos": 16,
+          "name": "Internacional",
+          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
+          "points": 38,
+          "games": 34,
+          "wins": 9,
+          "draws": 11,
+          "losses": 14,
+          "goalsFor": 38,
+          "goalsAgainst": 42,
+          "goalDiff": -4,
+          "pct": 37,
+          "zone": 0,
+          "movement": "S2"
+        },
+        {
+          "pos": 17,
           "name": "Grêmio",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/15cq43diumg649frqui8nrr0pu.png",
           "points": 37,
@@ -1134,11 +1150,11 @@
           "goalsAgainst": 44,
           "goalDiff": -7,
           "pct": 37,
-          "zone": 0,
-          "movement": "D1"
+          "zone": 4,
+          "movement": "D2"
         },
         {
-          "pos": 17,
+          "pos": 18,
           "name": "Corinthians",
           "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/5vcvvctt97r69pfi89v8th577m.png",
           "points": 36,
@@ -1151,23 +1167,7 @@
           "goalDiff": -6,
           "pct": 36,
           "zone": 4,
-          "movement": "S"
-        },
-        {
-          "pos": 18,
-          "name": "Internacional",
-          "shield": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/105v1kdvgn4qpbiqudq20s67t1.png",
-          "points": 36,
-          "games": 34,
-          "wins": 8,
-          "draws": 12,
-          "losses": 14,
-          "goalsFor": 37,
-          "goalsAgainst": 42,
-          "goalDiff": -5,
-          "pct": 35,
-          "zone": 4,
-          "movement": "S"
+          "movement": "D1"
         },
         {
           "pos": 19,
