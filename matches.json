@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-08T07:07:19.629Z",
+  "lastUpdated": "2026-11-08T14:57:36.435Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -831,9 +831,9 @@
     },
     {
       "round": 37,
-      "date": "2026-11-27",
-      "time": "21:00",
-      "datetime": "2026-11-27T21:00:00",
+      "date": "2026-11-29",
+      "time": "18:30",
+      "datetime": "2026-11-29T18:30:00",
       "homeTeam": "Corinthians",
       "homeAcronym": "COR",
       "awayTeam": "Grêmio",
@@ -854,14 +854,14 @@
     },
     {
       "round": 38,
-      "date": "2026-12-01",
-      "time": "21:00",
-      "datetime": "2026-12-01T21:00:00",
+      "date": "2026-12-02",
+      "time": "21:30",
+      "datetime": "2026-12-02T21:30:00",
       "homeTeam": "Remo",
       "homeAcronym": "REM",
       "awayTeam": "Corinthians",
       "awayAcronym": "COR",
-      "stadium": "Estádio Evandro Almeida (Baenão)",
+      "stadium": "Mangueirão",
       "homeGoals": null,
       "awayGoals": null,
       "status": "scheduled",
