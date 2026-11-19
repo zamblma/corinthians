@@ -48,12 +48,15 @@
       </button>
     </div>
     <div class="notif-cta" id="notifCta">
-      <p>Receba alertas de gols e jogos do Timão no celular</p>
+      <p>Receba alertas de gols, início de jogo e lembretes do Timão no celular</p>
       <button class="btn btn-notif" id="notifEnableBtn">Ativar Notificações</button>
     </div>
     <div class="notif-settings" id="notifSettings" style="display:none">
       <div class="nrow"><label for="notifT">Notificações do navegador</label><label class="switch"><input type="checkbox" id="notifT"><span class="sl"></span></label></div>
-      <div class="nrow"><label for="remindT">Lembrar 1 hora antes</label><label class="switch"><input type="checkbox" id="remindT" checked><span class="sl"></span></label></div>
+      <div class="nrow"><label for="goalNotifT">Alertas de gols e início/fim</label><label class="switch"><input type="checkbox" id="goalNotifT" checked><span class="sl"></span></label></div>
+      <div class="nrow"><label for="remindT">Lembrar 1h e 15min antes</label><label class="switch"><input type="checkbox" id="remindT" checked><span class="sl"></span></label></div>
+      <button class="btn btn-test-notif" id="testNotifBtn" type="button">🔔 Testar Notificação Agora</button>
+      <p class="notif-hint">Dica: no celular, adicione o site à Tela Inicial (PWA) para alertas como app.</p>
     </div>
   </section>
 
@@ -107,16 +110,21 @@
   </footer>
 </div>
 
+<div class="goal-overlay" id="goalOverlay" aria-live="polite"></div>
 <div class="toast" id="toast"></div>
 <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "172a6b14-7206-4d67-91c6-53c684deb317",
-      notifyButton: { enable: false },
-      welcomeNotification: { disable: true },
-    });
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    try {
+      await OneSignal.init({
+        appId: "172a6b14-7206-4d67-91c6-53c684deb317",
+        serviceWorkerPath: "sw.js",
+        serviceWorkerParam: { scope: new URL(".", location.href).pathname },
+        notifyButton: { enable: false },
+        welcomeNotification: { disable: true },
+      });
+    } catch (e) {}
   });
 </script>
 <script src="app.js"></script>

@@ -53,6 +53,7 @@ const $ = s => document.querySelector(s);
 
 let st = {
   notif: false,
+  goalNotif: true,
   remind: true,
   matches: [],
   filtered: [],
@@ -65,6 +66,11 @@ let st = {
   standings: [],
   competitionsMeta: [],
   lineups: {},
+  liveSummary: {},
+  prevMatches: {},
+  hasLoadedOnce: false,
+  pollTimer: null,
+  isFetching: false,
   hamTab: 'classif',
   weather: null,
   apiLive: false,
@@ -96,13 +102,19 @@ function load() {
   try {
     const d = JSON.parse(localStorage.getItem('ct') || '{}');
     st.notif = !!d.notif;
+    st.goalNotif = d.goalNotif !== false;
     st.remind = d.remind !== false;
     if (d.notified) st.notified = new Set(d.notified);
   } catch (e) {}
 }
 
 function save() {
-  localStorage.setItem('ct', JSON.stringify({ notif: st.notif, remind: st.remind, notified: [...st.notified] }));
+  localStorage.setItem('ct', JSON.stringify({
+    notif: st.notif,
+    goalNotif: st.goalNotif,
+    remind: st.remind,
+    notified: [...st.notified],
+  }));
 }
 
 function toast(text) {
@@ -118,11 +130,14 @@ function sdot(cls, text) {
   $('#stxt').textContent = text;
 }
 
-function setApiBadge(liveOk) {
+function setApiBadge(liveOk, isFastPoll = false) {
   const badge = $('#apiBadge');
   if (!badge) return;
   st.apiLive = liveOk;
-  if (liveOk) {
+  if (isFastPoll) {
+    badge.textContent = '⚡ Tempo Real (15s)';
+    badge.classList.add('live-ok');
+  } else if (liveOk) {
     badge.textContent = 'API ESPN Ao Vivo + Base 2026';
     badge.classList.add('live-ok');
   } else {
@@ -268,6 +283,18 @@ function parseEspnScheduleEvents(events, fallbackComp) {
     const roundM = String(ev.week?.text || compObj.notes?.[0]?.headline || '').match(/(\d+)/);
     const round = ev.week?.number || (roundM ? parseInt(roundM[1], 10) : idx + 1);
 
+    const espnSlug = leagueInfo.slug || fallbackComp?.slug || '';
+    const espnId = String(ev.id || '');
+    const quickDetails = (compObj.details || [])
+      .filter(det => det.scoringPlay || det.redCard || det.yellowCard)
+      .map(det => ({
+        minute: det.clock?.displayValue || '',
+        isGoal: !!det.scoringPlay,
+        isRed: !!det.redCard,
+        player: det.athletesInvolved?.[0]?.shortName || det.athletesInvolved?.[0]?.displayName || '',
+        teamId: String(det.team?.id || ''),
+      }));
+
     list.push({
       round,
       date: dt.date,
@@ -287,7 +314,10 @@ function parseEspnScheduleEvents(events, fallbackComp) {
       stage: ev.seasonType?.name || compObj.notes?.[0]?.headline || `Rodada ${round}`,
       homeLogo: isHome ? 'logocorinthians.svg' : (home.team?.logos?.[0]?.href || home.team?.logo || ''),
       awayLogo: !isHome ? 'logocorinthians.svg' : (away.team?.logos?.[0]?.href || away.team?.logo || ''),
-      matchId: String(ev.id || ''),
+      matchId: espnId,
+      espnId,
+      espnSlug,
+      liveDetails: quickDetails,
       isHome,
       opponent: isHome ? awayTeam : homeTeam,
       opponentAcronym: isHome ? (away.team?.abbreviation || '') : (home.team?.abbreviation || ''),
@@ -407,10 +437,191 @@ function mergeMatchLists(baseList, liveList) {
     if (!merged.stadium && inc.stadium) merged.stadium = inc.stadium;
     if (!merged.homeLogo && inc.homeLogo) merged.homeLogo = inc.homeLogo;
     if (!merged.awayLogo && inc.awayLogo) merged.awayLogo = inc.awayLogo;
+    if (inc.espnId) merged.espnId = inc.espnId;
+    if (inc.espnSlug) merged.espnSlug = inc.espnSlug;
+    if (inc.liveDetails && inc.liveDetails.length > 0) merged.liveDetails = inc.liveDetails;
+    if (!merged.matchId && inc.matchId) merged.matchId = inc.matchId;
     map.set(k, merged);
   });
 
   return [...map.values()];
+}
+
+const STAT_LABELS = {
+  possessionPct: 'Posse de Bola (%)',
+  totalShots: 'Finalizações',
+  shotsOnTarget: 'No Alvo',
+  wonCorners: 'Escanteios',
+  foulsCommitted: 'Faltas',
+  yellowCards: 'Cartões Amarelos',
+  redCards: 'Cartões Vermelhos',
+};
+
+async function fetchEspnMatchSummary(m) {
+  const eventId = m.espnId || m.matchId;
+  if (!eventId || !/^\d+$/.test(String(eventId))) return null;
+  const compSlugMap = {
+    brasileirao: 'bra.1',
+    libertadores: 'conmebol.libertadores',
+    copabrasil: 'bra.copa_do_brasil',
+    paulista: 'bra.camp.paulista',
+    supercopa: 'bra.supercopa_do_brasil',
+    sudamericana: 'conmebol.sudamericana',
+  };
+  const slug = m.espnSlug || compSlugMap[m.championshipKey] || 'bra.1';
+  const json = await fetchJsonSafe(`https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/summary?event=${eventId}&lang=pt`);
+  if (!json) return null;
+
+  const timeline = [];
+  const keyEvents = json.keyEvents || [];
+  keyEvents.forEach(ev => {
+    const typeText = norm(ev.type?.text || ev.text || '');
+    const isGoal = ev.scoringPlay || typeText.includes('goal') || typeText.includes('gol');
+    const isRed = typeText.includes('red') || typeText.includes('vermelho');
+    const isYellow = typeText.includes('yellow') || typeText.includes('amarelo');
+    const isSub = typeText.includes('sub') || typeText.includes('substit');
+    if (!isGoal && !isRed && !isYellow && !isSub) return;
+
+    const icon = isGoal ? '⚽' : isRed ? '🟥' : isYellow ? '🟨' : '🔄';
+    const player = (ev.participants || [])
+      .map(p => p.athlete?.shortName || p.athlete?.displayName)
+      .filter(Boolean)
+      .join(' / ');
+    timeline.push({
+      minute: ev.clock?.displayValue || '',
+      icon,
+      isGoal,
+      text: player || ev.shortText || ev.text || ev.type?.text || '',
+      team: ev.team?.shortDisplayName || ev.team?.abbreviation || '',
+    });
+  });
+
+  const stats = [];
+  const boxTeams = json.boxscore?.teams || [];
+  if (boxTeams.length === 2) {
+    const homeBox = boxTeams.find(t => t.homeAway === 'home') || boxTeams[0];
+    const awayBox = boxTeams.find(t => t.homeAway === 'away') || boxTeams[1];
+    const mapStats = box => {
+      const mStat = {};
+      (box.statistics || []).forEach(s => { mStat[s.name] = s.displayValue ?? s.value; });
+      return mStat;
+    };
+    const hs = mapStats(homeBox);
+    const as = mapStats(awayBox);
+    Object.entries(STAT_LABELS).forEach(([key, label]) => {
+      if (hs[key] === undefined && as[key] === undefined) return;
+      const hNum = parseFloat(String(hs[key] || 0).replace('%', '')) || 0;
+      const aNum = parseFloat(String(as[key] || 0).replace('%', '')) || 0;
+      const sum = hNum + aNum;
+      stats.push({
+        label,
+        homeVal: hs[key] ?? '0',
+        awayVal: as[key] ?? '0',
+        homePct: sum > 0 ? Math.round((hNum / sum) * 100) : 50,
+        awayPct: sum > 0 ? Math.round((aNum / sum) * 100) : 50,
+      });
+    });
+  }
+
+  let rosters = null;
+  if (Array.isArray(json.rosters) && json.rosters.length > 0) {
+    rosters = json.rosters.map(r => ({
+      team: r.team?.shortDisplayName || r.team?.displayName || '',
+      acronym: r.team?.abbreviation || '',
+      players: (r.roster || [])
+        .filter(p => p.starter)
+        .map(p => ({
+          num: p.jersey || '-',
+          pos: p.position?.abbreviation || '',
+          name: p.athlete?.shortName || p.athlete?.displayName || '',
+        })),
+    })).filter(t => t.players.length > 0);
+    if (rosters.length > 0 && m.matchId && !st.lineups[m.matchId]) {
+      st.lineups[m.matchId] = rosters;
+    }
+  }
+
+  const summary = { timeline, stats, rosters };
+  st.liveSummary[m.id] = summary;
+  return summary;
+}
+
+function showGoalBanner(m) {
+  const el = $('#goalOverlay');
+  if (!el) return;
+  el.innerHTML = `<div class="goal-banner">
+    <div class="goal-banner-title">🏴🏳️ GOOOOL DO TIMÃO!</div>
+    <div class="goal-banner-sub">${esc(m.homeName)} ${m.homeGoals} x ${m.awayGoals} ${esc(m.awayName)} &bull; ${esc(m.league)}</div>
+  </div>`;
+  el.classList.add('show');
+  if (navigator.vibrate) {
+    try { navigator.vibrate([300, 100, 400, 100, 500]); } catch (e) {}
+  }
+  clearTimeout(el._h);
+  el._h = setTimeout(() => el.classList.remove('show'), 7000);
+}
+
+function detectLiveChanges(newList) {
+  if (st.hasLoadedOnce) {
+    newList.forEach(m => {
+      const prev = st.prevMatches[m.id];
+      if (!prev) return;
+
+      if (st.goalNotif) {
+        if (!prev.isLive && m.isLive) {
+          toast(`⚽ Bola rolando: ${m.homeName} x ${m.awayName}`);
+          notificar('⚽ Bola rolando!', `${m.league}: ${m.homeName} x ${m.awayName} começou!`, `start-${m.id}`);
+        }
+
+        if (m.isLive || prev.isLive) {
+          const prevH = prev.homeGoals ?? 0;
+          const prevA = prev.awayGoals ?? 0;
+          const currH = m.homeGoals ?? 0;
+          const currA = m.awayGoals ?? 0;
+          if (currH > prevH || currA > prevA) {
+            const corScored = (m.isHome && currH > prevH) || (!m.isHome && currA > prevA);
+            if (corScored) {
+              showGoalBanner(m);
+              notificar('GOOOOL DO TIMÃO! 🏴🏳️', `${m.homeName} ${currH} x ${currA} ${m.awayName} (${m.league})`, `goal-${m.id}-${currH}-${currA}`);
+            } else {
+              toast(`Gol do ${m.opponent}: ${m.homeName} ${currH} x ${currA} ${m.awayName}`);
+              notificar(`Gol do ${m.opponent}`, `Placar: ${m.homeName} ${currH} x ${currA} ${m.awayName}`, `goal-${m.id}-${currH}-${currA}`);
+            }
+          }
+        }
+
+        if (prev.isLive && m.status === 'finished') {
+          toast(`⏱️ Fim de jogo: ${m.homeName} ${m.homeGoals} x ${m.awayGoals} ${m.awayName}`);
+          notificar('⏱️ Fim de jogo!', `${m.homeName} ${m.homeGoals ?? 0} x ${m.awayGoals ?? 0} ${m.awayName} (${m.league})`, `end-${m.id}`);
+        }
+      }
+    });
+  }
+
+  const nextPrev = {};
+  newList.forEach(m => {
+    nextPrev[m.id] = {
+      status: m.status,
+      isLive: m.isLive,
+      homeGoals: m.homeGoals,
+      awayGoals: m.awayGoals,
+    };
+  });
+  st.prevMatches = nextPrev;
+  st.hasLoadedOnce = true;
+}
+
+function scheduleNextPoll() {
+  clearTimeout(st.pollTimer);
+  const now = Date.now();
+  const hasLiveOrImminent = st.all.some(m => {
+    if (m.isLive) return true;
+    const diff = m.date.getTime() - now;
+    return m.status === 'scheduled' && diff <= 1200000 && diff >= -9000000;
+  });
+  const interval = hasLiveOrImminent ? 15000 : 60000;
+  setApiBadge(st.apiLive, hasLiveOrImminent);
+  st.pollTimer = setTimeout(() => buscarJogos(true), interval);
 }
 
 function renderShieldHtml(logo, name, acronym) {
@@ -560,24 +771,31 @@ function renderCompOverview() {
   });
 }
 
-async function buscarJogos() {
-  sdot('yellow', 'Atualizando...');
-  $('#matches').innerHTML = `
-    <div class="skel-card">
-      <div class="skel skel-l" style="width:40%"></div>
-      <div class="skel-r">
-        <div style="text-align:center"><div class="skel skel-c"></div><div class="skel skel-l" style="width:50%;margin:8px auto 0"></div></div>
-        <div class="skel skel-l" style="width:30px;height:30px;border-radius:50%"></div>
-        <div style="text-align:center"><div class="skel skel-c"></div><div class="skel skel-l" style="width:50%;margin:8px auto 0"></div></div>
+async function buscarJogos(silent = false) {
+  if (st.isFetching) return;
+  st.isFetching = true;
+
+  if (!silent || !st.hasLoadedOnce) {
+    sdot('yellow', 'Atualizando...');
+  }
+  if (!st.hasLoadedOnce) {
+    $('#matches').innerHTML = `
+      <div class="skel-card">
+        <div class="skel skel-l" style="width:40%"></div>
+        <div class="skel-r">
+          <div style="text-align:center"><div class="skel skel-c"></div><div class="skel skel-l" style="width:50%;margin:8px auto 0"></div></div>
+          <div class="skel skel-l" style="width:30px;height:30px;border-radius:50%"></div>
+          <div style="text-align:center"><div class="skel skel-c"></div><div class="skel skel-l" style="width:50%;margin:8px auto 0"></div></div>
+        </div>
+        <div class="skel skel-l" style="width:60%;margin:0 auto"></div>
       </div>
-      <div class="skel skel-l" style="width:60%;margin:0 auto"></div>
-    </div>
-    <div class="skel-card">
-      <div class="skel skel-l" style="width:30%"></div>
-      <div style="display:flex;gap:8px;justify-content:center">
-        ${'<div class="skel" style="width:52px;height:56px;border-radius:12px"></div>'.repeat(6)}
-      </div>
-    </div>`;
+      <div class="skel-card">
+        <div class="skel skel-l" style="width:30%"></div>
+        <div style="display:flex;gap:8px;justify-content:center">
+          ${'<div class="skel" style="width:52px;height:56px;border-radius:12px"></div>'.repeat(6)}
+        </div>
+      </div>`;
+  }
 
   try {
     const [r, espn] = await Promise.all([
@@ -587,7 +805,7 @@ async function buscarJogos() {
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const data = await r.json();
 
-    setApiBadge(espn.responded);
+    setApiBadge(espn.responded, false);
 
     if (data.lastUpdated) {
       const iso = data.lastUpdated.endsWith('Z') ? data.lastUpdated : data.lastUpdated + 'Z';
@@ -650,6 +868,9 @@ async function buscarJogos() {
         opponentAcronym: m.opponentAcronym || '',
         round: m.round,
         matchId: m.matchId || '',
+        espnId: m.espnId || ( /^\d+$/.test(String(m.matchId || '')) ? String(m.matchId) : '' ),
+        espnSlug: m.espnSlug || '',
+        liveDetails: m.liveDetails || [],
         liveMinute: m.liveMinute || (isLive ? Math.min(Math.floor(-diff / 60000), 120) : null),
         status: m.status,
         resultado,
@@ -658,6 +879,8 @@ async function buscarJogos() {
         awayGoals: m.awayGoals,
       };
     }).sort((a, b) => a.date - b.date);
+
+    detectLiveChanges(st.all);
 
     st.matches = st.all.filter(m => m.status === 'scheduled' || m.isLive).sort((a, b) => a.date - b.date);
     st.competitionsMeta = data.competitionsMeta || [];
@@ -668,7 +891,12 @@ async function buscarJogos() {
       if (idx >= 0) st.standings[idx] = liveTable;
       else st.standings.unshift(liveTable);
     }
-    st.lineups = data.lineups || {};
+    st.lineups = { ...(data.lineups || {}), ...st.lineups };
+
+    const liveGame = st.all.find(m => m.isLive);
+    if (liveGame && liveGame.espnId) {
+      await fetchEspnMatchSummary(liveGame);
+    }
 
     const proximo = st.matches.find(m => !m.isLive);
     if (proximo && proximo.venue && proximo.venue !== 'Local a definir') {
@@ -690,8 +918,13 @@ async function buscarJogos() {
         `${st.all.length} jogos na temporada (${totalDone} encerrados, ${st.matches.length} restantes)`);
     }
   } catch (err) {
-    $('#matches').innerHTML = `<div class="empty"><p style="color:#ef4444">Erro ao carregar jogos: ${esc(err.message)}</p></div>`;
+    if (!st.hasLoadedOnce) {
+      $('#matches').innerHTML = `<div class="empty"><p style="color:#ef4444">Erro ao carregar jogos: ${esc(err.message)}</p></div>`;
+    }
     sdot('red', 'Erro');
+  } finally {
+    st.isFetching = false;
+    scheduleNextPoll();
   }
 }
 
@@ -774,6 +1007,14 @@ function render() {
   // Highlight Live / Next Match (when viewing todos or proximos)
   const liveMatch = filtrados.find(m => m.isLive);
   if (liveMatch && st.statusFilter !== 'encerrados') {
+    const liveSummary = st.liveSummary[liveMatch.id];
+    const goalEvents = (liveSummary?.timeline || []).filter(ev => ev.isGoal);
+    const liveTagsHtml = goalEvents.length > 0
+      ? `<div class="live-events-pill">${goalEvents.map(ev => `<span class="live-ev-tag">⚽ ${esc(ev.minute)} ${esc(ev.text)}${ev.team ? ` (${esc(ev.team)})` : ''}</span>`).join('')}</div>`
+      : (liveMatch.liveDetails?.filter(d => d.isGoal).length > 0
+        ? `<div class="live-events-pill">${liveMatch.liveDetails.filter(d => d.isGoal).map(d => `<span class="live-ev-tag">⚽ ${esc(d.minute)} ${esc(d.player)}</span>`).join('')}</div>`
+        : '');
+
     html += `<div class="live-banner card card-destaque card-live" id="liveBanner" data-match-id="${esc(liveMatch.id)}">
       <div class="ct">
         <div class="tc">${renderShieldHtml(liveMatch.homeLogo, liveMatch.homeName, liveMatch.homeAcronym)}<span class="nm cor-team">${esc(liveMatch.homeName)}</span><span class="ls-num">${liveMatch.homeGoals !== null ? liveMatch.homeGoals : '?'}</span></div>
@@ -785,7 +1026,8 @@ function render() {
         <div class="di-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>${esc(liveMatch.league)} &bull; ${esc(liveMatch.stage)}</div>
         <div class="di-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>${esc(liveMatch.ch.join(' / '))}</div>
       </div>
-      <div class="cdwn cdwn-grande"><span class="live-dot"></span> AO VIVO${liveMatch.liveMinute ? ` <span class="live-minuto">${esc(liveMatch.liveMinute)}'</span>` : ''}</div>
+      ${liveTagsHtml}
+      <div class="cdwn cdwn-grande"><span class="live-dot"></span> AO VIVO${liveMatch.liveMinute ? ` <span class="live-minuto">${esc(liveMatch.liveMinute)}'</span>` : ''} &bull; Toque para ver lance a lance e estatísticas</div>
     </div>`;
   } else if (filtrados.length > 0 && st.statusFilter !== 'encerrados') {
     html += renderMatchCardHtml(filtrados[0], true);
@@ -1190,30 +1432,104 @@ function checkNotifs() {
   if (!st.notif || !('Notification' in window) || Notification.permission !== 'granted' || !st.matches) return;
   const now = Date.now();
   st.matches.forEach(m => {
-    if (st.notified.has(m.id)) return;
     const diff = m.date.getTime() - now;
     if (diff <= 0) {
-      if (diff >= -7200000) {
-        notificar('Corinthians - Jogo começou!', `${m.league}: ${m.opponent} está jogando agora!`, m.id);
+      const startKey = `start-${m.id}`;
+      if (!st.notified.has(startKey) && diff >= -7200000 && st.goalNotif) {
+        notificar('⚽ Corinthians - Bola rolando!', `${m.league}: ${m.homeName} x ${m.awayName} começou!`, startKey);
+        st.notified.add(startKey); save();
       }
-      st.notified.add(m.id); save(); return;
+      return;
     }
-    if (st.remind && diff <= 3600000 && diff > 0) {
-      notificar('Corinthians - 1 hora!', `${m.league}: ${m.opponent} - ${m.venue} às ${fmtT(m.date)}`, m.id);
-      st.notified.add(m.id); save();
-    }
-    if (diff <= 86400000 && diff > 3600000) {
-      notificar('Corinthians - Jogo amanhã!', `${m.league}: ${m.opponent} - ${fmtD(m.date)} às ${fmtT(m.date)}`, m.id);
-      st.notified.add(m.id); save();
+    if (st.remind && diff <= 900000 && diff > 0) {
+      const k15 = `15m-${m.id}`;
+      if (!st.notified.has(k15)) {
+        notificar('Corinthians - Falta 15min!', `${m.league}: ${m.homeName} x ${m.awayName} às ${fmtT(m.date)} (${m.venue})`, k15);
+        st.notified.add(k15); save();
+      }
+    } else if (st.remind && diff <= 3600000 && diff > 900000) {
+      const k1h = `1h-${m.id}`;
+      if (!st.notified.has(k1h)) {
+        notificar('Corinthians - Falta 1 hora!', `${m.league}: ${m.opponent} - ${m.venue} às ${fmtT(m.date)}`, k1h);
+        st.notified.add(k1h); save();
+      }
+    } else if (diff <= 86400000 && diff > 3600000) {
+      const k24 = `24h-${m.id}`;
+      if (!st.notified.has(k24)) {
+        notificar('Corinthians - Jogo amanhã!', `${m.league}: ${m.opponent} - ${fmtD(m.date)} às ${fmtT(m.date)}`, k24);
+        st.notified.add(k24); save();
+      }
     }
   });
+}
+
+function syncNotifUI(enabled) {
+  st.notif = !!enabled;
+  if ($('#notifT')) $('#notifT').checked = st.notif;
+  if ($('#notifCta')) $('#notifCta').style.display = st.notif ? 'none' : 'block';
+  if ($('#notifSettings')) $('#notifSettings').style.display = st.notif ? 'block' : 'none';
+  save();
+}
+
+async function isNotificationsActive() {
+  const nativeGranted = 'Notification' in window && Notification.permission === 'granted';
+  let osSubscribed = false;
+  if (window.OneSignalDeferred) {
+    osSubscribed = await new Promise(resolve => {
+      const timer = setTimeout(() => resolve(false), 1500);
+      window.OneSignalDeferred.push(async OneSignal => {
+        clearTimeout(timer);
+        try {
+          const perm = OneSignal.Notifications?.permission;
+          const opted = OneSignal.User?.PushSubscription?.optedIn;
+          resolve(Boolean(perm || opted));
+        } catch (e) {
+          resolve(false);
+        }
+      });
+    });
+  }
+  return nativeGranted && (osSubscribed || st.notif);
+}
+
+async function requestPushEnable() {
+  let granted = 'Notification' in window && Notification.permission === 'granted';
+  if (window.OneSignalDeferred) {
+    await new Promise(resolve => {
+      const timer = setTimeout(resolve, 2500);
+      window.OneSignalDeferred.push(async OneSignal => {
+        try {
+          if (OneSignal.Notifications?.requestPermission) {
+            await OneSignal.Notifications.requestPermission();
+          }
+          if (OneSignal.User?.PushSubscription?.optIn) {
+            await OneSignal.User.PushSubscription.optIn();
+          }
+        } catch (e) {}
+        clearTimeout(timer);
+        resolve();
+      });
+    });
+  }
+  if ('Notification' in window && Notification.permission !== 'granted') {
+    const res = await Notification.requestPermission();
+    granted = res === 'granted';
+  } else if ('Notification' in window) {
+    granted = Notification.permission === 'granted';
+  }
+  return granted;
 }
 
 function init() {
   load();
   renderFiltros();
-  $('#notifT').checked = st.notif;
-  $('#remindT').checked = st.remind;
+  if ($('#notifT')) $('#notifT').checked = st.notif;
+  if ($('#goalNotifT')) $('#goalNotifT').checked = st.goalNotif;
+  if ($('#remindT')) $('#remindT').checked = st.remind;
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
 
   const searchInput = $('#searchInput');
   if (searchInput) {
@@ -1223,69 +1539,66 @@ function init() {
     });
   }
 
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(async function() {
-    const isSubscribed = await OneSignal.isPushNotificationsEnabled();
-    st.notif = isSubscribed;
-    $('#notifT').checked = isSubscribed;
-    if (isSubscribed) {
-      $('#notifCta').style.display = 'none';
-      $('#notifSettings').style.display = 'block';
-    } else {
-      $('#notifCta').style.display = 'block';
-      $('#notifSettings').style.display = 'none';
-    }
-    save();
+  isNotificationsActive().then(active => {
+    syncNotifUI(active);
   });
 
   $('#notifEnableBtn').addEventListener('click', async () => {
-    toast('Abrindo permissão...');
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(async function() {
-      try {
-        await OneSignal.Slidedown.promptPush();
-        const isSubscribed = await OneSignal.isPushNotificationsEnabled();
-        if (isSubscribed) {
-          st.notif = true;
-          $('#notifT').checked = true;
-          $('#notifCta').style.display = 'none';
-          $('#notifSettings').style.display = 'block';
-          save();
-          toast('Notificações ativadas!');
-        } else {
-          toast('Permissão negada. Ative manualmente nas configurações do navegador.');
-        }
-      } catch (e) {
-        toast('Erro ao ativar notificações.');
-      }
-    });
+    if (!('Notification' in window)) {
+      toast('Este navegador não suporta notificações.');
+      return;
+    }
+    toast('Solicitando permissão...');
+    const granted = await requestPushEnable();
+    if (granted) {
+      syncNotifUI(true);
+      toast('Notificações ativadas!');
+      notificar('Corinthians Tracker 🏴🏳️', 'Alertas ativados! Você receberá avisos de gols e jogos do Timão.', 'welcome-notif', true);
+    } else {
+      syncNotifUI(false);
+      toast('Permissão negada. Ative nas configurações do navegador.');
+    }
   });
 
   $('#notifT').addEventListener('change', async () => {
     const enabled = $('#notifT').checked;
-    st.notif = enabled; save();
     if (enabled) {
       toast('Ativando notificações...');
-      await toggleOneSignal(true);
-      const isSubscribed = await new Promise(r => OneSignal.push(async () => r(await OneSignal.isPushNotificationsEnabled())));
-      if (isSubscribed) {
+      const granted = await requestPushEnable();
+      if (granted) {
+        syncNotifUI(true);
         toast('Notificações ativadas!');
-        $('#notifCta').style.display = 'none';
-        $('#notifSettings').style.display = 'block';
       } else {
+        syncNotifUI(false);
         toast('Notificações bloqueadas pelo navegador.');
-        st.notif = false; $('#notifT').checked = false; save();
       }
     } else {
       await toggleOneSignal(false);
+      syncNotifUI(false);
       toast('Notificações desativadas.');
-      $('#notifCta').style.display = 'block';
-      $('#notifSettings').style.display = 'none';
     }
   });
 
+  if ($('#goalNotifT')) {
+    $('#goalNotifT').addEventListener('change', () => {
+      st.goalNotif = $('#goalNotifT').checked;
+      save();
+    });
+  }
   $('#remindT').addEventListener('change', () => { st.remind = $('#remindT').checked; save(); });
-  $('#refreshBtn').addEventListener('click', buscarJogos);
+
+  if ($('#testNotifBtn')) {
+    $('#testNotifBtn').addEventListener('click', () => {
+      if (!('Notification' in window) || Notification.permission !== 'granted') {
+        toast('Ative a permissão de notificações primeiro.');
+        return;
+      }
+      notificar('Corinthians Tracker 🏴🏳️', 'Teste de alerta: gols, início e fim de jogo estão ativos!', 'test-' + Date.now(), true);
+      toast('Notificação de teste enviada!');
+    });
+  }
+
+  $('#refreshBtn').addEventListener('click', () => buscarJogos(false));
   $('#notifBtn').addEventListener('click', () => { $('#notifPanel').classList.toggle('show'); $('#notifOverlay').classList.toggle('show'); });
   $('#panelClose').addEventListener('click', () => { $('#notifPanel').classList.remove('show'); $('#notifOverlay').classList.remove('show'); });
   $('#notifOverlay').addEventListener('click', () => { $('#notifPanel').classList.remove('show'); $('#notifOverlay').classList.remove('show'); });
@@ -1307,9 +1620,7 @@ function init() {
     renderHamTab();
   });
 
-  if ('Notification' in window && Notification.permission === 'default') Notification.requestPermission();
-  buscarJogos();
-  setInterval(buscarJogos, 60000);
+  buscarJogos(false);
 
   let tx = 0, touchPanel = false;
   document.addEventListener('touchstart', e => {
@@ -1331,11 +1642,86 @@ function init() {
   }, { passive: true });
 }
 
+function buildModalBodyContent(m) {
+  const summary = st.liveSummary[m.id];
+  const lineup = (m.matchId && st.lineups[m.matchId]) || summary?.rosters;
+  const timeline = summary?.timeline || [];
+  const stats = summary?.stats || [];
+  const hasAnyExtra = timeline.length > 0 || stats.length > 0 || (lineup && lineup.length > 0);
+
+  if (!hasAnyExtra) {
+    if (m.espnId && !summary) {
+      return '<div class="modal-info" style="margin-top:12px;color:var(--gray-400)">Carregando lance a lance e estatísticas...</div>';
+    }
+    return '';
+  }
+
+  const tabs = [];
+  if (timeline.length > 0) tabs.push({ id: 'events', label: `Lance a Lance (${timeline.length})` });
+  if (stats.length > 0) tabs.push({ id: 'stats', label: 'Estatísticas' });
+  if (lineup && lineup.length > 0) tabs.push({ id: 'lineup', label: 'Escalação' });
+
+  const defaultTab = tabs[0].id;
+  let html = `<div class="modal-tabs">${tabs.map(t =>
+    `<button class="mtab${t.id === defaultTab ? ' ativo' : ''}" data-mtab="${t.id}">${esc(t.label)}</button>`
+  ).join('')}</div>`;
+
+  if (timeline.length > 0) {
+    html += `<div class="modal-pane${defaultTab === 'events' ? ' ativo' : ''}" data-mpane="events"><div class="modal-events">`;
+    timeline.forEach(ev => {
+      html += `<div class="ev-row${ev.isGoal ? ' ev-goal' : ''}">
+        <span class="ev-min">${esc(ev.minute)}</span>
+        <span class="ev-icon">${ev.icon}</span>
+        <span class="ev-text">${esc(ev.text)}</span>
+        ${ev.team ? `<span class="ev-team">${esc(ev.team)}</span>` : ''}
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  if (stats.length > 0) {
+    html += `<div class="modal-pane${defaultTab === 'stats' ? ' ativo' : ''}" data-mpane="stats"><div class="modal-stats">`;
+    stats.forEach(s => {
+      html += `<div class="stat-row">
+        <div class="stat-head"><span>${esc(s.homeVal)}</span><span>${esc(s.label)}</span><span>${esc(s.awayVal)}</span></div>
+        <div class="stat-bars">
+          <div class="stat-bar-left"><span style="width:${s.homePct}%"></span></div>
+          <div class="stat-bar-right"><span style="width:${s.awayPct}%"></span></div>
+        </div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  if (lineup && lineup.length > 0) {
+    html += `<div class="modal-pane${defaultTab === 'lineup' ? ' ativo' : ''}" data-mpane="lineup">`;
+    lineup.forEach(team => {
+      html += `<div class="modal-lineup-team"><strong>${esc(team.team)} (${esc(team.acronym)})</strong><div class="modal-lineup-grid">`;
+      team.players.forEach(p => {
+        html += `<span class="ej-num">${esc(p.num)}</span><span class="ej-nome">${esc(p.name)}</span><span class="ej-pos">${esc(p.pos)}</span>`;
+      });
+      html += `</div></div>`;
+    });
+    html += `</div>`;
+  }
+
+  return html;
+}
+
+function bindModalTabs(overlay) {
+  overlay.querySelectorAll('.mtab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.mtab;
+      overlay.querySelectorAll('.mtab').forEach(b => b.classList.toggle('ativo', b.dataset.mtab === target));
+      overlay.querySelectorAll('.modal-pane').forEach(p => p.classList.toggle('ativo', p.dataset.mpane === target));
+    });
+  });
+}
+
 function renderMatchModal(m) {
   if (!m) return;
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
-  const lineup = m.matchId && st.lineups[m.matchId];
   const isFinished = m.status === 'finished' && !m.isLive;
   const hasScore = m.isLive || isFinished;
   const scoreDisplay = hasScore
@@ -1367,22 +1753,13 @@ function renderMatchModal(m) {
       ${m.penalties ? `<div style="color:#fde68a;margin-top:6px">⚽ ${esc(m.penalties)}</div>` : ''}
       ${m.notes ? `<div style="color:var(--gray-200);margin-top:6px">${esc(m.notes)}</div>` : ''}
       ${statusLine}
-    </div>`;
+    </div>
+    <div id="modalExtra">${buildModalBodyContent(m)}</div>
+  </div>`;
 
-  if (lineup) {
-    html += `<div class="modal-lineup-title">Escalação</div>`;
-    lineup.forEach(team => {
-      html += `<div class="modal-lineup-team"><strong>${esc(team.team)} (${esc(team.acronym)})</strong><div class="modal-lineup-grid">`;
-      team.players.forEach(p => {
-        html += `<span class="ej-num">${esc(p.num)}</span><span class="ej-nome">${esc(p.name)}</span><span class="ej-pos">${esc(p.pos)}</span>`;
-      });
-      html += `</div></div>`;
-    });
-  }
-
-  html += `</div>`;
   overlay.innerHTML = html;
   document.body.appendChild(overlay);
+  bindModalTabs(overlay);
   requestAnimationFrame(() => overlay.classList.add('show'));
 
   const close = () => {
@@ -1391,34 +1768,67 @@ function renderMatchModal(m) {
   };
   overlay.querySelector('#modalClose').addEventListener('click', close);
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
-}
 
-function notificar(title, body, tag) {
-  if (!st.notif) return;
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.isPushNotificationsEnabled(function(isEnabled) {
-      if (isEnabled) {
-        OneSignal.sendSelfNotification(title, body, 'logocorinthians.svg', { tag: tag || 'cor-match' });
-      } else if ('Notification' in window && Notification.permission === 'granted') {
-        new Notification(title, { body, icon: 'logocorinthians.svg' });
+  if (m.espnId && (!st.liveSummary[m.id] || m.isLive)) {
+    fetchEspnMatchSummary(m).then(() => {
+      const extraEl = overlay.querySelector('#modalExtra');
+      if (extraEl && document.body.contains(overlay)) {
+        extraEl.innerHTML = buildModalBodyContent(m);
+        bindModalTabs(overlay);
       }
     });
-  });
+  }
+}
+
+function notificar(title, body, tag, force = false) {
+  if (!force && !st.notif) return;
+  if (!('Notification' in window) || Notification.permission !== 'granted') return;
+
+  const opts = {
+    body,
+    icon: 'logocorinthians.svg',
+    badge: 'logocorinthians.svg',
+    vibrate: [250, 100, 300],
+    tag: tag || 'cor-match',
+    renotify: true,
+    data: { url: './' },
+  };
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.ready
+      .then(reg => {
+        if (reg && reg.showNotification) {
+          return reg.showNotification(title, opts);
+        }
+        if (reg && reg.active) {
+          reg.active.postMessage({ type: 'notify', title, body, tag: opts.tag });
+          return null;
+        }
+        new Notification(title, opts);
+      })
+      .catch(() => {
+        try { new Notification(title, opts); } catch (e) {}
+      });
+  } else {
+    try { new Notification(title, opts); } catch (e) {}
+  }
 }
 
 async function toggleOneSignal(enable) {
-  window.OneSignal = window.OneSignal || [];
+  if (!window.OneSignalDeferred) return enable;
   return new Promise(resolve => {
-    OneSignal.push(async function() {
-      if (enable) {
-        const isSubscribed = await OneSignal.isPushNotificationsEnabled();
-        if (!isSubscribed) await OneSignal.Slidedown.promptPush();
-        resolve(true);
-      } else {
-        await OneSignal.setSubscription(false);
-        resolve(false);
-      }
+    const timer = setTimeout(() => resolve(enable), 2000);
+    window.OneSignalDeferred.push(async OneSignal => {
+      try {
+        if (enable) {
+          if (OneSignal.Notifications?.requestPermission) await OneSignal.Notifications.requestPermission();
+          if (OneSignal.User?.PushSubscription?.optIn) await OneSignal.User.PushSubscription.optIn();
+        } else {
+          if (OneSignal.User?.PushSubscription?.optOut) await OneSignal.User.PushSubscription.optOut();
+        }
+      } catch (e) {}
+      clearTimeout(timer);
+      resolve(enable);
     });
   });
 }

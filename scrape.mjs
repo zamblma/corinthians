@@ -494,6 +494,103 @@ function mergeMatches(existingList, newLists) {
   return [...map.values()].sort((a, b) => new Date(a.datetime) - new Date(b.datetime));
 }
 
+function detectPushAlerts(previousList, mergedList) {
+  const alerts = [];
+  const prevMap = new Map();
+  for (const m of previousList || []) {
+    prevMap.set(matchIdentityKey(m), m);
+  }
+
+  for (const curr of mergedList) {
+    const prev = prevMap.get(matchIdentityKey(curr));
+    if (!prev) continue;
+
+    if (prev.status !== 'live' && curr.status === 'live') {
+      alerts.push({
+        title: '⚽ Bola rolando! Vai, Corinthians!',
+        body: `${curr.championship}: ${curr.homeTeam} x ${curr.awayTeam}`,
+      });
+    }
+
+    if (curr.status === 'live' || prev.status === 'live') {
+      const prevH = prev.homeGoals ?? 0;
+      const prevA = prev.awayGoals ?? 0;
+      const currH = curr.homeGoals ?? 0;
+      const currA = curr.awayGoals ?? 0;
+      if (currH > prevH || currA > prevA) {
+        const corScored = (curr.isHome && currH > prevH) || (!curr.isHome && currA > prevA);
+        alerts.push({
+          title: corScored ? 'GOOOOL DO TIMÃO! 🏴🏳️' : `Gol do ${curr.opponent}`,
+          body: `${curr.homeTeam} ${currH} x ${currA} ${curr.awayTeam} (${curr.championship})`,
+        });
+      }
+    }
+
+    if (prev.status === 'live' && curr.status === 'finished') {
+      alerts.push({
+        title: '⏱️ Fim de jogo!',
+        body: `${curr.homeTeam} ${curr.homeGoals ?? 0} x ${curr.awayGoals ?? 0} ${curr.awayTeam} (${curr.championship})`,
+      });
+    }
+  }
+
+  return alerts;
+}
+
+async function sendPushNotifications(alerts) {
+  if (!alerts.length) return;
+
+  const osKey = process.env.ONESIGNAL_REST_API_KEY;
+  const osAppId = process.env.ONESIGNAL_APP_ID || '172a6b14-7206-4d67-91c6-53c684deb317';
+  const ntfyTopic = process.env.NTFY_TOPIC;
+
+  for (const alert of alerts) {
+    console.log(`  [Alert] ${alert.title} -> ${alert.body}`);
+
+    if (osKey) {
+      try {
+        const resp = await fetch('https://api.onesignal.com/notifications', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Key ${osKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            app_id: osAppId,
+            included_segments: ['Subscribed Users'],
+            headings: { en: alert.title, pt: alert.title },
+            contents: { en: alert.body, pt: alert.body },
+          }),
+          signal: AbortSignal.timeout(8000),
+        });
+        console.log(`    [OneSignal] HTTP ${resp.status}`);
+      } catch (err) {
+        console.log(`    [OneSignal] ERROR: ${err.message}`);
+      }
+    }
+
+    if (ntfyTopic) {
+      try {
+        const resp = await fetch('https://ntfy.sh', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            topic: ntfyTopic,
+            title: alert.title,
+            message: alert.body,
+            priority: 4,
+            tags: ['soccer', 'corinthians'],
+          }),
+          signal: AbortSignal.timeout(8000),
+        });
+        console.log(`    [ntfy] HTTP ${resp.status}`);
+      } catch (err) {
+        console.log(`    [ntfy] ERROR: ${err.message}`);
+      }
+    }
+  }
+}
+
 async function scrape() {
   let previousData = { corinthiansMatches: [], standings: [], lineups: {}, competitionsMeta: [] };
   if (existsSync('matches.json')) {
@@ -608,6 +705,10 @@ async function scrape() {
   };
 
   writeFileSync('matches.json', JSON.stringify(output, null, 2));
+
+  const alerts = detectPushAlerts(previousData.corinthiansMatches || [], mergedMatches);
+  await sendPushNotifications(alerts);
+
   const upcoming = mergedMatches.filter(m => m.status === 'scheduled').length;
   const liveCount = mergedMatches.filter(m => m.status === 'live').length;
   console.log(`\nTotal: ${mergedMatches.length} Corinthians matches (${upcoming} upcoming, ${liveCount} live)`);
