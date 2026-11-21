@@ -53,8 +53,11 @@ const $ = s => document.querySelector(s);
 
 let st = {
   notif: false,
+  notifDisabled: false,
   goalNotif: true,
   remind: true,
+  deferredPrompt: null,
+  bannerDismissed: false,
   matches: [],
   filtered: [],
   all: [],
@@ -102,8 +105,10 @@ function load() {
   try {
     const d = JSON.parse(localStorage.getItem('ct') || '{}');
     st.notif = !!d.notif;
+    st.notifDisabled = !!d.notifDisabled;
     st.goalNotif = d.goalNotif !== false;
     st.remind = d.remind !== false;
+    st.bannerDismissed = !!d.bannerDismissed;
     if (d.notified) st.notified = new Set(d.notified);
   } catch (e) {}
 }
@@ -111,8 +116,10 @@ function load() {
 function save() {
   localStorage.setItem('ct', JSON.stringify({
     notif: st.notif,
+    notifDisabled: st.notifDisabled,
     goalNotif: st.goalNotif,
     remind: st.remind,
+    bannerDismissed: st.bannerDismissed,
     notified: [...st.notified],
   }));
 }
@@ -207,6 +214,19 @@ function cdwn(d) {
   if (days > 0) return `Faltam <strong>${days}d ${h}h ${m}min</strong>`;
   if (h > 0) return `Falta <strong>${h}h ${m}min</strong>`;
   return `Falta <strong>${m}min</strong>`;
+}
+
+function cdwnBlocks(d) {
+  const diff = d - new Date();
+  if (diff <= 0) return cdwn(d);
+  const days = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  return `<div class="cdwn-blocks">
+    <div class="cdwn-unit"><strong>${String(days).padStart(2, '0')}</strong><span>Dias</span></div>
+    <div class="cdwn-unit"><strong>${String(h).padStart(2, '0')}</strong><span>Horas</span></div>
+    <div class="cdwn-unit"><strong>${String(m).padStart(2, '0')}</strong><span>Min</span></div>
+  </div>`;
 }
 
 function toSaoPauloParts(isoDate) {
@@ -976,7 +996,7 @@ function renderMatchCardHtml(m, isHighlight = false) {
     </div>
     ${m.penalties ? `<div class="match-notes">⚽ ${esc(m.penalties)}</div>` : ''}
     ${m.notes ? `<div class="match-notes${isChampionNote ? ' champion-note' : ''}">${isChampionNote ? '🏆 ' : ''}${esc(m.notes)}</div>` : ''}
-    ${!isFinished ? `<div class="cdwn${isHighlight ? ' cdwn-grande' : ''}">${m.isLive ? `<span class="live-dot"></span> AO VIVO${m.liveMinute ? ` <span class="live-minuto">${esc(m.liveMinute)}'</span>` : ''}` : cdwn(m.date)}</div>` : ''}
+    ${!isFinished ? `<div class="cdwn${isHighlight ? ' cdwn-grande' : ''}">${m.isLive ? `<span class="live-dot"></span> AO VIVO${m.liveMinute ? ` <span class="live-minuto">${esc(m.liveMinute)}'</span>` : ''}` : (isHighlight ? cdwnBlocks(m.date) : cdwn(m.date))}</div>` : ''}
   </article>`;
 }
 
@@ -1075,15 +1095,17 @@ function render() {
   if (st.statusFilter !== 'encerrados') {
     const futuros = filtrados.filter(m => !m.isLive);
     if (futuros.length > 0) {
-      html += `<div class="section-title">Próximos Jogos (${futuros.length})</div>`;
+      html += `<div class="section-title">Próximos Jogos (${futuros.length})</div><div class="matches-grid">`;
       html += futuros.map(m => renderMatchCardHtml(m, false)).join('');
+      html += `</div>`;
     }
   }
 
   // Jogos Encerrados list (Full Tracker History on Main Screen)
   if (st.statusFilter !== 'proximos' && encerrados.length > 0) {
-    html += `<div class="section-title">Jogos Realizados (${encerrados.length})</div>`;
+    html += `<div class="section-title">Jogos Realizados (${encerrados.length})</div><div class="matches-grid">`;
     html += encerrados.map(m => renderMatchCardHtml(m, false)).join('');
+    html += `</div>`;
   }
 
   if (!html) {
@@ -1102,6 +1124,60 @@ function render() {
 
   checkNotifs();
   renderHamTab();
+  renderSidebar();
+}
+
+function renderSidebar() {
+  const stEl = $('#sideStandings');
+  const formEl = $('#sideForm');
+
+  if (stEl) {
+    const targetTable = st.standings.find(t => t.championshipKey === st.filter) || st.standings[0];
+    if (targetTable && targetTable.teams && targetTable.teams.length > 0) {
+      const teams = targetTable.teams;
+      const corIdx = teams.findIndex(t => isCorinthians(t.name));
+      let rows = teams;
+      if (teams.length > 10 && corIdx >= 0) {
+        const picked = new Set([0, 1, 2, Math.max(0, corIdx - 2), Math.max(0, corIdx - 1), corIdx, Math.min(teams.length - 1, corIdx + 1), Math.min(teams.length - 1, corIdx + 2), teams.length - 1]);
+        rows = [...picked].sort((a, b) => a - b).map(i => teams[i]);
+      }
+      let tbl = `<div style="font-size:0.72rem;color:var(--gray-400);margin-bottom:8px">${esc(targetTable.championship)}</div>
+        <table class="st-table"><thead><tr><th class="st-pos">#</th><th class="st-team">Time</th><th class="st-num">P</th><th class="st-num">J</th><th class="st-num">V</th></tr></thead><tbody>`;
+      rows.forEach(t => {
+        const zClass = t.zone === 1 ? 'st-z1' : t.zone === 2 ? 'st-z2' : t.zone === 3 ? 'st-z3' : t.zone === 4 ? 'st-z4' : '';
+        const isCor = isCorinthians(t.name) ? ' st-cor' : '';
+        const shieldSrc = isCorinthians(t.name) ? 'logocorinthians.svg' : t.shield;
+        tbl += `<tr class="${zClass}${isCor}">
+          <td class="st-pos">${t.pos}</td>
+          <td class="st-team">${shieldSrc ? `<img class="st-shield" src="${esc(shieldSrc)}" alt="">` : ''}${esc(t.name)}</td>
+          <td class="st-num st-pontos">${t.points}</td>
+          <td class="st-num">${t.games}</td>
+          <td class="st-num">${t.wins}</td>
+        </tr>`;
+      });
+      tbl += `</tbody></table>`;
+      stEl.innerHTML = tbl;
+    } else {
+      stEl.innerHTML = '<p class="side-empty">Tabela indisponível.</p>';
+    }
+  }
+
+  if (formEl) {
+    const ultimos = st.all.filter(m => m.status === 'finished').sort((a, b) => b.date - a.date).slice(0, 8);
+    if (ultimos.length > 0) {
+      let pills = '<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px">';
+      ultimos.forEach(m => {
+        const cor = m.resultado === 'V' ? '#22c55e' : m.resultado === 'E' ? '#eab308' : '#ef4444';
+        const placar = `${m.isHome ? m.homeGoals : m.awayGoals}-${m.isHome ? m.awayGoals : m.homeGoals}`;
+        pills += `<div style="flex:1;min-width:34px;text-align:center;background:${cor}1f;border:1px solid ${cor};border-radius:7px;padding:4px 2px;font-size:0.68rem;font-weight:700;color:${cor}" title="${esc(m.opponent)} (${fmtData(m.date)})">${placar}</div>`;
+      });
+      pills += '</div>';
+      const res = calcResumo(ultimos);
+      formEl.innerHTML = `${pills}<div style="font-size:0.74rem;color:var(--gray-300)">Últimos ${ultimos.length} jogos: <strong style="color:var(--white)">${res.vitorias}V ${res.empates}E ${res.derrotas}D</strong> (${res.pct}%)</div>`;
+    } else {
+      formEl.innerHTML = '<p class="side-empty">Sem resultados recentes.</p>';
+    }
+  }
 }
 
 function renderHamTab() {
@@ -1463,36 +1539,175 @@ function checkNotifs() {
   });
 }
 
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+}
+
+function isIos() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent);
+}
+
+function openNotifPanel() {
+  if ($('#hamPanel')) $('#hamPanel').classList.remove('show');
+  if ($('#hamOverlay')) $('#hamOverlay').classList.remove('show');
+  if ($('#notifPanel')) $('#notifPanel').classList.add('show');
+  if ($('#notifOverlay')) $('#notifOverlay').classList.add('show');
+  updatePwaUI();
+}
+
+function openHamPanel(tab) {
+  if (tab) st.hamTab = tab;
+  if ($('#notifPanel')) $('#notifPanel').classList.remove('show');
+  if ($('#notifOverlay')) $('#notifOverlay').classList.remove('show');
+  if ($('#hamPanel')) $('#hamPanel').classList.add('show');
+  if ($('#hamOverlay')) $('#hamOverlay').classList.add('show');
+  renderHamTab();
+  if ($('#hamTabs')) {
+    $('#hamTabs').querySelectorAll('.htab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === st.hamTab));
+  }
+}
+
+function closeAllPanels() {
+  ['#hamPanel', '#hamOverlay', '#notifPanel', '#notifOverlay'].forEach(sel => {
+    const el = $(sel);
+    if (el) el.classList.remove('show');
+  });
+}
+
+function updatePwaUI() {
+  const installed = isStandalone();
+  const ios = isIos();
+  const canPromptInstall = Boolean(st.deferredPrompt);
+  const showInstallBtns = !installed && (canPromptInstall || ios);
+
+  ['#installBtn', '#panelInstallBtn', '#sideInstallBtn'].forEach(sel => {
+    const btn = $(sel);
+    if (!btn) return;
+    btn.style.display = showInstallBtns ? (sel === '#installBtn' ? 'inline-flex' : 'block') : 'none';
+  });
+
+  const statusBadge = $('#appStatusBadge');
+  if (statusBadge) {
+    statusBadge.textContent = installed ? '📱 App Instalado' : '🌐 Modo Navegador';
+    statusBadge.classList.toggle('installed', installed);
+  }
+
+  const notifState = $('#appNotifState');
+  if (notifState) {
+    if (st.notif) notifState.textContent = '✅ Alertas ativos';
+    else if (ios && !installed) notifState.textContent = '📲 Instale o app para alertas';
+    else notifState.textContent = '🔕 Alertas desativados';
+  }
+
+  const iosGuide = $('#iosInstallGuide');
+  if (iosGuide) {
+    iosGuide.style.display = (ios && !installed) ? 'block' : 'none';
+  }
+
+  const notifDot = $('#notifDot');
+  if (notifDot) notifDot.classList.toggle('active', st.notif);
+
+  // Smart banner below header
+  const banner = $('#pwaBanner');
+  if (banner) {
+    if (st.bannerDismissed || (installed && st.notif)) {
+      banner.style.display = 'none';
+    } else if (installed && !st.notif) {
+      banner.style.display = 'flex';
+      $('#pwaBannerTitle').textContent = 'App instalado! Ative os alertas do Timão';
+      $('#pwaBannerSub').textContent = 'Receba avisos de gols, início de jogo e lembretes direto na tela do celular.';
+      $('#pwaBannerCta').textContent = 'Ativar Alertas';
+      $('#pwaBannerCta').dataset.action = 'notif';
+    } else if (canPromptInstall) {
+      banner.style.display = 'flex';
+      $('#pwaBannerTitle').textContent = 'Baixe o App Corinthians Tracker';
+      $('#pwaBannerSub').textContent = 'Acesso rápido na tela inicial e notificações de gols em tempo real.';
+      $('#pwaBannerCta').textContent = 'Baixar App';
+      $('#pwaBannerCta').dataset.action = 'install';
+    } else if (ios && !installed) {
+      banner.style.display = 'flex';
+      $('#pwaBannerTitle').textContent = 'Instale no iPhone para receber alertas';
+      $('#pwaBannerSub').textContent = 'Adicione à Tela de Início pelo Safari para ativar notificações de gols.';
+      $('#pwaBannerCta').textContent = 'Como instalar';
+      $('#pwaBannerCta').dataset.action = 'panel';
+    } else if (!st.notif) {
+      banner.style.display = 'flex';
+      $('#pwaBannerTitle').textContent = 'Receba alertas de gol em tempo real';
+      $('#pwaBannerSub').textContent = 'Ative as notificações para ser avisado de gols, início e fim dos jogos.';
+      $('#pwaBannerCta').textContent = 'Ativar Alertas';
+      $('#pwaBannerCta').dataset.action = 'notif';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+}
+
+async function triggerInstallApp() {
+  if (st.deferredPrompt) {
+    try {
+      st.deferredPrompt.prompt();
+      const choice = await st.deferredPrompt.userChoice;
+      if (choice && choice.outcome === 'accepted') {
+        toast('Instalando Corinthians Tracker...');
+      }
+      st.deferredPrompt = null;
+      updatePwaUI();
+    } catch (e) {
+      openNotifPanel();
+    }
+  } else if (isIos() && !isStandalone()) {
+    openNotifPanel();
+    toast('No Safari, toque em Compartilhar > Adicionar à Tela de Início');
+  } else {
+    openNotifPanel();
+  }
+}
+
 function syncNotifUI(enabled) {
   st.notif = !!enabled;
   if ($('#notifT')) $('#notifT').checked = st.notif;
   if ($('#notifCta')) $('#notifCta').style.display = st.notif ? 'none' : 'block';
   if ($('#notifSettings')) $('#notifSettings').style.display = st.notif ? 'block' : 'none';
   save();
+  updatePwaUI();
+}
+
+async function registerPeriodicSync(reg) {
+  try {
+    if (reg && 'periodicSync' in reg && navigator.permissions) {
+      const status = await navigator.permissions.query({ name: 'periodic-background-sync' });
+      if (status.state === 'granted') {
+        await reg.periodicSync.register('corinthians-live-check', { minInterval: 15 * 60 * 1000 });
+      }
+    }
+  } catch (e) {}
 }
 
 async function isNotificationsActive() {
   const nativeGranted = 'Notification' in window && Notification.permission === 'granted';
-  let osSubscribed = false;
+  if (!nativeGranted) return false;
+  if (st.notifDisabled) return false;
+
+  // Ensure installed app users with granted permission are opted in to OneSignal Web Push
   if (window.OneSignalDeferred) {
-    osSubscribed = await new Promise(resolve => {
-      const timer = setTimeout(() => resolve(false), 1500);
-      window.OneSignalDeferred.push(async OneSignal => {
-        clearTimeout(timer);
-        try {
-          const perm = OneSignal.Notifications?.permission;
-          const opted = OneSignal.User?.PushSubscription?.optedIn;
-          resolve(Boolean(perm || opted));
-        } catch (e) {
-          resolve(false);
+    window.OneSignalDeferred.push(async OneSignal => {
+      try {
+        if (OneSignal.User?.PushSubscription && !OneSignal.User.PushSubscription.optedIn) {
+          await OneSignal.User.PushSubscription.optIn();
         }
-      });
+      } catch (e) {}
     });
   }
-  return nativeGranted && (osSubscribed || st.notif);
+  return true;
 }
 
 async function requestPushEnable() {
+  if (isIos() && !isStandalone() && !('Notification' in window)) {
+    openNotifPanel();
+    toast('No iPhone, adicione o app à Tela de Início primeiro para ativar notificações.');
+    return false;
+  }
+
   let granted = 'Notification' in window && Notification.permission === 'granted';
   if (window.OneSignalDeferred) {
     await new Promise(resolve => {
@@ -1517,6 +1732,12 @@ async function requestPushEnable() {
   } else if ('Notification' in window) {
     granted = Notification.permission === 'granted';
   }
+  if (granted) {
+    st.notifDisabled = false;
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then(registerPeriodicSync).catch(() => {});
+    }
+  }
   return granted;
 }
 
@@ -1528,8 +1749,33 @@ function init() {
   if ($('#remindT')) $('#remindT').checked = st.remind;
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => registerPeriodicSync(reg))
+      .catch(() => {});
   }
+
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    st.deferredPrompt = e;
+    updatePwaUI();
+  });
+
+  window.addEventListener('appinstalled', () => {
+    st.deferredPrompt = null;
+    st.bannerDismissed = false;
+    save();
+    updatePwaUI();
+    toast('App instalado! Ative as notificações para receber alertas de gol 🔔');
+    openNotifPanel();
+  });
+
+  // Immediately refresh when user returns to installed app or reconnects
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+      buscarJogos(true);
+    }
+  });
+  window.addEventListener('online', () => buscarJogos(true));
 
   const searchInput = $('#searchInput');
   if (searchInput) {
@@ -1543,9 +1789,14 @@ function init() {
     syncNotifUI(active);
   });
 
-  $('#notifEnableBtn').addEventListener('click', async () => {
+  const handleEnableNotif = async () => {
     if (!('Notification' in window)) {
-      toast('Este navegador não suporta notificações.');
+      if (isIos() && !isStandalone()) {
+        openNotifPanel();
+        toast('No iPhone, instale o app na Tela de Início primeiro.');
+      } else {
+        toast('Este navegador não suporta notificações.');
+      }
       return;
     }
     toast('Solicitando permissão...');
@@ -1558,11 +1809,35 @@ function init() {
       syncNotifUI(false);
       toast('Permissão negada. Ative nas configurações do navegador.');
     }
+  };
+
+  if ($('#notifEnableBtn')) $('#notifEnableBtn').addEventListener('click', handleEnableNotif);
+
+  ['#installBtn', '#panelInstallBtn', '#sideInstallBtn'].forEach(sel => {
+    const btn = $(sel);
+    if (btn) btn.addEventListener('click', triggerInstallApp);
   });
+
+  if ($('#pwaBannerCta')) {
+    $('#pwaBannerCta').addEventListener('click', () => {
+      const action = $('#pwaBannerCta').dataset.action;
+      if (action === 'install') triggerInstallApp();
+      else if (action === 'notif') handleEnableNotif();
+      else openNotifPanel();
+    });
+  }
+  if ($('#pwaBannerClose')) {
+    $('#pwaBannerClose').addEventListener('click', () => {
+      st.bannerDismissed = true;
+      save();
+      updatePwaUI();
+    });
+  }
 
   $('#notifT').addEventListener('change', async () => {
     const enabled = $('#notifT').checked;
     if (enabled) {
+      st.notifDisabled = false;
       toast('Ativando notificações...');
       const granted = await requestPushEnable();
       if (granted) {
@@ -1573,6 +1848,7 @@ function init() {
         toast('Notificações bloqueadas pelo navegador.');
       }
     } else {
+      st.notifDisabled = true;
       await toggleOneSignal(false);
       syncNotifUI(false);
       toast('Notificações desativadas.');
@@ -1599,18 +1875,43 @@ function init() {
   }
 
   $('#refreshBtn').addEventListener('click', () => buscarJogos(false));
-  $('#notifBtn').addEventListener('click', () => { $('#notifPanel').classList.toggle('show'); $('#notifOverlay').classList.toggle('show'); });
-  $('#panelClose').addEventListener('click', () => { $('#notifPanel').classList.remove('show'); $('#notifOverlay').classList.remove('show'); });
-  $('#notifOverlay').addEventListener('click', () => { $('#notifPanel').classList.remove('show'); $('#notifOverlay').classList.remove('show'); });
+  $('#notifBtn').addEventListener('click', () => {
+    if ($('#notifPanel').classList.contains('show')) closeAllPanels();
+    else openNotifPanel();
+  });
+  $('#panelClose').addEventListener('click', closeAllPanels);
+  $('#notifOverlay').addEventListener('click', closeAllPanels);
 
   $('#hamBtn').addEventListener('click', () => {
-    $('#hamPanel').classList.toggle('show');
-    $('#hamOverlay').classList.toggle('show');
-    renderHamTab();
-    $('#hamTabs').querySelectorAll('.htab').forEach(b => b.classList.toggle('ativo', b.dataset.tab === st.hamTab));
+    if ($('#hamPanel').classList.contains('show')) closeAllPanels();
+    else openHamPanel();
   });
-  $('#hamClose').addEventListener('click', () => { $('#hamPanel').classList.remove('show'); $('#hamOverlay').classList.remove('show'); });
-  $('#hamOverlay').addEventListener('click', () => { $('#hamPanel').classList.remove('show'); $('#hamOverlay').classList.remove('show'); });
+  $('#hamClose').addEventListener('click', closeAllPanels);
+  $('#hamOverlay').addEventListener('click', closeAllPanels);
+
+  if ($('#openFullStandings')) $('#openFullStandings').addEventListener('click', () => openHamPanel('classif'));
+  if ($('#openFullForm')) $('#openFullForm').addEventListener('click', () => openHamPanel('sequencia'));
+  if ($('#sideNotifBtn')) $('#sideNotifBtn').addEventListener('click', openNotifPanel);
+
+  // Mobile bottom navigation
+  const bottomNav = $('#bottomNav');
+  if (bottomNav) {
+    bottomNav.querySelectorAll('.bnav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        bottomNav.querySelectorAll('.bnav-btn').forEach(b => b.classList.remove('ativo'));
+        btn.classList.add('ativo');
+        const nav = btn.dataset.nav;
+        if (nav === 'jogos') {
+          closeAllPanels();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (nav === 'alertas') {
+          openNotifPanel();
+        } else {
+          openHamPanel(nav);
+        }
+      });
+    });
+  }
 
   document.addEventListener('click', e => {
     const tabBtn = e.target.closest('.htab');
@@ -1620,6 +1921,7 @@ function init() {
     renderHamTab();
   });
 
+  updatePwaUI();
   buscarJogos(false);
 
   let tx = 0, touchPanel = false;
@@ -1630,14 +1932,10 @@ function init() {
   document.addEventListener('touchend', e => {
     const dx = e.changedTouches[0].clientX - tx;
     const startX = tx;
-    if (dx > 80 && startX < 60) {
-      if (!$('#hamPanel').classList.contains('show')) $('#hamBtn').click();
-    } else if (dx < -80) {
-      if ($('#hamPanel').classList.contains('show')) $('#hamOverlay').click();
-      if ($('#notifPanel').classList.contains('show')) $('#notifOverlay').click();
-    } else if (Math.abs(dx) < 20 && !touchPanel) {
-      const screenW = window.innerWidth;
-      if (startX > screenW - 60 && !$('#hamPanel').classList.contains('show')) $('#hamBtn').click();
+    if (dx > 80 && startX < 50) {
+      if (!$('#hamPanel').classList.contains('show')) openHamPanel();
+    } else if (dx < -80 && touchPanel) {
+      closeAllPanels();
     }
   }, { passive: true });
 }
@@ -1786,8 +2084,8 @@ function notificar(title, body, tag, force = false) {
 
   const opts = {
     body,
-    icon: 'logocorinthians.svg',
-    badge: 'logocorinthians.svg',
+    icon: 'icon-192.png',
+    badge: 'icon-192.png',
     vibrate: [250, 100, 300],
     tag: tag || 'cor-match',
     renotify: true,

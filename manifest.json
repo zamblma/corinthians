@@ -1,17 +1,46 @@
 {
-  "name": "Corinthians Tracker",
+  "id": "./",
+  "name": "Corinthians Tracker — Todo Poderoso Timão",
   "short_name": "Timão",
-  "description": "Acompanhe os próximos jogos do Corinthians",
-  "start_url": ".",
+  "description": "Acompanhe todos os jogos do Corinthians ao vivo, placares, classificações, estatísticas e notificações de gols.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "background_color": "#070707",
+  "theme_color": "#070707",
+  "categories": ["sports", "news"],
   "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
     {
       "src": "logocorinthians.svg",
       "sizes": "any",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
