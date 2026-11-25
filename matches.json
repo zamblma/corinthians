@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-25T12:31:14.854Z",
+  "lastUpdated": "2026-11-25T22:20:09.479Z",
   "corinthiansMatches": [
     {
       "round": 1,
@@ -816,9 +816,9 @@
       "awayTeam": "Corinthians",
       "awayAcronym": "COR",
       "stadium": "Arena MRV",
-      "homeGoals": null,
-      "awayGoals": null,
-      "status": "scheduled",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "status": "live",
       "championship": "Brasileirão Série A",
       "championshipKey": "brasileirao",
       "homeLogo": "https://p2.trrsf.com/image/fget/cf/51/51/s1.trrsf.com/musa/pro/41v3fl8gq1fdj0uk01mvf29hte.png",
